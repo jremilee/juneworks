@@ -34,7 +34,7 @@ export default function Home() {
         
           {/* hand image */}
           <div className="hero__bg" aria-hidden="true">
-            <img src="/images/hand.png" alt="Image of hand holding minature objects" />
+            <img src="/images/hand-transparent.png" alt="Image of hand holding minature objects" />
           </div>
 
         </section>
@@ -66,7 +66,7 @@ export default function Home() {
               aria-label="Mobile UX Case Study project"
             >
               <div className="proj__thumb">
-                <img src="/images/thirstylion.png" alt="Mobile UX Case Study project" />
+                <img src="/images/thirstylion-2.png" alt="Mobile UX Case Study project" />
               </div>
               <div className="proj__overlay">
                 <div className="proj__overlayInner">Mobile UX Case Study</div>

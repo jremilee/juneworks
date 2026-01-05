@@ -14,13 +14,13 @@
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  font-family: ibm-plex-sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
 .content{
   width: min(880px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 18px 0 56px;
 }
 
 /* Nav */
@@ -64,10 +64,7 @@
 /* Hero */
 .hero{
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 28px;
   align-items: center;
-  padding: 34px 0 22px;
 }
 
 .hero__title{
@@ -88,19 +85,37 @@
 /* subtle vignette like your screenshot */
 
 /* full-width decorative background element for the hand image */
-.hero__bg{
-  position: absolute;
-  transform: translateX(10%);
-  bottom: 45%; /* nudged relative to viewport bottom */
-  width: 100vw; /* span the full viewport width */
-  /* make the hand ~30% smaller (default is 34vh) */
-  height: var(--hero-bg-height, 50vh);
-  z-index: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  pointer-events: none; /* decorative only */
+.hero {
+  display: flex;
+  align-items: center; /* Centers the hand vertically relative to the text */
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px; /* Or your preferred page width */
+  margin: 0 auto;
+  position: relative;
 }
+
+.hero__left {
+  flex: 1; /* Takes up the left side space */
+}
+
+.hero__bg {
+  flex: 1; /* Takes up the right side space */
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero__bg img {
+  /* Using 'max-width' ensures it scales down on zoom/resize */
+  max-width: 150%; 
+  height: auto;
+  /* If you want the hand to overlap or sit in a specific spot, 
+     use a slight margin or transform instead of absolute positioning */
+  transform: translateX(-16%); 
+}
+
 
 .hero__left{
   position: relative;
@@ -130,7 +145,7 @@
   align-items: stretch;
   height: var(--projects-height, 850px); /* tweakable total height so columns form a rectangle */
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .projectsCol{
@@ -243,7 +258,7 @@
 }
 
 #alterea{
-  flex: 1 1 0;
+  flex: 1 .8 0;
   width: 100%;
 }
 
