@@ -30,7 +30,7 @@ export default function About() {
               </p>
               <p className="aboutHero__text">
                 Recently, I’ve been exploring the EdTech industry. When I’m not
-                designing interfaces, I enjoy playing flute, building escape
+                designing interfaces, I enjoy playing guitar, building escape
                 rooms, and learning languages.
               </p>
             </div>
