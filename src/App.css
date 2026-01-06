@@ -1,7 +1,7 @@
 /* Home.css */
 
 :root{
-  --bg: #FAF6F4;
+  --bg:#faf3f4;
   --text: #1f1f1f;
   --muted: #5a5a5a;
   --line: rgba(0,0,0,0.08);
@@ -27,7 +27,7 @@
 .nav{
   position: sticky;
   top: 0;
-  background: rgba(250,246,244,0.85);
+  background: #faf3f4;
   backdrop-filter: blur(8px);
   z-index: 10;
 }
@@ -109,11 +109,12 @@
 
 .hero__bg img {
   /* Using 'max-width' ensures it scales down on zoom/resize */
-  max-width: 150%; 
+  max-width: 100%; 
   height: auto;
   /* If you want the hand to overlap or sit in a specific spot, 
      use a slight margin or transform instead of absolute positioning */
-  transform: translateX(-16%); 
+  /* lowered slightly so the hand sits a bit lower than before */
+  transform: translate(-0%, 30%);
 }
 
 
@@ -171,7 +172,7 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  background: #E9E9EB;               /* light card background like screenshot */
+  background: #FBF2ED;               /* light card background like screenshot */
   box-shadow: 0 10px 28px rgba(0,0,0,0.10);
   border: 1px solid rgba(0,0,0,0.06);
   text-decoration: none;
@@ -291,11 +292,11 @@
 
   /* keep thirstylion a bit taller */
   #thirstylion{
-    aspect-ratio: 10 / 12;
+    aspect-ratio: 12 / 12;
   }
 
-  .proj__thumb{
-    padding: 14px;
+  #techspace{
+    aspect-ratio: 12 / 9;
   }
 
   /* revert other block sizes on small screens */
@@ -405,7 +406,7 @@
 
 /* About.css */
 :root {
-  --bg: #faf6f4;
+  --bg: #faf3f4;
   --ink: #1f1f1f;
   --muted: #5c5c5c;
   --line: rgba(0, 0, 0, 0.14);

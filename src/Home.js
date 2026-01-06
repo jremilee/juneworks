@@ -1,6 +1,6 @@
 // Home.js
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import Nav from "./Nav";
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -15,19 +15,7 @@ export default function Home() {
   return (
     <div className="home">
       {/* Top Nav */}
-      <header className="nav">
-        <div className="nav__inner">
-          <nav className="nav__links" aria-label="Primary">
-            <Link className="nav__link nav__link--active" to="/">
-              Home
-            </Link>
-            <Link className="nav__link" to="/about">
-              About
-            </Link>
-          </nav>
-        </div>
-        <div className="nav__divider" />
-      </header>
+      <Nav />
 
       <main className="content" id="home">
         {/* Hero */}
@@ -44,7 +32,7 @@ export default function Home() {
         
           {/* hand image */}
           <div className="hero__bg" aria-hidden="true">
-            <img src="/images/hand-transparent.png" alt="Image of hand holding minature objects" />
+            <img src="/images/hand-2.png" alt="Image of hand holding minature objects" />
           </div>
 
         </section>

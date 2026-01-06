@@ -1,23 +1,11 @@
 // About.js
-import { Link } from "react-router-dom";
+import Nav from "./Nav";
 
 export default function About() {
   return (
     <div className="aboutPage">
       {/* Top Nav */}
-      <header className="aboutNav">
-        <div className="aboutNav__inner">
-          <nav className="aboutNav__links" aria-label="Primary">
-            <Link className="aboutNav__link" to="/">
-              Home
-            </Link>
-            <Link className="aboutNav__link aboutNav__link--active" to="/about">
-              About
-            </Link>
-          </nav>
-        </div>
-        <div className="aboutNav__divider" />
-      </header>
+      <Nav />
 
       <main className="aboutMain" id="about">
         {/* ABOUT HERO */}
