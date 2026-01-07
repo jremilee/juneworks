@@ -58,9 +58,9 @@ export default function Home() {
             </a>
 
             {/* Project 3 */}
-            <a
+            <Link
               id="thirstylion"
-              href="#"
+              to="/thirstylion"
               className="proj-left"
               aria-label="Mobile UX Case Study project"
             >
@@ -70,7 +70,7 @@ export default function Home() {
               <div className="proj__overlay">
                 <div className="proj__overlayInner">Mobile UX Case Study</div>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="projectsCol projectsCol--right">

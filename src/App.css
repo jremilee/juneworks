@@ -569,15 +569,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
 @media (max-width: 760px){
   .aboutBoxes__inner{ grid-template-columns: 1fr; }
   .aboutBox{ min-height: auto; }
@@ -588,23 +579,47 @@ body {
 
 /* SECTIONS */
 .aboutSection {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 /* Extra space above Education */
 .aboutSection[aria-label="Education"] {
-  margin-top: 55px;
+  padding-top: 30px;
 }
 
 .aboutSection__title {
   font-size: 18px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
+}
+
+/* Center specific sections while keeping their text left-aligned */
+.aboutSection[aria-label="Education"],
+.aboutSection[aria-label="Work Experience"] {
+  max-width: 880px;
+  margin: 0 auto 20px;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.aboutSection[aria-label="Education"] .aboutSection__title,
+.aboutSection[aria-label="Work Experience"] .aboutSection__title {
+  font-size: 23px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+.aboutSection[aria-label="Education"] p,
+.aboutSection[aria-label="Work Experience"] p,
+.aboutSection[aria-label="Education"] .aboutInfoRow__line,
+.aboutSection[aria-label="Work Experience"] .aboutInfoRow__line {
+  font-size: 15px;
+  line-height: 1.4;
 }
 
 .aboutInfoRow {
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
+  padding-top: 0px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 18px;
@@ -628,10 +643,14 @@ body {
   padding-top: 2px;
 }
 
+.aboutInfoRow__left {
+  padding-left: 10px;
+}
+
 .aboutInfoRow__link {
   display: inline-block;
   margin-top: 6px;
-  font-size: 12px;
+  font-size: 15px;
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -650,7 +669,7 @@ body {
 }
 
 .aboutConnect__title {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 600;
   margin: 0 0 10px;
 }
@@ -658,7 +677,7 @@ body {
 .aboutConnect__text {
   margin: 0 auto 14px;
   max-width: 640px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -666,16 +685,15 @@ body {
 .aboutConnect__icons {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 6px;
+  gap: 24px;
+  margin-top: 12px;
+  margin-bottom: 36px; /* ensure icons sit visually at bottom area */
 }
 
 .aboutIconBtn {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.6);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -683,14 +701,24 @@ body {
 }
 
 .aboutIconBtn svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   fill: #3a3a3a;
 }
 
 .aboutIconBtn:hover {
   transform: translateY(-1px);
   transition: transform 120ms ease;
+}
+
+/* icons implemented as images inside the link */
+.aboutIconBtn img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  padding: 3px; /* small inset so image doesn't touch border */
+  box-sizing: border-box;
 }
 
 /* New About Box Styles */
@@ -818,11 +846,18 @@ body {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .brainVideoBtn:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease;
+}
+
+/* Ensure the <video> inside the Link doesn't intercept clicks — let the Link handle them */
+.brainVideoBtn video,
+.brainVideoBtn .other__videoPoster {
+  pointer-events: none;
 }
 
 /* creativeworks.css */
@@ -895,6 +930,9 @@ body {
   color: var(--ink);
   flex-shrink: 0;
   transition: background 0.2s ease;
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
 }
 
 .cw__scrollBtn:hover {
@@ -907,4 +945,126 @@ body {
 
 .cw__scrollBtn--right {
   order: 3;
+}
+
+/* Disabled state to indicate scroll limits */
+.cw__scrollBtn:disabled,
+.cw__scrollBtn[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Progress indicator showing scroll bounds */
+.cw__progress {
+  height: 4px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 999px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.cw__progressBar {
+  height: 100%;
+  background: rgba(0,0,0,0.28);
+  width: 0%;
+  border-radius: 999px;
+  transition: width 200ms ease;
+}
+
+/* =========================
+   THIRSTY LION PAGE
+   ========================= */
+.root {
+  background: var(--bg);
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+} 
+
+.tlPage {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.tl__header {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.tl__videoContainer {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  aspect-ratio: 16 / 9;
+  box-sizing: border-box;
+}
+
+.tl__videoContainer iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.tl__title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.tl__lead {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.tl__section {
+  margin: 24px 0 28px;
+}
+
+.tl__sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.tl__list {
+  margin: 0;
+  padding-left: 18px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.tl__img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.tl__img img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+
+
+@media (max-width: 760px) {
+  .tl__imageGrid { grid-template-columns: 1fr; }
+  .tl__img { 
+    margin-top: 25px;
+    margin-bottom: 16px;
+  }
+  .tl__img img {
+    width: 100%;
+  }
 }
