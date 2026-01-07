@@ -1,5 +1,6 @@
 // Home.js
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Nav from "./Nav";
 
 export default function Home() {
@@ -129,27 +130,29 @@ export default function Home() {
 
             {/* Decorative looping video (muted, autoplay, loop). */}
             <span className="other__icon" aria-hidden="true">
-              <video
-                ref={videoRef}
-                className="other__video"
-                autoPlay
-                muted
-                playsInline
-                loop
-                aria-hidden="true"
-                poster="/images/brain-poster.png"
-                onError={(e) => {
-                  const v = e.currentTarget;
-                  v.style.display = 'none';
-                  const img = v.nextElementSibling;
-                  if (img) img.style.display = 'block';
-                }}
-                preload="metadata"
-              >
-                <source src="/videos/brain.mp4" type="video/mp4" />
-                <source src="/videos/brain.webm" type="video/webm" />
+              <Link to="/creativeworks" className="brainVideoBtn">
+                <video
+                  ref={videoRef}
+                  className="other__video brainSvg"
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  aria-hidden="true"
+                  poster="/images/brain-poster.png"
+                  onError={(e) => {
+                    const v = e.currentTarget;
+                    v.style.display = 'none';
+                    const img = v.nextElementSibling;
+                    if (img) img.style.display = 'block';
+                  }}
+                  preload="metadata"
+                >
+                  <source src="/videos/brain.mp4" type="video/mp4" />
+                  <source src="/videos/brain.webm" type="video/webm" />
 
-              </video>
+                </video>
+              </Link>
 
               <img
                 className="other__videoPoster"
