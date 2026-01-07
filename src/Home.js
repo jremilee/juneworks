@@ -1,27 +1,27 @@
 // Home.js
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import Nav from "./Nav";
 
 export default function Home() {
+  const videoRef = useRef(null);
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play()
+      .then(() => console.log('S video played'))
+      .catch((e) => console.error('brain video play failed', e));
+  }, []);
+
   return (
     <div className="home">
       {/* Top Nav */}
-      <header className="nav">
-        <div className="nav__inner">
-          <nav className="nav__links" aria-label="Primary">
-            <a className="nav__link nav__link--active" href="#home">
-              Home
-            </a>
-            <a className="nav__link" href="#about">
-              About
-            </a>
-          </nav>
-        </div>
-        <div className="nav__divider" />
-      </header>
+      <Nav />
 
       <main className="content" id="home">
         {/* Hero */}
         <section className="hero">
+
           <div className="hero__left">
             <h1 className="hero__title">Hi! I’m June, a UX designer based in NYC</h1>
             <p className="hero__subtitle">
@@ -30,92 +30,96 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="hero__right" aria-label="Hero image placeholder">
-            {/* Replace this div with your hand image later */}
-            <div className="handPlaceholder">
-              <div className="handPlaceholder__label">Hand image placeholder</div>
-            </div>
+        
+          {/* hand image */}
+          <div className="hero__bg" aria-hidden="true">
+            <img src="/images/hand-2.png" alt="Image of hand holding minature objects" />
           </div>
+
         </section>
 
         {/* Projects */}
-        <div className="projectsGrid">
-          {/* Project 1 */}
-          <a
-            id="sharp"
-            href="#"
-            className="proj-left"
-            aria-label="Accessibility Audit project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/sharp-consolidation.png" alt="Accessibility Audit project" />
-            </div>
+        <div className="projectsCols">
+          <div className="projectsCol projectsCol--left">
+            {/* Project 1 */}
+            <a
+              id="sharp"
+              href="#"
+              className="proj-left"
+              aria-label="Accessibility Audit project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/sharp-consolidation.png" alt="Accessibility Audit project" />
+              </div>
 
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Accessibility Audit</div>
-            </div>
-          </a>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Accessibility Audit</div>
+              </div>
+            </a>
 
-          {/* Project 2 */}
-          <a
-            id="miai"
-            href="#"
-            className="proj-right"
-            aria-label="Research Dashboard project"
-          >
-            <div className="proj__thumb">   
-              <img src="/images/miai-laptop.png" alt="Research Dashboard project" />
-            </div>
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Research Dashboard</div>
-            </div>
-          </a>
+            {/* Project 3 */}
+            <a
+              id="thirstylion"
+              href="#"
+              className="proj-left"
+              aria-label="Mobile UX Case Study project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/thirstylion-2.png" alt="Mobile UX Case Study project" />
+              </div>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Mobile UX Case Study</div>
+              </div>
+            </a>
+          </div>
 
-          {/* Project 3 */}
-          <a
-            id="thirstylion"
-            href="#"
-            className="proj-left"
-            aria-label="Mobile UX Case Study project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/thirstylion-phone.png" alt="Mobile UX Case Study project" />
-            </div>
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Mobile UX Case Study</div>
-            </div>
-          </a>
+          <div className="projectsCol projectsCol--right">
+            {/* Project 2 */}
+            <a
+              id="miai"
+              href="#"
+              className="proj-right"
+              aria-label="Research Dashboard project"
+            >
+              <div className="proj__thumb">   
+                <img src="/images/miai-laptop.png" alt="Research Dashboard project" />
+              </div>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Research Dashboard</div>
+              </div>
+            </a>
 
-          {/* Project 4 */}
-          <a
-            id="alterea"
-            href="#"
-            className="proj-right"
-            aria-label="Gamified Learning Tool project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/alterea-tablet.png" alt="Gamified Learning Tool project" />
-            </div>
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Gamified Learning Tool</div>
-            </div>
-          </a>
+            {/* Project 4 */}
+            <a
+              id="alterea"
+              href="#"
+              className="proj-right"
+              aria-label="Gamified Learning Tool project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/alterea-tablet.png" alt="Gamified Learning Tool project" />
+              </div>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Gamified Learning Tool</div>
+              </div>
+            </a>
 
-          {/* Project 5 */}
-          <a
-            id="techspace"
-            href="#"
-            className="proj-right"
-            aria-label="Space Threads App project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/techspace.png" alt="Space Threads App project" />
-            </div>
+            {/* Project 5 */}
+            <a
+              id="techspace"
+              href="#"
+              className="proj-right"
+              aria-label="Space Threads App project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/techspace.png" alt="Space Threads App project" />
+              </div>
 
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Space Threads App</div>
-            </div>
-          </a>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Space Threads App</div>
+              </div>
+            </a>
+          </div>
         </div>
 
 
@@ -124,28 +128,38 @@ export default function Home() {
           <div className="other__row">
             <span className="other__text">OTHER CREATIVE</span>
 
-            {/* Simple brain doodle as inline SVG (optional). Replace/remove if you want. */}
+            {/* Decorative looping video (muted, autoplay, loop). */}
             <span className="other__icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 120 90"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="brainSvg"
-              >
-                <path
-                  d="M24 46c-8-6-9-17-2-24 7-7 18-6 24 2 6-8 18-9 26-2 7-7 18-8 25 0 7 7 6 18-2 24 8 6 9 17 2 24-7 7-18 6-24-2-6 8-18 9-26 2-7 7-18 8-25 0-7-7-6-18 2-24Z"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M38 26c-5 6-5 14 0 20m12-26c-6 9-6 21 0 30m12-30c-6 9-6 21 0 30m12-24c5 6 5 14 0 20"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <Link to="/creativeworks" className="brainVideoBtn">
+                <video
+                  ref={videoRef}
+                  className="other__video brainSvg"
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  aria-hidden="true"
+                  poster="/images/brain-poster.png"
+                  onError={(e) => {
+                    const v = e.currentTarget;
+                    v.style.display = 'none';
+                    const img = v.nextElementSibling;
+                    if (img) img.style.display = 'block';
+                  }}
+                  preload="metadata"
+                >
+                  <source src="/videos/brain.mp4" type="video/mp4" />
+                  <source src="/videos/brain.webm" type="video/webm" />
+
+                </video>
+              </Link>
+
+              <img
+                className="other__videoPoster"
+                src="/images/brain-poster.png"
+                alt="Brain doodle"
+                style={{ display: 'none' }}
+              />
             </span>
 
             <span className="other__text">WORKS</span>
