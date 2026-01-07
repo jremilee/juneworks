@@ -131,7 +131,7 @@ export default function About() {
             </div>
 
             <div className="aboutBox aboutBox--text">
-              <h3 className="aboutBox__title">Research Topics</h3>
+              <h3 className="aboutBox__title">Areas of Research</h3>
               <ul className="aboutBox__bullets aboutBox__bullets-research">
                 <br/>
                 <li>Bilingualism & Mental Imagery</li>
