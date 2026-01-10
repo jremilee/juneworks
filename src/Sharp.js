@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Nav from "./Nav";
 
-export default function ThirstyLion() {
+export default function Sharp() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -43,7 +43,9 @@ function CarouselSection({ title, items }) {
   const [maxScroll, setMaxScroll] = useState(0);
   const scrollRef = useRef(null);
 
-  // Keep internal state synced with the real scroll position
+  // Keep internal state synced with the real scroll position.
+  // Use ResizeObserver and image "load" events to ensure metrics are correct
+  // when the user first navigates to the page (no refresh required).
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
@@ -56,16 +58,31 @@ function CarouselSection({ title, items }) {
 
     updateMetrics();
 
-    const onScroll = () => {
-      setScrollPos(container.scrollLeft);
-    };
-
+    const onScroll = () => setScrollPos(container.scrollLeft);
     container.addEventListener("scroll", onScroll);
     window.addEventListener("resize", updateMetrics);
+
+    // If images are still loading, update metrics when each finishes loading.
+    const imgs = container.querySelectorAll("img");
+    const onImgLoad = () => updateMetrics();
+    imgs.forEach((img) => img.addEventListener("load", onImgLoad));
+
+    // Use ResizeObserver to handle dynamic layout/content changes.
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(() => updateMetrics());
+      ro.observe(container);
+      // also observe images in case their intrinsic size loads later
+      imgs.forEach((img) => ro.observe(img));
+    }
+
     return () => {
       container.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", updateMetrics);
+      imgs.forEach((img) => img.removeEventListener("load", onImgLoad));
+      if (ro) ro.disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const clamp = (val, min, max) => Math.min(Math.max(val, min), max);

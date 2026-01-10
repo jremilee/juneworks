@@ -172,7 +172,7 @@ export default function About() {
           <div className="aboutInfoRow aboutInfoRow--stack">
             <div className="aboutInfoRow__left">
               <div className="aboutInfoRow__line">
-                Other than user design, my work experience spans research,
+                Beyond user design, my work experience spans research,
                 education and marketing.
               </div>
               <a className="aboutInfoRow__link" href="#resume">
@@ -194,7 +194,7 @@ export default function About() {
           <div className="aboutConnect__icons">
             <a
               className="aboutIconBtn"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/june-lee-18snvk90/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"

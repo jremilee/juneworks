@@ -46,14 +46,14 @@ export default function Home() {
               id="sharp"
               href="#"
               className="proj-left"
-              aria-label="Accessibility Audit project"
+              aria-label="Sharp Electronics"
             >
               <div className="proj__thumb">
-                <img src="/images/sharp-consolidation.png" alt="Accessibility Audit project" />
+                <img src="/images/sharp-consolidation.png" alt="Sharp Electronics project" />
               </div>
 
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Accessibility Audit</div>
+                <div className="proj__overlayInner">Sharp Electronics</div>
               </div>
             </a>
 
@@ -62,13 +62,13 @@ export default function Home() {
               id="thirstylion"
               to="/thirstylion"
               className="proj-left"
-              aria-label="Mobile UX Case Study project"
+              aria-label="Thirsty Lion project"
             >
               <div className="proj__thumb">
-                <img src="/images/thirstylion-2.png" alt="Mobile UX Case Study project" />
+                <img src="/images/thirstylion-2.png" alt="Thirsty Lion" />
               </div>
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Mobile UX Case Study</div>
+                <div className="proj__overlayInner">ThirstyLion</div>
               </div>
             </Link>
           </div>
@@ -79,13 +79,13 @@ export default function Home() {
               id="miai"
               href="#"
               className="proj-right"
-              aria-label="Research Dashboard project"
+              aria-label="M.I.A.I. Game"
             >
               <div className="proj__thumb">   
-                <img src="/images/miai-laptop.png" alt="Research Dashboard project" />
+                <img src="/images/miai-laptop.png" alt="M.I.A.I. Game" />
               </div>
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Research Dashboard</div>
+                <div className="proj__overlayInner">M.I.A.I</div>
               </div>
             </a>
 
@@ -100,7 +100,7 @@ export default function Home() {
                 <img src="/images/alterea-tablet.png" alt="Gamified Learning Tool project" />
               </div>
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Gamified Learning Tool</div>
+                <div className="proj__overlayInner">Agents of Influence Game</div>
               </div>
             </a>
 
@@ -116,7 +116,7 @@ export default function Home() {
               </div>
 
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Space Threads App</div>
+                <div className="proj__overlayInner">TechSpace</div>
               </div>
             </a>
           </div>

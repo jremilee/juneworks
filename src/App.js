@@ -5,6 +5,7 @@ import Home from './Home';
 import About from './About';
 import Creativeworks from './Creativeworks';
 import ThirstyLion from './ThirstyLion';
+import Sharp from './Sharp';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/creativeworks" element={<Creativeworks />} />
         <Route path="/about" element={<About />} />
         <Route path="/thirstylion" element={<ThirstyLion />} />
+        <Route path="/sharp" element={<Sharp />} />
       </Routes>
     </BrowserRouter>
   );
