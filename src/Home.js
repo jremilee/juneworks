@@ -75,9 +75,9 @@ export default function Home() {
 
           <div className="projectsCol projectsCol--right">
             {/* Project 2 */}
-            <a
+            <Link
               id="miai"
-              href="#"
+              to="/miai"
               className="proj-right"
               aria-label="M.I.A.I. Game"
             >
@@ -87,12 +87,12 @@ export default function Home() {
               <div className="proj__overlay">
                 <div className="proj__overlayInner">M.I.A.I</div>
               </div>
-            </a>
+            </Link>
 
             {/* Project 4 */}
-            <a
+            <Link
               id="alterea"
-              href="#"
+              to="/alterea"
               className="proj-right"
               aria-label="Gamified Learning Tool project"
             >
@@ -102,12 +102,12 @@ export default function Home() {
               <div className="proj__overlay">
                 <div className="proj__overlayInner">Agents of Influence Game</div>
               </div>
-            </a>
+            </Link>
 
             {/* Project 5 */}
-            <a
+            <Link
               id="techspace"
-              href="#"
+              to="/techspace"
               className="proj-right"
               aria-label="Space Threads App project"
             >
@@ -118,7 +118,7 @@ export default function Home() {
               <div className="proj__overlay">
                 <div className="proj__overlayInner">TechSpace</div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
 
