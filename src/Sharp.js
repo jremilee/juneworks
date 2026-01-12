@@ -34,10 +34,10 @@ export default function Sharp() {
         </section>
 
         <section className="tl__section" aria-label="Project Overview">
-          <h2><strong>The Problem</strong> </h2> 
+          <h3><strong>The Problem</strong> </h3> 
           <p> The sites were redundant and hurt SEO ranking by competing with one another. Customers were also confused about which site to visit. 
             Sharp’s SBS site and Sharp Business site had pages with mostly identical content. However, there was still some SBS-specific content that was not posted on the business site.</p>
-          <h2><strong>Our Solution</strong> </h2> 
+          <h3><strong>Our Solution</strong> </h3> 
           <p> 1. SBS-specific content was edited to be generalized and suitable for posting on the business site.  
             <br/> 2. The four SBS-specific pages would be consolidated into a single SBS page on the business site.</p>
           <p>Team: Sharp Marketing Team </p>

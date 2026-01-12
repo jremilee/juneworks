@@ -5,6 +5,32 @@ import { useEffect, useRef, useState } from "react";
 export default function About() {
   const trackRef = useRef(null);
   const [paused, setPaused] = useState(false);
+  const emailAddress = "jrl2227@barnard.edu";
+  const [copied, setCopied] = useState(false);
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(emailAddress);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch (err) {
+      const ta = document.createElement("textarea");
+      ta.value = emailAddress;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1800);
+      } catch (e) {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2200);
+      }
+      document.body.removeChild(ta);
+    }
+  };
 
   useEffect(() => {
     const track = trackRef.current;
@@ -156,7 +182,13 @@ export default function About() {
                 BA Cognitive Science, Education minor (GPA: 4.1)
               </div>
               <div className="aboutInfoRow__line">Phi Beta Kappa</div>
-              <a className="aboutInfoRow__link" href="#transcript">
+              <a
+                className="aboutInfoRow__link"
+                href="/pdf/transcript-1-12-26.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
                 Link to transcript
               </a>
             </div>
@@ -175,9 +207,16 @@ export default function About() {
                 Beyond user design, my work experience spans research,
                 education and marketing.
               </div>
-              <a className="aboutInfoRow__link" href="#resume">
+              <a
+                className="aboutInfoRow__link"
+                href="/pdf/resume-1-12-26.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
                 Link to resume
               </a>
+
             </div>
           </div>
         </section>
@@ -205,16 +244,42 @@ export default function About() {
 
             </a>
 
-            <a
-              className="aboutIconBtn"
-              href="mailto:hello@yourdomain.com"
-              aria-label="Email"
-              title="Email"
-            >
-              
-              <img src= "/images/gmail-icon.png" alt= "email Icon" />
-
-            </a>
+            <span style={{position: 'relative', display: 'inline-block'}}>
+              <a
+                className="aboutIconBtn"
+                href="mailto:jrl2227@barnard.edu"
+                aria-label="Email"
+                title="Email"
+                onClick={(e) => {
+                  e.preventDefault();
+                  copyEmailToClipboard();
+                }}
+              >
+                <img src="/images/gmail-icon.png" alt="email Icon" />
+              </a>
+              {copied && (
+                <span
+                  role="status"
+                  aria-live="polite"
+                  style={{
+                    position: 'absolute',
+                    top: -36,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(0,0,0,0.85)',
+                    color: '#fff',
+                    padding: '6px 8px',
+                    borderRadius: 6,
+                    fontSize: '0.75rem',
+                    whiteSpace: 'nowrap',
+                    pointerEvents: 'none',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                  }}
+                >
+                  Copied
+                </span>
+              )}
+            </span>
           </div>
         </section>
       </main>
