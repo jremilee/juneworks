@@ -42,57 +42,57 @@ export default function Home() {
         <div className="projectsCols">
           <div className="projectsCol projectsCol--left">
             {/* Project 1 */}
-            <a
+            <Link
               id="sharp"
-              href="#"
+              to = "/sharp"
               className="proj-left"
-              aria-label="Accessibility Audit project"
+              aria-label="Sharp Electronics"
             >
               <div className="proj__thumb">
-                <img src="/images/sharp-consolidation.png" alt="Accessibility Audit project" />
+                <img src="/images/sharp-consolidation.png" alt="Sharp Electronics project" />
               </div>
 
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Accessibility Audit</div>
+                <div className="proj__overlayInner">Sharp Electronics</div>
               </div>
-            </a>
+            </Link>
 
             {/* Project 3 */}
-            <a
+            <Link
               id="thirstylion"
-              href="#"
+              to="/thirstylion"
               className="proj-left"
-              aria-label="Mobile UX Case Study project"
+              aria-label="Thirsty Lion project"
             >
               <div className="proj__thumb">
-                <img src="/images/thirstylion-2.png" alt="Mobile UX Case Study project" />
+                <img src="/images/thirstylion-2.png" alt="Thirsty Lion" />
               </div>
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Mobile UX Case Study</div>
+                <div className="proj__overlayInner">ThirstyLion</div>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="projectsCol projectsCol--right">
             {/* Project 2 */}
-            <a
+            <Link
               id="miai"
-              href="#"
+              to="/miai"
               className="proj-right"
-              aria-label="Research Dashboard project"
+              aria-label="M.I.A.I. Game"
             >
               <div className="proj__thumb">   
-                <img src="/images/miai-laptop.png" alt="Research Dashboard project" />
+                <img src="/images/miai-laptop.png" alt="M.I.A.I. Game" />
               </div>
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Research Dashboard</div>
+                <div className="proj__overlayInner">M.I.A.I</div>
               </div>
-            </a>
+            </Link>
 
             {/* Project 4 */}
-            <a
+            <Link
               id="alterea"
-              href="#"
+              to="/alterea"
               className="proj-right"
               aria-label="Gamified Learning Tool project"
             >
@@ -100,14 +100,14 @@ export default function Home() {
                 <img src="/images/alterea-tablet.png" alt="Gamified Learning Tool project" />
               </div>
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Gamified Learning Tool</div>
+                <div className="proj__overlayInner">Agents of Influence Game</div>
               </div>
-            </a>
+            </Link>
 
             {/* Project 5 */}
-            <a
+            <Link
               id="techspace"
-              href="#"
+              to="/techspace"
               className="proj-right"
               aria-label="Space Threads App project"
             >
@@ -116,9 +116,9 @@ export default function Home() {
               </div>
 
               <div className="proj__overlay">
-                <div className="proj__overlayInner">Space Threads App</div>
+                <div className="proj__overlayInner">TechSpace</div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -215,7 +215,7 @@ body {
 .proj__overlayInner{
   padding: 0 18px;
   color: #111111; /* strong black */
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 400; /* normal weight */
   text-align: center;
   line-height: 1.2;
@@ -269,6 +269,8 @@ body {
   flex: 1 1 0;
   width: 100%;
 }
+
+
 
 /* =========================
    RESPONSIVE (STACK ON   // ...existing code...
@@ -384,6 +386,18 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.09);
 }
 
+  /* Full-bleed divider that spans the viewport for the Alterea page */
+  .altereaFullBleed {
+    border: none;
+    height: 1px;
+    background: rgba(0,0,0,0.12);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
 .brainSvg{
   width: 144px;
   height: auto;
@@ -398,6 +412,59 @@ body {
     gap: 18px;
     padding-top: 10px;
   }
+
+/* small wrapper placeholder removed; specific white-banner styles defined below */
+
+/* MIAI page styles */
+.miaiPage .miai__header{
+  padding-top: 40px;
+  padding-bottom: 18px;
+  text-align: left;
+}
+.miai__title{
+  font-size: 30px;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.miai__subtitle{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.miai__section{
+  margin: 22px 0;
+}
+.miai__sectionTitle{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.miai__lead{ 
+  color: var(--muted);
+  max-width: 70ch;
+}
+.miai__list{
+  margin: 8px 0 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.miai__img, .miai__img2{
+  margin-top: 14px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.miai__img img, .miai__img2 img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 920px){
+  .miaiPage .content{
+    width: min(1000px, calc(100% - 48px));
+  }
+}
   .hero__subtitle{
     max-width: 60ch;
   }
@@ -540,7 +607,7 @@ body {
 .aboutBoxes {
   margin-top: 22px;
   overflow: hidden;
-  position: relative;
+  position: relative;       
 }
 
 .aboutBoxes__inner {
@@ -548,6 +615,7 @@ body {
   gap: 22px;
   align-items: stretch;
   width: max-content;         /* shrink to content */
+  height: auto;
   will-change: transform;     /* smoother */
 }
 
@@ -569,15 +637,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
 @media (max-width: 760px){
   .aboutBoxes__inner{ grid-template-columns: 1fr; }
   .aboutBox{ min-height: auto; }
@@ -588,23 +647,47 @@ body {
 
 /* SECTIONS */
 .aboutSection {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 /* Extra space above Education */
 .aboutSection[aria-label="Education"] {
-  margin-top: 55px;
+  padding-top: 30px;
 }
 
 .aboutSection__title {
   font-size: 18px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
+}
+
+/* Center specific sections while keeping their text left-aligned */
+.aboutSection[aria-label="Education"],
+.aboutSection[aria-label="Work Experience"] {
+  max-width: 880px;
+  margin: 0 auto 20px;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.aboutSection[aria-label="Education"] .aboutSection__title,
+.aboutSection[aria-label="Work Experience"] .aboutSection__title {
+  font-size: 23px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+.aboutSection[aria-label="Education"] p,
+.aboutSection[aria-label="Work Experience"] p,
+.aboutSection[aria-label="Education"] .aboutInfoRow__line,
+.aboutSection[aria-label="Work Experience"] .aboutInfoRow__line {
+  font-size: 15px;
+  line-height: 1.4;
 }
 
 .aboutInfoRow {
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
+  padding-top: 0px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 18px;
@@ -622,16 +705,20 @@ body {
 }
 
 .aboutInfoRow__right {
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--muted);
   white-space: nowrap;
   padding-top: 2px;
 }
 
+.aboutInfoRow__left {
+  padding-left: 10px;
+}
+
 .aboutInfoRow__link {
   display: inline-block;
   margin-top: 6px;
-  font-size: 12px;
+  font-size: 15px;
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -650,7 +737,7 @@ body {
 }
 
 .aboutConnect__title {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 600;
   margin: 0 0 10px;
 }
@@ -658,7 +745,7 @@ body {
 .aboutConnect__text {
   margin: 0 auto 14px;
   max-width: 640px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -666,16 +753,15 @@ body {
 .aboutConnect__icons {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 6px;
+  gap: 24px;
+  margin-top: 12px;
+  margin-bottom: 36px; /* ensure icons sit visually at bottom area */
 }
 
 .aboutIconBtn {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.6);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -683,8 +769,8 @@ body {
 }
 
 .aboutIconBtn svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   fill: #3a3a3a;
 }
 
@@ -693,12 +779,22 @@ body {
   transition: transform 120ms ease;
 }
 
+/* icons implemented as images inside the link */
+.aboutIconBtn img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  padding: 3px; /* small inset so image doesn't touch border */
+  box-sizing: border-box;
+}
+
 /* New About Box Styles */
 .aboutBox {
   background: var(--bg);
   border: 1px solid var(--accent-green);
   border-radius: 12px;
-  padding: 20px;
+  padding: 20px 20px 5px; /* reduced bottom padding by 15px */
   min-width: 180px;
   max-width: 300px;
   display: flex;
@@ -818,11 +914,18 @@ body {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .brainVideoBtn:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease;
+}
+
+/* Ensure the <video> inside the Link doesn't intercept clicks — let the Link handle them */
+.brainVideoBtn video,
+.brainVideoBtn .other__videoPoster {
+  pointer-events: none;
 }
 
 /* creativeworks.css */
@@ -895,6 +998,9 @@ body {
   color: var(--ink);
   flex-shrink: 0;
   transition: background 0.2s ease;
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
 }
 
 .cw__scrollBtn:hover {
@@ -907,4 +1013,469 @@ body {
 
 .cw__scrollBtn--right {
   order: 3;
+}
+
+/* Disabled state to indicate scroll limits */
+.cw__scrollBtn:disabled,
+.cw__scrollBtn[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Progress indicator showing scroll bounds */
+.cw__progress {
+  height: 4px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 999px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.cw__progressBar {
+  height: 100%;
+  background: rgba(0,0,0,0.28);
+  width: 0%;
+  border-radius: 999px;
+  transition: width 200ms ease;
+}
+
+/* =========================
+   THIRSTY LION PAGE
+   ========================= */
+.root {
+  background: var(--bg);
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+} 
+
+.tlPage {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-color: var(--bg);
+}
+
+.tl__header {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.tl__videoContainer {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  aspect-ratio: 16 / 9;
+  box-sizing: border-box;
+}
+
+.tl__videoContainer iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.tl__title {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.tl__lead {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.tl__section {
+  margin: 12px 0 12px;
+}
+
+.tl__sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 40px 0 12px;
+}
+
+.tl__sectionTitle-vid {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 40px 0 12px;
+  text-align: center;
+}
+
+.tl__subtitleD{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0px 0 10px;
+}
+
+.tl__list {
+  margin: 0;
+  padding-left: 18px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Remove list markers for specific project-section lists while keeping indent */
+.tl__list.tl__no-bullets {
+  list-style: none;
+}
+
+.tl__img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+/* Specific spacing for alterea-1 image */
+.tl__img--spaced{
+  margin-bottom: 30px;
+}
+
+.tl__img img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.tl__img2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.tl__img2 img {
+  width: 70%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  border-radius: 7px;
+  box-sizing: border-box;
+  margin: 5px auto; /* center horizontally */
+}
+
+/* Video styling for tl__img2 containers */
+.tl__img2 .tl__video,
+.tl__video {
+  width: 70%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  border-radius: 7px;
+  margin: 8px auto;
+  box-sizing: border-box;
+}
+
+/* Side-by-side image layout for paired screenshots */
+.tl__img--sideBySide {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+.tl__img--sideBySide img {
+  width: 48%;
+  max-width: 48%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Slideshow styles */
+.slideshow{
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slideshow__img{
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.slideshow__arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.slideshow__arrow--left{ left: 8px; }
+.slideshow__arrow--right{ right: 8px; }
+.slideshow__dots{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.slideshow__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 2px; /* make square with slightly rounded corners */
+  background: rgba(255,255,255,0.6);
+  border: none;
+  cursor: pointer;
+}
+.slideshow__dot--active{
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.08) inset;
+}
+
+/* MIAI page: increase top padding for h3 headings */
+#miai h3,
+#miai .tl__subhead {
+  padding-top: 16px;
+}
+
+
+
+@media (max-width: 760px) {
+  .tl__imageGrid { grid-template-columns: 1fr; }
+  .tl__img { 
+    margin-top: 25px;
+    margin-bottom: 16px;
+  }
+  .tl__img--spaced { margin-bottom: 15px; }
+  .tl__img img {
+    width: 100%;
+  }
+  .tl__img2 img {
+    width: 100%;
+  }
+  .tl__img--sideBySide {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tl__img--sideBySide img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* SHARP project styles */
+.sharpPage {
+  padding: 28px 18px 60px;
+}
+.sharp__header {
+  text-align: left;
+  max-width: 880px;
+  margin: 0 auto 18px;
+}
+.sharp__title {
+  font-size: 28px;
+  margin: 0 0 6px;
+}
+.sharp__lead {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+.sharp__section {
+  max-width: 880px;
+  margin: 24px auto;
+}
+.sharp__img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 18px 0;
+}
+.sharp__img img {
+  width: 100%;
+  max-width: 880px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  background: #fff;
+}
+
+/* small screens: full width images */
+@media (max-width: 760px) {
+  .sharp__img img { width: 100%; max-width: 100%; }
+}
+
+/* Thirsty Lion banner: full-bleed, fixed 60px height (cropped) */
+.tl__bannerContainer {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: 440px;
+  max-height: 440px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Shorter banner specifically for the Sharp page */
+#sharp .tl__bannerContainer {
+  height: 390px;
+  max-height: 390px;
+}
+.tl__banner {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* White banner variant for Thirsty Lion: full-bleed white area with centered, vertically-fitting video */
+.tl__whiteBanner{
+  background: #ffffff;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: 400px;
+  max-height: 400px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tl__whiteBanner .tl__bannerWrapper{
+  width: 70%;
+  max-width: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.tl__whiteBanner .tl__banner{
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 760px){
+  .tl__whiteBanner .tl__bannerWrapper{
+    width: 20%;
+  }
+  .tl__whiteBanner .tl__banner{
+    height: 85%;
+  }
+}
+
+/*Alterea Page Styles*/
+
+/* Two-column Problems / Solutions layout */
+.tl__twoCol .tl__twoColInner{
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Sharp page: add extra space after the "What I did" section so "The Problem" sits 20px lower */
+#sharp .tl__spacedBottom {
+  margin-bottom: 50px;
+}
+
+.tl__twoCol .tl__col{
+  flex: 1;
+}
+
+.tl__colTitle{
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Increase footer padding for the Alterea page */
+.altereaFooter {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Button style used for external project links */
+.externalBtn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--accent-green);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: calc(1em - 10px);
+}
+
+.externalBtn:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+  transition: transform 140ms ease, opacity 120ms ease;
+}
+
+.tl__twoCol .tl__list li{
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+
+/* Sharp: add space under Google Analytics image */
+#sharp .tl__img2[aria-label="Google Analytics screenshot"] img {
+  display: block;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 760px){
+  .tl__twoCol .tl__twoColInner{
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+/* Center text and increase bottom padding for testing/launch sections on project pages */
+#miai .tl__centerBottomPad {
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+/* Ensure links inside are centered too */
+#miai .tl__centerBottomPad a {
+  display: inline-block;
+}
+
+/* Global: ensure consistent spacing for h4 headings */
+h4 {
+  margin-bottom: 10px;
+}
+
+/* Make elements with class .story italic */
+.story {
+  font-style: italic;
 }
