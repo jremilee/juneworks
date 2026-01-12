@@ -126,8 +126,27 @@ export default function Alterea() {
           </div>
 
         </section>
+        
+        <hr className="altereaFullBleed" />
 
-        <footer> Check out Agents of Influence! </footer>
+        <div>
+          <div className="altereaFooter">
+            <div>
+              Check out Agents of Influence!
+            </div>
+            <div>
+              <a
+                className="externalBtn"
+                href="https://www.agentsofinfluencegame.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Agents of Influence site"
+              >
+                See Game
+              </a>
+            </div>
+          </div>
+        </div>
 
         </main>
       </div>

@@ -23,21 +23,13 @@ export default function Sharp() {
         </div>
         
         <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> Sharp Electronics wanted to merge their two sites: Sharp Business for dealers, and Sharp SBS for Sharp’s direct sales division.  </p></h2>
-        
-        <section className="tl__section tl__spacedBottom" aria-label="What I did">
-          <h3><strong>My Role:</strong> </h3> 
-          <ul className="tl__list">
-            <li>Designed the main page and other key pages in the consolidation project</li>
-            <li>Search Engine Optimization (SEO) improvements for better site visibility and increased user traffic.</li>
-            <li>Utilized Google Analytics to monitor site performance and inform design decisions.</li>
-          </ul>
-        </section>
+
 
         <section className="tl__section" aria-label="Project Overview">
-          <h3><strong>The Problem</strong> </h3> 
+          <p><strong>The Problem</strong> </p> 
           <p> The sites were redundant and hurt SEO ranking by competing with one another. Customers were also confused about which site to visit. 
             Sharp’s SBS site and Sharp Business site had pages with mostly identical content. However, there was still some SBS-specific content that was not posted on the business site.</p>
-          <h3><strong>Our Solution</strong> </h3> 
+          <p><strong>Our Solution</strong> </p> 
           <p> 1. SBS-specific content was edited to be generalized and suitable for posting on the business site.  
             <br/> 2. The four SBS-specific pages would be consolidated into a single SBS page on the business site.</p>
           <p>Team: Sharp Marketing Team </p>
@@ -45,6 +37,15 @@ export default function Sharp() {
           <div className="tl__img2" aria-label="Overview image">
             <img src="/images/sharp-1.png" alt="Merging Sharp SBS site content into Sharp Business site" />
           </div>
+        </section>
+
+        <section className="tl__section tl__spacedBottom" aria-label="What I did">
+          <h3><strong>My Role:</strong> </h3> 
+          <ul className="tl__list">
+            <li>Designed the main page and other key pages in the consolidation project</li>
+            <li>Search Engine Optimization (SEO) improvements for better site visibility and increased user traffic.</li>
+            <li>Utilized Google Analytics data to inform design decisions.</li>
+          </ul>
         </section>
 
         <section className="tl__section" aria-label="Discovery & Contextual Inquiry">

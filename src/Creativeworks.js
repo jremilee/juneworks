@@ -4,6 +4,10 @@ import "./App.css";
 import Nav from "./Nav";
 
 export default function Creativeworks() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    
   const paintings = [
     { src: "/images/church.png", alt: "church painting" },
     { src: "/images/pots.png", alt: "pots painting" },

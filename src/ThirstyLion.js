@@ -62,13 +62,23 @@ export default function ThirstyLion() {
         
 
           <p><strong>The Problem:</strong> Columbia students often encounter broken, slow, or warm water fountains, leading to frustration and dehydration. Even when familiar with the building, students often struggle to find the next best water fountain especially since fountains are not listed on building maps.</p>
-          <p><strong>Our Solution:</strong> A crowdsourced platform where students rate and track fountain performance (flow speed, temperature, and filter status) in real-time.</p>
+          <p><strong>Our Solution:</strong> A crowdsourced platform where students rate and track fountain performance (flow speed, temperature, and filter status) in real-time. App data could also be used to alert facilites about fountain status.</p>
           <p>Team: June Lee, Jeffrey Roh, Madeline Ou, Jadyn Park</p>
 
           <div className="tl__img" aria-label="Overview image ">
             <img src="/images/thirstylion-allscreens-pink.png" alt="Figma layout of all screens of the Thirsty Lion app" />
           </div>
         </section>
+
+          <section className="tl__section" aria-label="What I did">
+            <h4>My Role</h4>
+            <ul className="tl__list">
+              <li>Pitched the winning project concept from a pool of 40 internal team proposals.</li>
+              <li>Conducted smoke-and-mirrors prototyping to gage app demand (51 responses in 24 hours).</li>
+              <li>Designed and implemented key pages using Figma (home page, map page) and React.</li>
+              <li>Conducted targeted user testing and synthesized feedback into actionable design changes.</li>
+            </ul>
+          </section>
 
         <section className="tl__section" aria-label="Discovery & Contextual Inquiry">
           <h2 className="tl__sectionTitle">01. Discovery & Contextual Inquiry</h2>
@@ -84,12 +94,11 @@ export default function ThirstyLion() {
 
         <section className="tl__section" aria-label="Smoke & Mirrors Prototype">
           <h2 className="tl__sectionTitle">02. The "Smoke & Mirrors" Prototype</h2>
-          <ul className="tl__list">
+          <ul className="tl__list tl__no-bullets">
             <li><strong>The Setup:</strong> Placed QR-coded posters at 8 different fountains at Columbia's most popular library.</li>
             <li><strong>The System:</strong> QR codes led to a Google Form (for rating) and a live Spreadsheet (displaying average scores).</li>
             <li><strong>The Result:</strong> <strong>51 organic responses</strong> in a short window. <strong>80% of users</strong> confirmed they would switch fountains based on our data.</li>
           </ul>
-
           <div className="tl__img" aria-label="Smoke & Mirrors Prototype image">
             <img src="/images/thirstylion-excel.png" alt="Excel spreadsheet with contextual inquiry data" />
           </div>
@@ -97,10 +106,10 @@ export default function ThirstyLion() {
 
         <section className="tl__section" aria-label="Data-Driven Iteration">
           <h2 className="tl__sectionTitle">03. Data-Driven Iteration</h2>
-          <ul className="tl__list">
+          <ul className="tl__list tl__no-bullets">
             <li><strong>Negativity Bias:</strong> Users report bad fountains more often than good ones. We needed to gamify "good" reports to keep data fresh.</li>
             <li><strong>Broken Infrastructure:</strong> We discovered "green" filter lights don't always mean high pressure, leading us to add "Flow Strength" as a primary metric.</li>
-            <li><strong>Visibility Gap:</strong> Fountains on higher floors had zero engagement, proving the need for an <strong>In-App Map</strong> to surface hidden "gem" fountains.</li>
+            <li><strong>Visibility Gap:</strong> Fountains on higher floors had zero engagement, proving the need for an In-App Map to surface hidden "gem" fountains.</li>
           </ul>
         </section>
 
@@ -110,7 +119,7 @@ export default function ThirstyLion() {
             Moving from low-fidelity sketches to high-fidelity Figma mockups, we focused on a "speed-first" UI for mobile devices. This way students filling water can easily scan a QR code on the fountains with their phone and they are not obligated to leave reviews, so we designed the interface to be tactile and efficient to lead to the least amount of resistance.
           </p>
 
-          <ul className="tl__list">
+          <ul className="tl__list tl__no-bullets">
             <li><strong>Fountain Query:</strong> Quick search by building for water fountain floor and rating.</li>
             <li><strong>Building Map:</strong> Visual guide to locate fountains without physical signage.</li>
             <li><strong>Rating System:</strong> A 1–5 scale for overall quality, and a section focusing on the "Big Three": Temperature, Taste, and Filter Status.</li>
@@ -128,7 +137,7 @@ export default function ThirstyLion() {
 
         <section className="tl__section" aria-label="Risk Mitigation & Future Roadmap">
           <h2 className="tl__sectionTitle">05. Risk Mitigation & Future Roadmap</h2>
-          <p><strong>Current Strategy:</strong> We transitioned from physical fountain stickers (a sticker saying “fountain 1” on physical fountain) to an <strong>interactive digital map</strong> with photo-references of each fountain.</p>
+          <p><strong>Current Strategy:</strong> Columbia facilities frequently take down student posters so we transitioned from physical fountain stickers (a sticker saying “fountain 1” on physical fountain) to an interactive digital map with photo-references of each fountain.</p>
           <p><strong>Crowdsourcing:</strong> We discussed implementing a rolling average (average of most recent data) so crowdsourced data remains accurate even as student traffic and ratings fluctuate.</p>
         </section>
 
@@ -139,16 +148,6 @@ export default function ThirstyLion() {
             <li><strong>Frontend:</strong> React/JavaScript (Query &amp; Individual Fountain Pages).</li>
             <li><strong>Backend:</strong> Firebase for real-time rating updates.</li>
             <li><strong>Testing:</strong> User testing &amp; Smoke-and-Mirrors validation.</li>
-          </ul>
-        </section>
-
-        <section className="tl__section" aria-label="What I did">
-          <h2 className="tl__sectionTitle">My Role</h2>
-          <ul className="tl__list">
-            <li>Pitched the winning project concept from a pool of 40 internal team proposals.</li>
-            <li>Conducted smoke-and-mirrors prototyping to gage app demand (51 responses in 24 hours).</li>
-            <li>Designed two key pages using Figma (home page, map page) and implemented frontend for fountain query page and fountain details page.</li>
-            <li>Conducted targeted user testing and synthesized feedback into actionable design changes.</li>
           </ul>
         </section>
 

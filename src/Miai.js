@@ -55,7 +55,10 @@ export default function Miai() {
 
           <p><strong>Team:</strong> June Lee, Blaire Kim, Charlette Huang </p>
 
-          <p><strong>Overview:</strong> Single-player 2D PvE interrogation game for PC. The Inquisitor (INQ) interrogates three suspects. Two suspects are AI-controlled; one is controlled by a Puppeteer (PUP). Only the culprit and the PUP may lie. The INQ must identify the culprit and the hijacked AIC. The PUP must mimic AI behavior to mislead the INQ while solving the case.</p>
+          <p><strong>Overview:</strong> A single-player 2D PvE interrogation game for PC. </p>
+          <p className="story">You are a human player "hijacking" one of three AI suspects. You are sitting across 
+            from the Inquisitor (the AI judge). To win, you must uncover the actual culprit among 
+            the suspects while acting exactly like AI to stay undercover. Only the culprit and the human player may lie.</p>
           
         </section>
         <h2 className="tl__sectionTitle-vid">2.5D Prototype</h2>

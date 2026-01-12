@@ -270,6 +270,8 @@ body {
   width: 100%;
 }
 
+
+
 /* =========================
    RESPONSIVE (STACK ON   // ...existing code...
   @media (max-width: 760px) {
@@ -383,6 +385,18 @@ body {
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.09);
 }
+
+  /* Full-bleed divider that spans the viewport for the Alterea page */
+  .altereaFullBleed {
+    border: none;
+    height: 1px;
+    background: rgba(0,0,0,0.12);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
 
 .brainSvg{
   width: 144px;
@@ -1105,6 +1119,11 @@ body {
   line-height: 1.6;
 }
 
+/* Remove list markers for specific project-section lists while keeping indent */
+.tl__list.tl__no-bullets {
+  list-style: none;
+}
+
 .tl__img {
   width: 100%;
   display: flex;
@@ -1237,6 +1256,8 @@ body {
 #miai .tl__subhead {
   padding-top: 16px;
 }
+
+
 
 @media (max-width: 760px) {
   .tl__imageGrid { grid-template-columns: 1fr; }
@@ -1391,9 +1412,43 @@ body {
   font-weight: 600;
 }
 
+/* Increase footer padding for the Alterea page */
+.altereaFooter {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Button style used for external project links */
+.externalBtn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--accent-green);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: calc(1em - 10px);
+}
+
+.externalBtn:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+  transition: transform 140ms ease, opacity 120ms ease;
+}
+
 .tl__twoCol .tl__list li{
   margin-bottom: 12px;
   line-height: 1.55;
+}
+
+/* Sharp: add space under Google Analytics image */
+#sharp .tl__img2[aria-label="Google Analytics screenshot"] img {
+  display: block;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 760px){
@@ -1413,4 +1468,14 @@ body {
 /* Ensure links inside are centered too */
 #miai .tl__centerBottomPad a {
   display: inline-block;
+}
+
+/* Global: ensure consistent spacing for h4 headings */
+h4 {
+  margin-bottom: 10px;
+}
+
+/* Make elements with class .story italic */
+.story {
+  font-style: italic;
 }
