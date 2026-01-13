@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/juneworks/static/css/main.3c4cb478.css",
-    "main.js": "/juneworks/static/js/main.b01aa64e.js",
+    "main.js": "/juneworks/static/js/main.cdd2dc19.js",
     "static/js/453.a04ae9d0.chunk.js": "/juneworks/static/js/453.a04ae9d0.chunk.js",
     "static/media/hand attempt 1.png": "/juneworks/static/media/hand attempt 1.120b11d54f6e56877c66.png",
     "static/media/thirstylion-2.png": "/juneworks/static/media/thirstylion-2.e2d767bd7e9b292617bc.png",
@@ -87,11 +87,11 @@
     "static/media/sharp-banner.png": "/juneworks/static/media/sharp-banner.bad78a4e82c526aeb5fb.png",
     "index.html": "/juneworks/index.html",
     "main.3c4cb478.css.map": "/juneworks/static/css/main.3c4cb478.css.map",
-    "main.b01aa64e.js.map": "/juneworks/static/js/main.b01aa64e.js.map",
+    "main.cdd2dc19.js.map": "/juneworks/static/js/main.cdd2dc19.js.map",
     "453.a04ae9d0.chunk.js.map": "/juneworks/static/js/453.a04ae9d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3c4cb478.css",
-    "static/js/main.b01aa64e.js"
+    "static/js/main.cdd2dc19.js"
   ]
 }
