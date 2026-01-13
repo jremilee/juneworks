@@ -74,12 +74,12 @@ export default function Techspace() {
           </p>
 
           <div className="tl__img2" aria-label="Figma screenshots">
-            <img src="/images/techspace-1.png" alt="Figma designs for login and thread pages" />
+            <img src={allImages['techspace-1.png']} alt="Figma designs for login and thread pages" />
           </div>
 
 
           <div className="tl__img2" aria-label="Topic planets screenshot">
-            <img src="/images/techspace-2.png" alt="Topic planets and thread view mockup" />
+            <img src={allImages['techspace-2.png']} alt="Topic planets and thread view mockup" />
           </div>
 
         </section>

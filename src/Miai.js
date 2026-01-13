@@ -48,7 +48,7 @@ export default function Miai() {
         </header>
 
         <div className="tl__bannerContainer">
-          <img src="/images/miai-banner.webp" alt="MIAI Puppeteer Interface Banner" className="tl__banner"/>
+          <img src={allImages['miai-banner.webp']} alt="MIAI Puppeteer Interface Banner" className="tl__banner"/>
         </div>
 
         <section className="tl__section" aria-label="Project Overview">
@@ -82,7 +82,7 @@ export default function Miai() {
           <div className="tl__twoColInner">
             <div className="tl__col">
               <div className="tl__img" aria-label="Style guide preview">
-                <img src="/images/miai-1.png" alt="Style guide and typeface samples" />
+                <img src={allImages['miai-1.png']} alt="Style guide and typeface samples" />
               </div>
             </div>
 
@@ -98,7 +98,7 @@ export default function Miai() {
           </div>
 
           <div className="tl__img" aria-label="Interface sketches">
-            <img src="/images/miai-3.png" alt="Interface sketches and brainstormed formats" />
+            <img src={allImages['miai-3.png']} alt="Interface sketches and brainstormed formats" />
           </div>
         </section>
 
@@ -107,7 +107,7 @@ export default function Miai() {
           <p className="tl__list">Inspired by video conferencing layouts, the Puppeteer receives a dedicated screen among the AIC lineup; chat and info panels are surfaced constantly in a tri-fold layout for quick reference.</p>
 
           <div className="tl__img" aria-label="Interface sketches">
-            <img src="/images/miai-4.png" alt="Interface sketches and brainstormed formats" />
+            <img src={allImages['miai-4.png']} alt="Interface sketches and brainstormed formats" />
           </div>
         </section>
 
@@ -124,7 +124,7 @@ export default function Miai() {
             from the AIC dialogue in the center of the screen.</p><br/>
 
           <div className="tl__img2" aria-label="Interface sketches">
-            <img src="/images/trifold-1.png" alt="Interface sketches and brainstormed formats" />
+            <img src={allImages['trifold-1.png']} alt="Interface sketches and brainstormed formats" />
           </div>
 
           <h3 className="tl__subhead">Draft 2 — INQ left panel</h3>
@@ -132,8 +132,8 @@ export default function Miai() {
           <p className="tl__list"><strong>Edits: </strong>INQ moved to the left panel to create a clear boundary between the INQ and AICs. 
           Later, added a round timer, response timer, chat filter, and other features for smoother play.</p>
 
-          <div className="tl__img2" aria-label="Final mockup">
-            <img src="/images/trifold-2.png" alt="Final Puppeteer interface mockup" />
+            <div className="tl__img2" aria-label="Final mockup">
+            <img src={allImages['trifold-2.png']} alt="Final Puppeteer interface mockup" />
           </div>
 
           <h3 className="tl__subhead">Draft 3 & 4 — 3 AIC layout & smoother transitions</h3>
@@ -143,7 +143,7 @@ export default function Miai() {
           AIC talking for “to one AIC” rounds and increase dialogue space. </p>
 
           <div className="tl__img2" aria-label="Interface sketches">
-            <img src="/images/trifold-3.png" alt="Interface sketches and brainstormed formats" />
+            <img src={allImages['trifold-3.png']} alt="Interface sketches and brainstormed formats" />
           </div>
 
         </section>
@@ -153,14 +153,14 @@ export default function Miai() {
 
           <div className="tl__img" aria-label="Interface sketches">
             <Slideshow images={[
-              '/images/miai-6.png',
-              '/images/miai-7.png',
-              '/images/miai-8.png',
-              '/images/miai-9.png',
-              '/images/miai-10.png',
-              '/images/miai-11.png',
-              '/images/miai-12.png',
-              '/images/miai-13.png'
+              allImages['miai-6.png'],
+              allImages['miai-7.png'],
+              allImages['miai-8.png'],
+              allImages['miai-9.png'],
+              allImages['miai-10.png'],
+              allImages['miai-11.png'],
+              allImages['miai-12.png'],
+              allImages['miai-13.png']
             ]} />
           </div>
         </section>

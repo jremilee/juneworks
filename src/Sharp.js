@@ -36,7 +36,7 @@ export default function Sharp() {
           <p>Team: Sharp Marketing Team </p>
 
           <div className="tl__img2" aria-label="Overview image">
-            <img src="/images/sharp-1.png" alt="Merging Sharp SBS site content into Sharp Business site" />
+            <img src={allImages['sharp-1.png']} alt="Merging Sharp SBS site content into Sharp Business site" />
           </div>
         </section>
 
@@ -57,11 +57,11 @@ export default function Sharp() {
           <p><strong>Note:</strong> Design decisions explained in the image below.</p>
 
           <div className="tl__img" aria-label="Discovery image">
-            <img src="/images/sharp-2.png" alt="First draft of the Sharp consolidation page" />
+            <img src={allImages['sharp-2.png']} alt="First draft of the Sharp consolidation page" />
           </div>
 
           <div className="tl__img" aria-label="Consolidation first draft">
-            <img src="/images/sharp-3.png" alt="second half of first draft of consolidation page" />
+            <img src={allImages['sharp-3.png']} alt="second half of first draft of consolidation page" />
           </div>
         </section>
 
@@ -74,7 +74,7 @@ export default function Sharp() {
           </p>
 
           <div className="tl__img" aria-label="Final draft image">
-            <img src="/images/sharp-4.png" alt="final draft screenshot" />
+            <img src={allImages['sharp-4.png']} alt="final draft screenshot" />
           </div>
 
         </section>
@@ -85,8 +85,8 @@ export default function Sharp() {
            In addition to the main SBS page, I helped redesign and modify other business pages for improved SEO copywriting and clearer visual flow while ensuring accessibility compliance.
           </p>
 
-          <div className="tl__img2" aria-label="Low-fidelity mockup of consolidation page">
-              <img src="/images/sharp-5.png" alt="Low-fidelity mockup of the Sharp consolidation page" />
+            <div className="tl__img2" aria-label="Low-fidelity mockup of consolidation page">
+              <img src={allImages['sharp-5.png']} alt="Low-fidelity mockup of the Sharp consolidation page" />
             </div>
         </section>
 
@@ -99,7 +99,7 @@ export default function Sharp() {
 
             
             <div className="tl__img2" aria-label="Google Analytics screenshot">
-              <img src="/images/sharp-googleanalytics.png" alt="Google Analytics report showing Sharp site traffic improvements" />
+              <img src={allImages['sharp-googleanalytics.png']} alt="Google Analytics report showing Sharp site traffic improvements" />
             </div>
 
         </section>

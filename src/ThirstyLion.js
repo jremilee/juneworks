@@ -67,7 +67,7 @@ export default function ThirstyLion() {
           <p>Team: June Lee, Jeffrey Roh, Madeline Ou, Jadyn Park</p>
 
           <div className="tl__img" aria-label="Overview image ">
-            <img src="/images/thirstylion-allscreens-pink.png" alt="Figma layout of all screens of the Thirsty Lion app" />
+            <img src={allImages['thirstylion-allscreens-pink.png']} alt="Figma layout of all screens of the Thirsty Lion app" />
           </div>
         </section>
 
@@ -89,7 +89,7 @@ export default function ThirstyLion() {
           <p><strong>Key Insight:</strong> Students are willing to walk further if they are guaranteed a high-pressure, cold-water refill.</p>
 
           <div className="tl__img" aria-label="Discovery image ">
-            <img src="/images/thirstylion-postits.png" alt="Post-it notes from contextual inquiry" />
+            <img src={allImages['thirstylion-postits.png']} alt="Post-it notes from contextual inquiry" />
           </div>
         </section>
 
@@ -101,7 +101,7 @@ export default function ThirstyLion() {
             <li><strong>The Result:</strong> <strong>51 organic responses</strong> in a short window. <strong>80% of users</strong> confirmed they would switch fountains based on our data.</li>
           </ul>
           <div className="tl__img" aria-label="Smoke & Mirrors Prototype image">
-            <img src="/images/thirstylion-excel.png" alt="Excel spreadsheet with contextual inquiry data" />
+            <img src={allImages['thirstylion-excel.png']} alt="Excel spreadsheet with contextual inquiry data" />
           </div>
         </section>
 
@@ -127,11 +127,11 @@ export default function ThirstyLion() {
           </ul>
 
             <div className="tl__img2" aria-label="Low-fidelity mockup">
-              <img src="/images/thirstylion-lowfid.png" alt="High-fidelity mockup 1 of the Thirsty Lion app" />
+              <img src={allImages['thirstylion-lowfid.png']} alt="High-fidelity mockup 1 of the Thirsty Lion app" />
             </div>
             
             <div className="tl__img2" aria-label="High-fidelity mockup">
-              <img src="/images/thirstylion-highfid.png" alt="High-fidelity mockup 2 of the Thirsty Lion app" />
+              <img src={allImages['thirstylion-highfid.png']} alt="High-fidelity mockup 2 of the Thirsty Lion app" />
             </div>
 
         </section>
