@@ -12,7 +12,7 @@ import Techspace from './Techspace';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/juneworks">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/creativeworks" element={<Creativeworks />} />
