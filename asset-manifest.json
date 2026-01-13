@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/juneworks/static/css/main.3c4cb478.css",
+    "main.js": "/juneworks/static/js/main.981764d5.js",
+    "static/js/453.fd2f0c4a.chunk.js": "/juneworks/static/js/453.fd2f0c4a.chunk.js",
+    "index.html": "/juneworks/index.html",
+    "main.3c4cb478.css.map": "/juneworks/static/css/main.3c4cb478.css.map",
+    "main.981764d5.js.map": "/juneworks/static/js/main.981764d5.js.map",
+    "453.fd2f0c4a.chunk.js.map": "/juneworks/static/js/453.fd2f0c4a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c4cb478.css",
+    "static/js/main.981764d5.js"
+  ]
+}
