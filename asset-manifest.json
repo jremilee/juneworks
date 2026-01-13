@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/juneworks/static/css/main.3c4cb478.css",
-    "main.js": "/juneworks/static/js/main.cdd2dc19.js",
+    "main.js": "/juneworks/static/js/main.6014e8b6.js",
     "static/js/453.a04ae9d0.chunk.js": "/juneworks/static/js/453.a04ae9d0.chunk.js",
+    "static/media/miai-video.mp4": "/juneworks/static/media/miai-video.30b7fcc6888ffd345811.mp4",
     "static/media/hand attempt 1.png": "/juneworks/static/media/hand attempt 1.120b11d54f6e56877c66.png",
     "static/media/thirstylion-2.png": "/juneworks/static/media/thirstylion-2.e2d767bd7e9b292617bc.png",
     "static/media/sharp-1.png": "/juneworks/static/media/sharp-1.4a3a0e3bc6dc05649494.png",
@@ -87,11 +88,11 @@
     "static/media/sharp-banner.png": "/juneworks/static/media/sharp-banner.bad78a4e82c526aeb5fb.png",
     "index.html": "/juneworks/index.html",
     "main.3c4cb478.css.map": "/juneworks/static/css/main.3c4cb478.css.map",
-    "main.cdd2dc19.js.map": "/juneworks/static/js/main.cdd2dc19.js.map",
+    "main.6014e8b6.js.map": "/juneworks/static/js/main.6014e8b6.js.map",
     "453.a04ae9d0.chunk.js.map": "/juneworks/static/js/453.a04ae9d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3c4cb478.css",
-    "static/js/main.cdd2dc19.js"
+    "static/js/main.6014e8b6.js"
   ]
 }
