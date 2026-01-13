@@ -20,7 +20,7 @@ export default function Sharp() {
         </header>
 
         <div className="tl__bannerContainer">
-          <video src="/videos/sharp-omma2-frame.mp4" alt="Sharp Web Consolidation Banner" className="tl__banner" autoPlay loop muted />
+          <video src={`${process.env.PUBLIC_URL}/videos/sharp-omma2-frame.mp4`} alt="Sharp Web Consolidation Banner" className="tl__banner" autoPlay loop muted />
         </div>
         
         <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> Sharp Electronics wanted to merge their two sites: Sharp Business for dealers, and Sharp SBS for Sharp’s direct sales division.  </p></h2>

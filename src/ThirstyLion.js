@@ -48,7 +48,7 @@ export default function ThirstyLion() {
           <div className="tl__bannerWrapper">
             <video
               ref={videoRef}
-              src="/videos/thirstylion-retry.mp4"
+              src={`${process.env.PUBLIC_URL}/videos/thirstylion-retry.mp4`}
               className="tl__banner"
               loop
               muted

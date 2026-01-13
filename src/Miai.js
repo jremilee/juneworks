@@ -64,7 +64,7 @@ export default function Miai() {
         </section>
         <h2 className="tl__sectionTitle-vid">2.5D Prototype</h2>
         <div className="tl__img2" aria-label="MIAI project video">
-          <video src="/images/miai-video.mp4" className="tl__video" controls />
+          <video src={allImages['miai-video.mp4']} className="tl__video" controls />
         </div>
 
         <section className="tl__section" aria-label="Design challenge">

@@ -19,7 +19,7 @@ export default function Alterea() {
         </header>
 
         <div className="tl__bannerContainer">
-          <video src="/videos/alterea-2.mp4" alt="Agents of Influence banner" className="tl__banner" autoPlay loop muted />
+          <video src={`${process.env.PUBLIC_URL}/videos/alterea-2.mp4`} alt="Agents of Influence banner" className="tl__banner" autoPlay loop muted />
         </div>
 
         <section className="tl__section" aria-label="Project Overview">

@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
+import { allImages } from "./utils/imageLoader";
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -33,7 +34,7 @@ export default function Home() {
         
           {/* hand image */}
           <div className="hero__bg" aria-hidden="true">
-            <img src="/images/hand-2.png" alt="Image of hand holding minature objects" />
+            <img src={allImages['hand-2.png']} alt="Image of hand holding minature objects" />
           </div>
 
         </section>
@@ -49,7 +50,7 @@ export default function Home() {
               aria-label="Sharp Electronics"
             >
               <div className="proj__thumb">
-                <img src="/images/sharp-consolidation.png" alt="Sharp Electronics project" />
+                <img src={allImages['sharp-consolidation.png']} alt="Sharp Electronics project" />
               </div>
 
               <div className="proj__overlay">
@@ -65,7 +66,7 @@ export default function Home() {
               aria-label="Thirsty Lion project"
             >
               <div className="proj__thumb">
-                <img src="/images/thirstylion-2.png" alt="Thirsty Lion" />
+                <img src={allImages['thirstylion-2.png']} alt="Thirsty Lion" />
               </div>
               <div className="proj__overlay">
                 <div className="proj__overlayInner">ThirstyLion</div>
@@ -82,7 +83,7 @@ export default function Home() {
               aria-label="M.I.A.I. Game"
             >
               <div className="proj__thumb">   
-                <img src="/images/miai-laptop.png" alt="M.I.A.I. Game" />
+                <img src={allImages['miai-laptop.png']} alt="M.I.A.I. Game" />
               </div>
               <div className="proj__overlay">
                 <div className="proj__overlayInner">M.I.A.I</div>
@@ -97,7 +98,7 @@ export default function Home() {
               aria-label="Gamified Learning Tool project"
             >
               <div className="proj__thumb">
-                <img src="/images/alterea-tablet.png" alt="Gamified Learning Tool project" />
+                <img src={allImages['alterea-tablet.png']} alt="Gamified Learning Tool project" />
               </div>
               <div className="proj__overlay">
                 <div className="proj__overlayInner">Agents of Influence Game</div>
@@ -112,7 +113,7 @@ export default function Home() {
               aria-label="Space Threads App project"
             >
               <div className="proj__thumb">
-                <img src="/images/techspace.png" alt="Space Threads App project" />
+                <img src={allImages['techspace.png']} alt="Space Threads App project" />
               </div>
 
               <div className="proj__overlay">
@@ -139,7 +140,7 @@ export default function Home() {
                   playsInline
                   loop
                   aria-hidden="true"
-                  poster="/images/brain-poster.png"
+                  poster={allImages['brain-poster.png']}
                   onError={(e) => {
                     const v = e.currentTarget;
                     v.style.display = 'none';
@@ -148,15 +149,15 @@ export default function Home() {
                   }}
                   preload="metadata"
                 >
-                  <source src="/videos/brain.mp4" type="video/mp4" />
-                  <source src="/videos/brain.webm" type="video/webm" />
+                  <source src={`${process.env.PUBLIC_URL}/videos/brain.mp4`} type="video/mp4" />
+                  <source src={`${process.env.PUBLIC_URL}/videos/brain.webm`} type="video/webm" />
 
                 </video>
               </Link>
 
               <img
                 className="other__videoPoster"
-                src="/images/brain-poster.png"
+                src={allImages['brain-poster.png']}
                 alt="Brain doodle"
                 style={{ display: 'none' }}
               />

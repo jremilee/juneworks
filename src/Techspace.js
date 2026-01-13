@@ -21,7 +21,7 @@ export default function Techspace() {
         </header>
 
         <div className="tl__bannerContainer">
-          <video src="/videos/techspace-banner.mp4" alt="TechSpace banner" className="tl__banner" autoPlay loop muted />
+          <video src={`${process.env.PUBLIC_URL}/videos/techspace-banner.mp4`} alt="TechSpace banner" className="tl__banner" autoPlay loop muted />
         </div>
 
         <section className="tl__section" aria-label="Project Overview">

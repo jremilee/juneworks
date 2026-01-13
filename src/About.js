@@ -1,6 +1,7 @@
 // About.js
 import Nav from "./Nav";
 import { useEffect, useRef, useState } from "react";
+import { allImages } from "./utils/imageLoader";
 
 export default function About() {
   const trackRef = useRef(null);
@@ -102,7 +103,7 @@ export default function About() {
               {/* Replace with your image path in /public, e.g. /about-finger.png */}
               <img
                 className="finger__image"
-                src="/images/finger-comp-transparent.png"
+                src={allImages['finger-comp-transparent.png']}
                 alt="Hand holding a tiny laptop"
               />
             </div>
@@ -142,7 +143,7 @@ export default function About() {
             </div>
 
             <div className="aboutBox aboutBox--image">
-              <img className="aboutBox__img" src="/images/brainbanter.png" alt="Brain Banter placeholder" />
+              <img className="aboutBox__img" src={allImages['brainbanter.png']} alt="Brain Banter placeholder" />
               <div className="aboutBox__caption">My favorite extracurricular</div>
             </div>
 
@@ -240,7 +241,7 @@ export default function About() {
               title="LinkedIn"
             >
 
-            <img src= "/images/linkedin-icon.png" alt= "LinkedIn Icon" />
+            <img src={allImages['linkedin-icon.png']} alt="LinkedIn Icon" />
 
             </a>
 
@@ -255,7 +256,7 @@ export default function About() {
                   copyEmailToClipboard();
                 }}
               >
-                <img src="/images/gmail-icon.png" alt="email Icon" />
+                <img src={allImages['gmail-icon.png']} alt="email Icon" />
               </a>
               {copied && (
                 <span
