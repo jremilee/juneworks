@@ -1,6 +1,7 @@
 // Miai.js
 import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
+import { allImages } from "./utils/imageLoader";
 
 function Slideshow({ images = [] }) {
   const [index, setIndex] = useState(0);

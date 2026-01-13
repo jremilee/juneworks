@@ -1,6 +1,7 @@
 // ThirstyLion.js
 import React, { useEffect } from "react";
 import Nav from "./Nav";
+import { allImages } from "./utils/imageLoader";
 
 export default function Sharp() {
   useEffect(() => {

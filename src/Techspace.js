@@ -1,6 +1,7 @@
 // Techspace.js
 import React, { useEffect } from "react";
 import Nav from "./Nav";
+import { allImages } from "./utils/imageLoader";
 import "./Techspace.css";
 
 export default function Techspace() {
