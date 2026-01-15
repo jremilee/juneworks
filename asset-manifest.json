@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/juneworks/static/css/main.3c4cb478.css",
-    "main.js": "/juneworks/static/js/main.3473924b.js",
+    "main.css": "/juneworks/static/css/main.258ec712.css",
+    "main.js": "/juneworks/static/js/main.08f05555.js",
     "static/js/453.a04ae9d0.chunk.js": "/juneworks/static/js/453.a04ae9d0.chunk.js",
     "static/media/miai-video.mp4": "/juneworks/static/media/miai-video.30b7fcc6888ffd345811.mp4",
     "static/media/hand attempt 1.png": "/juneworks/static/media/hand attempt 1.120b11d54f6e56877c66.png",
@@ -87,12 +87,12 @@
     "static/media/thirstylion-banner.webp": "/juneworks/static/media/thirstylion-banner.1eaab57de7ca562dd25c.webp",
     "static/media/sharp-banner.png": "/juneworks/static/media/sharp-banner.bad78a4e82c526aeb5fb.png",
     "index.html": "/juneworks/index.html",
-    "main.3c4cb478.css.map": "/juneworks/static/css/main.3c4cb478.css.map",
-    "main.3473924b.js.map": "/juneworks/static/js/main.3473924b.js.map",
+    "main.258ec712.css.map": "/juneworks/static/css/main.258ec712.css.map",
+    "main.08f05555.js.map": "/juneworks/static/js/main.08f05555.js.map",
     "453.a04ae9d0.chunk.js.map": "/juneworks/static/js/453.a04ae9d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c4cb478.css",
-    "static/js/main.3473924b.js"
+    "static/css/main.258ec712.css",
+    "static/js/main.08f05555.js"
   ]
 }
