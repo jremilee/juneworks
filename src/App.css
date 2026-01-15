@@ -1481,6 +1481,29 @@ body {
   }
 }
 
+/* Ensure project banners fully fit on small screens (no horizontal cropping) */
+@media (max-width: 760px) {
+  /* For Alterea and Techspace pages specifically, let the banner scale naturally */
+  #alterea .tl__bannerContainer,
+  #sharp .tl__bannerContainer {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  #alterea .tl__banner,
+  #sharp .tl__banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* don't crop; scale to fit width */
+  }
+}
+
 /*Alterea Page Styles*/
 
 /* Two-column Problems / Solutions layout */
