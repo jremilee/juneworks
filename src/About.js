@@ -149,7 +149,7 @@ export default function About() {
 
             <div id="published" className="aboutBox aboutBox--text aboutBox--wide">
               <h3 className="aboutBox__title">Published works</h3>
-              <ul className="aboutBox__bullets">
+              <ul className="aboutBox__bullets aboutBox__bullets-published">
                 <li>§ Tart (Turning the Corner Erber & Wein Publishing)</li>
                 <li>§ Illusion of Inadequacy, essay (finalist for National PTA Reflections)</li>
                 <li>§ Dirty Rain, poem about anti-Asian sentiment during Covid (published in Anthology)</li>

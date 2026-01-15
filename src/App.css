@@ -540,6 +540,7 @@ body {
   .other__row{
     gap: 10px;
     align-items: center;
+
   }
 
   .other__text{
@@ -699,9 +700,34 @@ body {
 
 
 @media (max-width: 760px){
-  .aboutBoxes__inner{ grid-template-columns: 1fr; }
-  .aboutBox{ min-height: auto; }
-  .aboutBox__img{ max-width: 50px; margin: 0 auto; }
+  .aboutBoxes__inner{ grid-template-columns: 1fr; gap: 12px; }
+  .aboutBox{
+    min-height: auto;
+    padding: 14px 14px 8px;
+    min-width: 140px;
+    max-width: 260px;
+    gap: 10px;
+    max-height: 210px;
+  }
+  .aboutBox--wide { max-width: 360px; }
+  .aboutBox__img{
+    max-width: 120px;
+    width: 48%;
+    margin: 0 auto;
+    display: block;
+  }
+  /* Increase brainbanter image on mobile by 1.2x (120%) */
+  .aboutBox--image .aboutBox__img {
+    max-width: 144px; /* 120% of 120px */
+  }
+  .aboutBox__caption{ font-size: 14px; }
+  .aboutBox__title{ font-size: 14px; }
+  .aboutBox__list{ font-size: 12px; line-height: 1.4; }
+  .aboutBox__bullets{ font-size: 11.5px;}
+  /* ensure Published works (wide box) matches mobile bullet sizing */
+  .aboutBoxes .aboutBox--wide .aboutBox__bullets-published { font-size: 7px; }
+
+  .aboutBox__img{ width: 55%;}
 }
 
 
@@ -919,6 +945,7 @@ body {
 
 .aboutBox--wide .aboutBox__bullets {
   text-align: left;
+  font-size: 12px; /* match other about box bullets */
 }
 
 .aboutBox--text .aboutBox__bullets {
@@ -968,6 +995,11 @@ body {
 
   .aboutInfoRow__right {
     white-space: normal;
+  }
+
+  .other{
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 }
 

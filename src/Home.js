@@ -10,8 +10,7 @@ export default function Home() {
   const dynamic = useTypewriter([
     "a UX Designer based in NYC",
     "a product designer",
-    "a creative problem solver",
-    "an educator and researcher",
+    "a curriculum designer and psychology researcher",
     "a cheese enthusiast",
     "I'm lactose intolerant",
   ], 6000, 80, 80);
