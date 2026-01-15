@@ -519,13 +519,13 @@ body {
     justify-content: center;
     pointer-events: none;
     transform: none;
-    margin-top: 6px;
+    margin-top: 0; /* removed extra gap on mobile */
   }
 
   .hero__bg img {
     max-width: 260px;
     height: auto;
-    transform: none;
+    transform: translateX(50px);
   }
 
   .hero__title {
@@ -535,6 +535,10 @@ body {
 
   .hero__subtitle {
     max-width: 100%;
+  }
+  /* reduce vertical gap between hero and projects on mobile */
+  .projectsCols {
+    margin-top: 24px;
   }
 }
 
