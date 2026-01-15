@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';    
 import About from './About';
 import Creativeworks from './Creativeworks';
@@ -12,7 +12,7 @@ import Techspace from './Techspace';
 
 function App() {
   return (
-    <BrowserRouter basename="/juneworks">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/creativeworks" element={<Creativeworks />} />
@@ -23,7 +23,7 @@ function App() {
         <Route path="/alterea" element={<Alterea />} />
         <Route path="/techspace" element={<Techspace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
