@@ -346,7 +346,7 @@ body {
 
 /* Other creative works */
 .other{
-  padding-top: 46px;
+  padding-top: 15px;
   padding-bottom: 20px;
 }
 
@@ -370,7 +370,7 @@ body {
 }
 
 .other__video{
-  width: 144px; /* doubled */
+  width: 180px; /* doubled */
   height: auto;
   display: block;
   border-radius: 8px;
@@ -379,7 +379,7 @@ body {
 }
 
 .other__videoPoster{
-  width: 144px;
+  width: 180px;
   height: auto;
   display: block;
   border-radius: 8px;
@@ -399,7 +399,7 @@ body {
   }
 
 .brainSvg{
-  width: 144px;
+  width: 180px;
   height: auto;
 }
 
@@ -535,6 +535,23 @@ body {
 
   .hero__subtitle {
     max-width: 100%;
+  }
+  /* shrink 'Other creative' row on mobile so it fits the viewport */
+  .other__row{
+    gap: 10px;
+    align-items: center;
+  }
+
+  .other__text{
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .other__icon, .other__video, .other__videoPoster, .brainSvg{
+    width: calc(56px * 2); /* 15% larger on mobile */
+    height: auto;
   }
   /* reduce vertical gap between hero and projects on mobile */
   .projectsCols {
