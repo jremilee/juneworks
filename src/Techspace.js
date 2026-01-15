@@ -67,7 +67,7 @@ export default function Techspace() {
         <section className="tl__section" aria-label="How we built it">
           <h2 className="tl__sectionTitle">How we built it</h2>
           <p>
-            I used Figma to design out login pages, landing page, and thread pages. 
+            I used Figma to our login pages, landing page, and thread pages. 
             For frontend, we used React + Tailwind + Axios.
             For backend, we used FastAPI, with Firebase Auth for login and Firestore for data
             storage (threads, comments, profiles).

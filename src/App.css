@@ -104,13 +104,13 @@ body {
 .hero__bg {
   flex: 1; /* Takes up the right side space */
   display: flex;
-  justify-content: center;
+  justify-content: right; /* align image's right edge to the container's right edge */
   pointer-events: none;
 }
 
 .hero__bg img {
   /* Using 'max-width' ensures it scales down on zoom/resize */
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
   /* If you want the hand to overlap or sit in a specific spot, 
      use a slight margin or transform instead of absolute positioning */
@@ -495,6 +495,46 @@ body {
   .hero__title{
     font-size: 30px;
     margin-top: 10px;
+  }
+}
+
+/* Mobile hero: stack text above the hand image and center the hand */
+@media (max-width: 620px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .hero__left {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero__bg {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    transform: none;
+    margin-top: 6px;
+  }
+
+  .hero__bg img {
+    max-width: 260px;
+    height: auto;
+    transform: none;
+  }
+
+  .hero__title {
+    font-size: 28px;
+    line-height: 1.12;
+  }
+
+  .hero__subtitle {
+    max-width: 100%;
   }
 }
 

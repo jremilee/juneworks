@@ -1,11 +1,20 @@
 // Home.js
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
 
 export default function Home() {
   const videoRef = useRef(null);
+  // dynamic descriptors for the title; hook below handles typing/deleting
+  const dynamic = useTypewriter([
+    "a UX Designer based in NYC",
+    "a product designer",
+    "a creative problem solver",
+    "an educator and researcher",
+    "a cheese enthusiast",
+    "I'm lactose intolerant",
+  ], 6000, 80, 80);
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
@@ -24,7 +33,9 @@ export default function Home() {
         <section className="hero">
 
           <div className="hero__left">
-            <h1 className="hero__title">Hi! I’m June, a UX designer based in NYC</h1>
+            <h1 className="hero__title">
+              Hi! I’m June, <span className="hero__dynamic">{dynamic}</span>
+            </h1>
             <p className="hero__subtitle">
               With a background in cognitive science and ADA compliance, I craft accessible and
               imaginative gamified experiences that make a meaningful difference in users’ lives.
@@ -170,3 +181,59 @@ export default function Home() {
     </div>
   );
 }
+
+// Typewriter hook used on the Home page to cycle several descriptors.
+export function useTypewriter(words = [], cycleMs = 6000, typingSpeed = 80, deletingSpeed = 80) {
+  const [text, setText] = useState(words[0] || "");
+  const indexRef = useRef(0);
+  const timeoutRef = useRef();
+
+  useEffect(() => {
+    let mounted = true;
+
+    const tick = async () => {
+      const idx = indexRef.current;
+      const word = words[idx] || "";
+
+      // type
+      for (let i = 1; i <= word.length; i++) {
+        if (!mounted) return;
+        setText(word.slice(0, i));
+        // eslint-disable-next-line no-await-in-loop
+        await new Promise((r) => (timeoutRef.current = setTimeout(r, typingSpeed)));
+      }
+
+      // compute pause so full cycle approximates cycleMs
+      const totalCharMs = word.length * (typingSpeed + deletingSpeed);
+      const pauseMs = Math.max(400, cycleMs - totalCharMs);
+      // pause when fully typed
+      await new Promise((r) => (timeoutRef.current = setTimeout(r, pauseMs)));
+
+      // delete
+      for (let i = word.length - 1; i >= 0; i--) {
+        if (!mounted) return;
+        setText(word.slice(0, i));
+        // eslint-disable-next-line no-await-in-loop
+        await new Promise((r) => (timeoutRef.current = setTimeout(r, deletingSpeed)));
+      }
+
+      // next
+      indexRef.current = (indexRef.current + 1) % words.length;
+      if (mounted) tick();
+    };
+
+    if (words.length > 0) tick();
+
+    return () => {
+      mounted = false;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [words.join("||"), cycleMs, typingSpeed, deletingSpeed]);
+
+  return text;
+}
+
+// enhance Home to use the typewriter hook for the dynamic descriptor
+// we keep the original export default unchanged; instead wrap the hook usage via a small HOC-like pattern
+const originalDefault = null; // placeholder to satisfy linting in patch context

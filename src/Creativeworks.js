@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 import Nav from "./Nav";
+import { allImages } from "./utils/imageLoader";
 
 export default function Creativeworks() {
     useEffect(() => {
@@ -9,23 +10,23 @@ export default function Creativeworks() {
     }, []);
     
   const paintings = [
-    { src: "/images/church.png", alt: "church painting" },
-    { src: "/images/pots.png", alt: "pots painting" },
-    { src: "/images/boat.png", alt: "boat painting" },
+    { src: allImages['church.png'], alt: "church painting" },
+    { src: allImages['pots.png'], alt: "pots painting" },
+    { src: allImages['boat.png'], alt: "boat painting" },
   ];
 
   const randomMediums = [
-    { src: "/images/foldingcube.png", alt: "folding cube image" },
-    { src: "/images/egg.png", alt: "carved ostrich egg" },
-    { src: "/images/cardboard.png", alt: "cardboard art" },
-    { src: "/images/flowerwoman.png", alt: "pencil drawing of woman's face with flower petal hair" },
+    { src: allImages['foldingcube.png'], alt: "folding cube image" },
+    { src: allImages['egg.png'], alt: "carved ostrich egg" },
+    { src: allImages['cardboard.png'], alt: "cardboard art" },
+    { src: allImages['flowerwoman.png'], alt: "pencil drawing of woman's face with flower petal hair" },
   ];
 
   const digitalExperimentations = [
-    { src: "/images/mindcloset.png", alt: "June's mind closer" },
-    { src: "/images/converse.png", alt: "Converse Ad" },
-    { src: "/images/waves.png", alt: "website design inspo" },
-    { src: "/images/goatpuzzle.png", alt: "goat puzzle" },
+    { src: allImages['mindcloset.png'], alt: "June's mind closer" },
+    { src: allImages['converse.png'], alt: "Converse Ad" },
+    { src: allImages['waves.png'], alt: "website design inspo" },
+    { src: allImages['goatpuzzle.png'], alt: "goat puzzle" },
   ];
 
   return (
