@@ -1,6 +1,7 @@
 // Alterea.js
 import React, { useEffect } from "react";
 import Nav from "./Nav";
+import { allImages } from "./utils/imageLoader";
 
 export default function Alterea() {
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function Alterea() {
           <p className="tl__list">Research game example: highlighted items caused confusion — blue highlights were not draggable and yellow highlights were draggable, but players expected otherwise.</p>
 
           <div className="tl__img tl__img--spaced" aria-label="Research game highlights">
-            <img src="/images/alterea-1.png" alt="Screenshot showing blue and yellow highlights in the research game" />
+            <img src={allImages['alterea-1.png']} alt="Screenshot showing blue and yellow highlights in the research game" />
           </div>
 
           
@@ -77,7 +78,7 @@ export default function Alterea() {
           </ul>
 
           <div className="tl__img" aria-label="Teacher dashboard screenshot">
-            <img src="/images/alterea-2.png" alt="Teacher dashboard mockup showing table layout" />
+            <img src={allImages['alterea-2.png']} alt="Teacher dashboard mockup showing table layout" />
           </div>
 
           <h3 className="tl__sectionSubtitle">Solutions</h3>
@@ -87,7 +88,7 @@ export default function Alterea() {
           </ul>
           
           <div className="tl__img" aria-label="Teacher dashboard screenshot">
-            <img src="/images/alterea-3.png" alt="Teacher dashboard edits" />
+            <img src={allImages['alterea-3.png']} alt="Teacher dashboard edits" />
           </div>
 
         </section>
@@ -105,16 +106,16 @@ export default function Alterea() {
               to ensure intuitive gameplay at a glance.</p>
 
           <div className="tl__img2" aria-label="Gameplay guide example">
-            <img src="/images/alterea-4.png" alt="Annotated gameplay guide screenshot" />
+            <img src={allImages['alterea-4.png']} alt="Annotated gameplay guide screenshot" />
           </div>
 
           <h3 className="tl__sectionSubtitle">Analysis Game</h3>
             <p style={{ marginTop: '-10px' }}>I developed annotated visual aids with clear indicators 
               to ensure intuitive gameplay at a glance.</p>
 
-          <div className="tl__img tl__img--sideBySide" aria-label="Gameplay guide examples side by side">
-            <img src="/images/alterea-5.png" alt="Annotated gameplay guide screenshot 1" />
-            <img src="/images/alterea-6.png" alt="Annotated gameplay guide screenshot 2" />
+            <div className="tl__img tl__img--sideBySide" aria-label="Gameplay guide examples side by side">
+            <img src={allImages['alterea-5.png']} alt="Annotated gameplay guide screenshot 1" />
+            <img src={allImages['alterea-6.png']} alt="Annotated gameplay guide screenshot 2" />
           </div>
 
           <h3 className="tl__sectionSubtitle">Conversation Game</h3>
@@ -122,7 +123,7 @@ export default function Alterea() {
               to ensure intuitive gameplay at a glance.</p>
           
           <div className="tl__img2" aria-label="Gameplay guide example">
-            <img src="/images/alterea-7.png" alt="Annotated gameplay guide screenshot" />
+            <img src={allImages['alterea-7.png']} alt="Annotated gameplay guide screenshot" />
           </div>
 
         </section>

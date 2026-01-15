@@ -9,7 +9,7 @@ export default function Home() {
   // dynamic descriptors for the title; hook below handles typing/deleting
   const dynamic = useTypewriter([
     "a UX designer based in NYC",
-    "product designer",
+    "a product designer",
     "a cheese enthusiast",
     "I'm lactose intolerant",
   ], 6000, 80, 80);

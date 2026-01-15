@@ -27,7 +27,7 @@ export default function Techspace() {
         <section className="tl__section" aria-label="Project Overview">
           <h2 className="tl__sectionTitle"><p className="tl__subtitle"> A space-themed “gamified Reddit” that creates a safe, welcoming community for girls in tech. </p></h2>
 
-          <p><strong>My role:</strong> Designed and implemented the frontend for the team’s project using React during a 24-hour DivHacks hackathon.</p>
+          <p><strong>My role:</strong> Pitched the selected hackathon idea, designed and implemented the frontend for the team’s project using React during a 24-hour DivHacks hackathon.</p>
           <p><strong>Skills / Tools:</strong> HTML, CSS, JavaScript, React, Tailwind, Axios</p>
 
           <div className="tl__videoContainer">
