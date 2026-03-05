@@ -11,7 +11,6 @@ export default function Home() {
     "a UX designer based in NYC",
     "a product designer",
     "a cheese enthusiast",
-    "I'm lactose intolerant",
   ], 6000, 80, 80);
   useEffect(() => {
     const v = videoRef.current;

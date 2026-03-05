@@ -25,9 +25,11 @@ body {
 
 /* Nav */
 .nav{
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background: #faf3f4;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   z-index: 10;
 }
@@ -580,6 +582,7 @@ body {
 
 /* NAV */
 .aboutNav {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
