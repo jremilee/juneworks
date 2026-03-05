@@ -168,6 +168,15 @@ export default function About() {
                 <li>Impact of text vs speech, and voice gender on learning and source monitoring </li>
               </ul>
             </div>
+
+            <div className="aboutBox aboutBox--poster twotongues">
+              <img
+                className="aboutBox__img twotongues__img"
+                src={allImages['twotongue-poster.JPEG']}
+                alt="bilingualism research poster"
+              />
+              <h3 className="aboutBox__title twotongues__title">Lida Orzeck '68 Poster Session</h3>
+            </div>
           </div>
         </section>
 

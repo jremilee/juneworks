@@ -12,4 +12,4 @@ const importAll = (r) => {
 
 // Adjust the path to where your images folder is relative to this file
 // Include common video extensions too so media in src/images can be imported
-export const allImages = importAll(require.context('../images', false, /\.(png|jpe?g|svg|webp|mp4|webm|mkv)$/));
+export const allImages = importAll(require.context('../images', false, /\.(png|JPEG|svg|webp|mp4|webm|mkv)$/));

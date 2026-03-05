@@ -1,6 +1,6 @@
 .tl__linkBtn{
   display: inline-block;
-  padding: 10px 18px;
+  padding: calc(10px * var(--ui-scale, 1.25)) calc(18px * var(--ui-scale, 1.25));
   border-radius: 12px;
   background: #fff;
   border: 1px solid rgba(0,0,0,0.09);
@@ -18,13 +18,13 @@
 }
 
 .tl__footer{
-  margin: 15px 0 45px;
+  margin: calc(15px * var(--ui-scale, 1.25)) 0 calc(45px * var(--ui-scale, 1.25));
   display: flex;
   justify-content: left;
 }
 
 .tl__footerInner{
-  max-width: min(880px, calc(100% - 48px));
+  max-width: min(calc(880px * var(--ui-scale, 1.25)), calc(100% - calc(48px * var(--ui-scale, 1.25))));
   width: 100%;
   display: flex;
   justify-content: left;
