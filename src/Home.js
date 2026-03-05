@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
+import "./DownFinger.css";
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -44,6 +45,16 @@ export default function Home() {
           {/* hand image */}
           <div className="hero__bg" aria-hidden="true">
             <img src={allImages['hand-2.png']} alt="Image of hand holding minature objects" />
+          </div>
+
+          {/* Scroll indicator with pointing hand animation, positioned at the bottom of the hero section. */}
+          <div className="scroll-indicator">
+            <div className="pointing-hand">
+              <div className="thumb"></div>
+              <div className="finger-2"></div>
+              <div className="finger-3"></div>
+              <div className="finger-4"></div>
+            </div>
           </div>
 
         </section>

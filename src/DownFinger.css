@@ -1,0 +1,157 @@
+/* Pointing Hand Scroll Indicator Animation */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  transform: none;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.pointing-hand {
+  width: 40px;
+  height: 60px;
+  position: relative;
+  animation: bounce 2s infinite;
+}
+
+/* Hand outline using CSS borders and pseudo-elements */
+.pointing-hand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 35px;
+  border: 2px solid #000;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: transparent;
+}
+
+/* Index finger pointing down */
+.pointing-hand::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 8px;
+  height: 25px;
+  border: 2px solid #000;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background: transparent;
+}
+
+/* Thumb */
+.pointing-hand .thumb {
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  width: 12px;
+  height: 15px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background: transparent;
+  transform: rotate(-30deg);
+}
+
+/* Other fingers */
+.pointing-hand .finger-2,
+.pointing-hand .finger-3,
+.pointing-hand .finger-4 {
+  position: absolute;
+  top: 8px;
+  width: 6px;
+  height: 20px;
+  border: 2px solid #000;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  background: transparent;
+}
+
+.pointing-hand .finger-2 {
+  left: 18px;
+}
+
+.pointing-hand .finger-3 {
+  left: 22px;
+  height: 18px;
+  top: 10px;
+}
+
+.pointing-hand .finger-4 {
+  left: 26px;
+  height: 15px;
+  top: 13px;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Alternative pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Optional: Use pulse instead of bounce */
+.pointing-hand.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 15px;
+  }
+  
+  .pointing-hand {
+    width: 35px;
+    height: 50px;
+  }
+  
+  .pointing-hand::before {
+    width: 18px;
+    height: 30px;
+  }
+  
+  .pointing-hand::after {
+    width: 7px;
+    height: 20px;
+    top: 25px;
+  }
+}
+
+/* Hide on small screens if needed */
+@media (max-width: 480px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pointing-hand {
+    animation: none !important;
+  }
+}

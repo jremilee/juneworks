@@ -19,8 +19,8 @@ body {
 }
 
 .content{
-  width: min(880px, calc(100% - 48px));
-  margin: 0 auto;
+  width: 100%;
+  margin: 1rem 0rem 1rem auto;
 }
 
 /* Nav */
@@ -28,12 +28,13 @@ body {
   position: sticky;
   top: 0;
   background: #faf3f4;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   z-index: 10;
 }
 
 .nav__inner{
-  width: min(880px, calc(100% - 48px));
+  width: 90%;
   margin: 0 auto;
   padding: 14px 0 10px;
 }
@@ -47,7 +48,7 @@ body {
 .nav__link{
   text-decoration: none;
   color: rgba(0,0,0,0.55);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
   padding: 4px 2px;
 }
@@ -62,16 +63,12 @@ body {
 }
 
 /* Hero */
-.hero{
-  display: flex;
-  align-items: center;
-  padding-top: 50px;
-}
+
 
 .hero__title{
-  font-size: 36px;
+  font-size: 40px;
   letter-spacing: -0.02em;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
   font-weight: 650;
 }
 
@@ -79,49 +76,62 @@ body {
   margin: 0;
   max-width: 55ch;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.55;
+  padding-bottom: 3rem;
 }
 
 /* subtle vignette like your screenshot */
 
 /* full-width decorative background element for the hand image */
+
 .hero {
   display: flex;
   align-items: center; /* Centers the hand vertically relative to the text */
-  justify-content: space-between;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px; /* Or your preferred page width */
+  gap: -3rem;
+  width: 90%;
+  max-width: 90%; /* Or your preferred page width */
   margin: 0 auto;
   position: relative;
+  min-height: 60dvh;
+  padding-bottom: 30vh; /* Ensure space for the hand image below */
 }
 
-.hero__left {
-  flex: 1; /* Takes up the left side space */
+.aboutHero__left {
+  max-width: auto;
+  display: flex;
+  justify-content: flex-start;
 }
+
 
 .hero__bg {
-  flex: 1; /* Takes up the right side space */
+  position: absolute;
+  right: -5.55%;
+  bottom: 0;
+  width: auto;
+  height: auto;
   display: flex;
-  justify-content: right; /* align image's right edge to the container's right edge */
+  justify-content: flex-end;
+  align-items: flex-end;
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero__bg img {
   /* Using 'max-width' ensures it scales down on zoom/resize */
-  max-width: 100%;
+  max-width: 63%;
+  min-width: 500px;
   height: auto;
-  /* If you want the hand to overlap or sit in a specific spot, 
-     use a slight margin or transform instead of absolute positioning */
-  /* lowered slightly so the hand sits a bit lower than before */
-  transform: translate(-0%, 30%);
+  /* Make hand 20% larger and aligned to bottom */
+  transform-origin: bottom right;
 }
 
 
 .hero__left{
+  flex: 1;
   position: relative;
-  z-index: 2; /* keep text above the hand image */
+  z-index: 10; /* keep text above the hand image */
+  padding-left: 1rem;
 }
 /* Section title */
 .sectionTitle{
@@ -141,13 +151,12 @@ body {
 .projectsCols{
   display: flex;
   gap: 22px;
-  width: 100%;
-  max-width: 920px;
+  width: 90%;
   margin: 0 auto 46px; /* centers both columns */
   align-items: stretch;
-  height: var(--projects-height, 850px); /* tweakable total height so columns form a rectangle */
+  height: auto; /* tweakable total height so columns form a rectangle */
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 0; /* Removed since hero now has margin-bottom */
 }
 
 .projectsCol{
@@ -272,35 +281,6 @@ body {
 
 
 
-/* =========================
-   RESPONSIVE (STACK ON   // ...existing code...
-  @media (max-width: 760px) {
-    .aboutHero__inner {
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-  
-    .aboutHero__left {
-      max-width: 320px;
-      margin: 0 auto;
-    }
-  
-    .finger__image {
-      transform: translateX(0);
-      margin: 0 auto;
-      display: block;
-    }
-  
-    .aboutInfoRow {
-      grid-template-columns: 1fr;
-    }
-  
-    .aboutInfoRow__right {
-      white-space: normal;
-    }
-  }
-  // ...existing code...)
-   ========================= */
 
 @media (max-width: 760px){
   .projectsCols{
@@ -472,7 +452,7 @@ body {
 
 @media (max-width: 620px){
   .content{
-    width: min(980px, calc(100% - 28px));
+    width: 90%;
   }
 
   .projectsCols{
@@ -504,28 +484,53 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    padding-top: 24px;
+    padding-top: 0px;
+    padding-bottom: 0; /* Remove desktop padding */
+    height: 90dvh; /* full viewport height on mobile support */
+  }
+
+  .content{
+    width: 100%;
+    margin: 1rem 0rem 1rem auto;
   }
 
   .hero__left {
     order: 1;
-    width: 100%;
+    width: 90%;
+    padding-left: 0rem;
+    margin: 0 auto; /* center text on mobile */
+    min-height: auto;
+    height: auto;
+    max-height: 40vh; /* Limit text area to allow space for image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+    flex-shrink: 0;
   }
 
   .hero__bg {
     order: 2;
     width: 100%;
+    height: auto;
+    max-height: 50vh; /* Limit image height to fit in remaining space */
     display: flex;
     justify-content: center;
+    align-items: center;
     pointer-events: none;
-    transform: none;
-    margin-top: 0; /* removed extra gap on mobile */
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 0;
   }
 
   .hero__bg img {
-    max-width: 260px;
+    width: 100%;
+    max-width: none;
     height: auto;
-    transform: translateX(50px);
+    max-height: 100%;
+    object-fit: contain;
+    transform: none;
   }
 
   .hero__title {
@@ -622,7 +627,7 @@ body {
 
 /* MAIN WRAP */
 .aboutMain {
-  max-width: 980px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0px 18px 64px;
 }
@@ -634,17 +639,25 @@ body {
 
 .aboutHero__inner {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 34px;
+  grid-template-columns: max-content 1fr;
+  gap: 0;
   align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutHero__inner .aboutHero__left {
+  display: flex;
+  justify-self: end;
 }
 
 .finger__image {
-  width: 100%;
+  max-width: 18rem;
   height: auto;
   display: block;
   filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.12));
-  transform: translateX(70px);
+  transform: none;
+  margin: 0;
 }
 
 .aboutHero__title {
@@ -725,7 +738,7 @@ body {
   .aboutBox__list{ font-size: 12px; line-height: 1.4; }
   .aboutBox__bullets{ font-size: 11.5px;}
   /* ensure Published works (wide box) matches mobile bullet sizing */
-  .aboutBoxes .aboutBox--wide .aboutBox__bullets-published { font-size: 7px; }
+  .aboutBoxes .aboutBox--wide .aboutBox__bullets-published { font-size: 12px; }
 
   .aboutBox__img{ width: 55%;}
 }
@@ -976,14 +989,17 @@ body {
   .aboutHero__inner {
     grid-template-columns: 1fr;
     gap: 18px;
+    max-width: 100%;
   }
 
   .aboutHero__left {
     max-width: 320px;
     margin: 0 auto;
+    justify-self: center;
   }
 
-  .finger__image {
+  .finger__image .img{
+    max-width: 100%;
     transform: translateX(0);
     margin: 0 auto;
     display: block;
