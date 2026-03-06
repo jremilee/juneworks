@@ -1,4 +1,7 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.thirsty-lion-page,
+.thirsty-lion-page * {
   box-sizing: border-box;
 }
 
@@ -8,19 +11,19 @@ html {
   }
 }
 
-body {
+.thirsty-lion-page {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #f4f4f4;
   color: #111;
 }
 
-img {
+.thirsty-lion-page img {
   max-width: 100%;
   display: block;
 }
 
-a {
+.thirsty-lion-page a {
   text-decoration: none;
   color: inherit;
 }
@@ -104,7 +107,18 @@ a {
 .tl-section h1 {
   font-size: 48px;
   color: #5aa8ff;
-  margin-bottom: 14px;
+  margin-bottom: 0px;
+}
+
+.tl-hero-text h1 {
+  width: 365px;
+  color: #61B2E9;
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 2rem;
 }
 
 .tl-section h2 {
@@ -150,6 +164,7 @@ a {
   font-size: 20px;
   color: #444;
   line-height: 1.6;
+  margin-left: 2rem;
 }
 
 .tl-hero-images {
@@ -184,6 +199,8 @@ a {
   display: grid;
   grid-template-columns: 1.2fr 1fr 0.7fr 1.2fr;
   gap: 24px;
+  position: relative;
+  z-index: 3;
 }
 
 .tl-info-item {
@@ -414,6 +431,20 @@ a {
   font-size: 18px;
   font-weight: 700;
   color: #2c6de8;
+}
+
+/* LARGEST SCREENS ONLY */
+@media (min-width: 900px) {
+  .tl-phone-right {
+    top: calc(-1 * (var(--tl-section-top-pad) + var(--tl-nav-height)) - 5rem);
+    width: 16rem;
+}
+
+  .tl-phone-left {
+    bottom: calc(-72px - 8rem);
+    z-index: 0;
+    width: 18rem;
+  }
 }
 
 /* TABLET ONLY */

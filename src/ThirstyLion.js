@@ -74,10 +74,10 @@ export default function ThirstyLion() {
           <section className="tl__section" aria-label="What I did">
             <h4>My Role</h4>
             <ul className="tl__list">
-              <li>Pitched the winning project concept from a pool of 40 internal team proposals.</li>
-              <li>Conducted smoke-and-mirrors prototyping to gage app demand (51 responses in 24 hours).</li>
-              <li>Designed and implemented key pages using Figma (home page, map page) and React.</li>
-              <li>Conducted targeted user testing and synthesized feedback into actionable design changes.</li>
+              <li>* Pitched the winning project concept from a pool of 40 internal team proposals.</li>
+              <li>* Conducted smoke-and-mirrors prototyping to gage app demand (51 responses in 24 hours).</li>
+              <li>* Designed and implemented key pages using Figma (home page, map page) and React.</li>
+              <li>* Conducted targeted user testing and synthesized feedback into actionable design changes.</li>
             </ul>
           </section>
 

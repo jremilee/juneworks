@@ -19,9 +19,14 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-color: transparent;
   margin: 0;
   padding: 0;
+}
+
+.home,
+.aboutPage {
+  background-color: var(--bg);
 }
 
 .content{
