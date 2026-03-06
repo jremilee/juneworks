@@ -5,7 +5,7 @@ import "./ThirstyLion2.css";
 import heroPhoneLeft from "./images/hero-phone-left-clear.png";
 import heroPhoneRight from "./images/hero-phone-right-clear.png";
 import contextBoard from "./images/context-board.png";
-import solutionPhone from "./images/solution-phone.png";
+import solutionPhone from "./images/solution-phone-clear.png";
 import stickyNotes from "./images/sticky-notes.png";
 import journeyOne from "./images/journey-1.png";
 import journeyTwo from "./images/journey-2.png";
@@ -167,10 +167,9 @@ export default function ThirstyLionProject() {
 
         {/* SOLUTION */}
         <section className="tl-section tl-solution">
-          <div className="tl-label">OUR SOLUTION</div>
-
           <div className="tl-two-col solution-layout">
             <div>
+              <div className="tl-label">OUR SOLUTION</div>
               <h2>
                 A crowdsourced platform where students rate and track fountain
                 performance in real-time.
