@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import React, { useEffect, useRef } from "react";
 import "./ThirstyLion2.css";
 
 // Replace these with your real image paths
@@ -10,15 +11,27 @@ import stickyNotes from "./images/sticky-notes.png";
 import journeyOne from "./images/journey-1.png";
 import journeyTwo from "./images/journey-2.png";
 import prototypeLaptop from "./images/prototype-laptop.png";
-import dataDecisionGraphic from "./images/data-decision-graphic.png";
+import dataDecisionGraphic from "./images/data-driven-icons.svg";
 import designProcess from "./images/design-process.png";
 import finalScreens from "./images/final-screens.png";
 import footerHand from "./images/footer-hand.png";
 
 const interviews = [
-  "“I’ll walk across campus just to fill my bottle at Milstein because the water tastes best there.”",
-  "“I honestly didn’t even know there was a water fountain there.”",
-  "“I usually just go somewhere else instead of filling out a report.”",
+  {
+    before: "“I’ll walk across campus just to fill my bottle at Milstein because the ",
+    highlight: "water tastes best there",
+    after: ".”",
+  },
+  {
+    before: "“I honestly ",
+    highlight: "didn’t even know",
+    after: " there was a water fountain there.”",
+  },
+  {
+    before: "“I usually just go somewhere else ",
+    highlight: "instead of filling out a report",
+    after: ".”",
+  },
 ];
 
 const findings = [
@@ -51,6 +64,9 @@ const results = [
   },
 ];
 
+const topRowResults = results.slice(0, 3);
+const bottomRowResults = results.slice(3);
+
 const designDecisions = [
   {
     title: "Remove Login Friction",
@@ -82,6 +98,11 @@ const techStack = [
 ];
 
 export default function ThirstyLionProject() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    const videoRef = useRef(null);
+      
   return (
     <div className="thirsty-lion-page">
       <Nav />
@@ -91,7 +112,7 @@ export default function ThirstyLionProject() {
         <section className="tl-section tl-hero">
           <div className="tl-hero-text">
             <h1>Thirsty Lion</h1>
-            <p>
+            <p className= "tl-hero-subtitle">
               A crowdsourced platform for real-time water fountain ratings and
               locations at Columbia University.
             </p>
@@ -201,7 +222,11 @@ export default function ThirstyLionProject() {
           <div className="tl-quote-grid">
             {interviews.map((quote, index) => (
               <div className="tl-quote-card" key={index}>
-                <p>{quote}</p>
+                <p>
+                  {quote.before}
+                  <span className="tl-quote-highlight">{quote.highlight}</span>
+                  {quote.after}
+                </p>
                 <span>STUDENT INTERVIEWEE</span>
               </div>
             ))}
@@ -213,7 +238,7 @@ export default function ThirstyLionProject() {
             </div>
 
             <div>
-              <h3>Our Findings</h3>
+              <h3 className="our-finding">Our Findings</h3>
               <ol className="tl-findings-list">
                 {findings.map((item, index) => (
                   <li key={index}>{item}</li>
@@ -249,10 +274,9 @@ export default function ThirstyLionProject() {
 
         {/* PROTOTYPE */}
         <section className="tl-section">
-          <div className="tl-label">SMOKE & MIRRORS PROTOTYPING</div>
-
           <div className="tl-two-col prototype-layout">
             <div>
+              <div className="tl-label">SMOKE & MIRRORS PROTOTYPING</div>
               <h2>Testing our concept with a no-code prototype</h2>
               <p>
                 We placed QR-coded posters at eight water fountains in
@@ -268,13 +292,28 @@ export default function ThirstyLionProject() {
           </div>
 
           <h3 className="tl-results-heading">Prototype Results</h3>
-          <div className="tl-results-grid">
-            {results.map((result, index) => (
-              <div className="tl-result-card" key={index}>
-                <h4>{result.title}</h4>
-                <p>{result.text}</p>
-              </div>
-            ))}
+          <div className="tl-results-rows">
+            <div className="tl-results-row tl-results-row--top">
+              {topRowResults.map((result, index) => (
+                <div className="tl-result-card" key={`top-${index}`}>
+                  <div className="tl-result-card__content">
+                    <h4 className={/^[\d+%\s.]+$/.test(result.title) ? "tl-result-card__title--numeric" : ""}>{result.title}</h4>
+                    <p>{result.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="tl-results-row tl-results-row--bottom">
+              {bottomRowResults.map((result, index) => (
+                <div className="tl-result-card" key={`bottom-${index}`}>
+                  <div className="tl-result-card__content">
+                    <h4 className={/^[\d+%\s.]+$/.test(result.title) ? "tl-result-card__title--numeric" : ""}>{result.title}</h4>
+                    <p>{result.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
