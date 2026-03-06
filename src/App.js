@@ -9,6 +9,7 @@ import Sharp from './Sharp';
 import Miai from './Miai';
 import Alterea from './Alterea';
 import Techspace from './Techspace';
+import ThirstyLion2 from './ThirstyLion2';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/miai" element={<Miai />} />
         <Route path="/alterea" element={<Alterea />} />
         <Route path="/techspace" element={<Techspace />} />
+        <Route path="/thirstylion2" element={<ThirstyLion2 />} />
       </Routes>
     </HashRouter>
   );

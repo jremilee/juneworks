@@ -69,7 +69,7 @@ export default function Home() {
             {/* Project 3 */}
             <Link
               id="thirstylion"
-              to="/thirstylion"
+              to="/thirstylion2"
               className="proj-left"
               aria-label="Thirsty Lion project"
             >
