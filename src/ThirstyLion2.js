@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./ThirstyLion2.css";
 import Footer from "./Footer";
 
@@ -100,10 +100,91 @@ const techStack = [
 ];
 
 export default function ThirstyLionProject() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+    const heroSectionRef = useRef(null);
     const videoRef = useRef(null);
+    const quoteGridRef = useRef(null);
+    const prototypeSectionRef = useRef(null);
+    const resultsRowsRef = useRef(null);
+    const [heroVisible, setHeroVisible] = useState(false);
+    const [quotesVisible, setQuotesVisible] = useState(false);
+  const [prototypeImageVisible, setPrototypeImageVisible] = useState(false);
+    const [resultsVisible, setResultsVisible] = useState(false);
+
+    useEffect(() => {
+      const node = heroSectionRef.current;
+      if (!node) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            setHeroVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(node);
+      return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+      const node = quoteGridRef.current;
+      if (!node) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            setQuotesVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(node);
+      return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+      const node = prototypeSectionRef.current;
+      if (!node) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            setPrototypeImageVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+      );
+
+      observer.observe(node);
+      return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+      const node = resultsRowsRef.current;
+      if (!node) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            setResultsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      observer.observe(node);
+      return () => observer.disconnect();
+    }, []);
       
   return (
     <div className="thirsty-lion-page">
@@ -111,7 +192,7 @@ export default function ThirstyLionProject() {
 
       <main>
         {/* HERO */}
-        <section className="tl-section tl-hero">
+        <section className={`tl-section tl-hero${heroVisible ? " tl-hero--animate" : ""}`} ref={heroSectionRef}>
           <div className="tl-hero-text">
             <h1>Thirsty Lion</h1>
             <p className= "tl-hero-subtitle">
@@ -221,9 +302,13 @@ export default function ThirstyLionProject() {
             shape product direction.
           </p>
 
-          <div className="tl-quote-grid">
+          <div className="tl-quote-grid" ref={quoteGridRef}>
             {interviews.map((quote, index) => (
-              <div className="tl-quote-card" key={index}>
+              <div
+                className={`tl-quote-card tl-quote-card--animate${quotesVisible ? " is-visible" : ""}`}
+                style={{ transitionDelay: quotesVisible ? `${index * 140}ms` : "0ms" }}
+                key={index}
+              >
                 <p>
                   {quote.before}
                   <span className="tl-quote-highlight">{quote.highlight}</span>
@@ -275,7 +360,7 @@ export default function ThirstyLionProject() {
         </section>
 
         {/* PROTOTYPE */}
-        <section className="tl-section">
+        <section className="tl-section" ref={prototypeSectionRef}>
           <div className="tl-two-col prototype-layout">
             <div>
               <div className="tl-label">SMOKE & MIRRORS PROTOTYPING</div>
@@ -288,16 +373,22 @@ export default function ThirstyLionProject() {
               </p>
             </div>
 
-            <div className="tl-image-side">
+            <div
+              className={`tl-image-side tl-image-side--prototype-animate${prototypeImageVisible ? " is-visible" : ""}`}
+            >
               <img src={prototypeLaptop} alt="Prototype spreadsheet on laptop" />
             </div>
           </div>
 
           <h3 className="tl-results-heading">Prototype Results</h3>
-          <div className="tl-results-rows">
+          <div className="tl-results-rows" ref={resultsRowsRef}>
             <div className="tl-results-row tl-results-row--top">
               {topRowResults.map((result, index) => (
-                <div className="tl-result-card" key={`top-${index}`}>
+                <div
+                  className={`tl-result-card tl-result-card--animate${resultsVisible ? " is-visible" : ""}`}
+                  style={{ transitionDelay: resultsVisible ? `${index * 140}ms` : "0ms" }}
+                  key={`top-${index}`}
+                >
                   <div className="tl-result-card__content">
                     <h4 className={/^[\d+%\s.]+$/.test(result.title) ? "tl-result-card__title--numeric" : ""}>{result.title}</h4>
                     <p>{result.text}</p>
@@ -308,7 +399,11 @@ export default function ThirstyLionProject() {
 
             <div className="tl-results-row tl-results-row--bottom">
               {bottomRowResults.map((result, index) => (
-                <div className="tl-result-card" key={`bottom-${index}`}>
+                <div
+                  className={`tl-result-card tl-result-card--animate${resultsVisible ? " is-visible" : ""}`}
+                  style={{ transitionDelay: resultsVisible ? `${(topRowResults.length + index) * 140}ms` : "0ms" }}
+                  key={`bottom-${index}`}
+                >
                   <div className="tl-result-card__content">
                     <h4 className={/^[\d+%\s.]+$/.test(result.title) ? "tl-result-card__title--numeric" : ""}>{result.title}</h4>
                     <p>{result.text}</p>

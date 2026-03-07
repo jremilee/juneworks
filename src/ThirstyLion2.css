@@ -191,6 +191,36 @@ html {
   z-index: 0;
 }
 
+@keyframes tl-phone-enter-from-bottom {
+  0% {
+    transform: translateY(140px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes tl-phone-enter-from-top {
+  0% {
+    transform: translateY(-140px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* INFO BAND */
 .tl-info-band {
   background: linear-gradient(90deg, #8eb4ef 0%, #aeb2ea 100%);
@@ -272,10 +302,13 @@ html {
 
 .context-layout,
 .solution-layout,
-.prototype-layout,
 .decisions-layout,
 .discovery-layout {
   margin-bottom: 28px;
+}
+
+.prototype-layout{
+    margin-bottom: 5rem;
 }
 
 .tl-image-card {
@@ -323,6 +356,16 @@ html {
   width: auto;
 }
 
+.tl-image-side--prototype-animate {
+  transform: translateX(min(40vw, 520px));
+  transition: transform 4000ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.tl-image-side--prototype-animate.is-visible {
+  transform: translateX(0);
+}
+
 /* QUOTES */
 .tl-quote-grid {
   display: grid;
@@ -368,6 +411,44 @@ html {
   text-align: center;
 }
 
+.tl-quote-card--animate {
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  transition: opacity 1000ms ease, transform 2000ms cubic-bezier(0.2, 0.8, 0.2, 1) 2s;
+}
+
+.tl-quote-card--animate.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-quote-card--animate,
+  .tl-quote-card--animate.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .tl-image-side--prototype-animate,
+  .tl-image-side--prototype-animate.is-visible {
+    transform: none;
+    transition: none;
+  }
+
+  .tl-result-card--animate,
+  .tl-result-card--animate.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .tl-phone-left,
+  .tl-phone-right {
+    animation: none;
+  }
+}
+
 @media (max-width: 900px) {
   .tl-quote-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -383,6 +464,12 @@ html {
 @media (max-width: 600px) {
   .tl-quote-grid {
     grid-template-columns: 1fr;
+  }
+
+  .tl-quote-grid .tl-quote-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
   }
 }
 
@@ -431,7 +518,7 @@ html {
 }
 
 .tl-result-card {
-  background: #edf1f7;
+  background: #ffffff;
   border-radius: 22px;
   padding: 28px 24px;
   min-height: 180px;
@@ -466,6 +553,17 @@ html {
   margin: 0;
   font-size: 15px;
   line-height: 1.6;
+}
+
+.tl-result-card--animate {
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 3000ms ease, transform 3000ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tl-result-card--animate.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* DATA DRIVEN DECISIONS */
@@ -505,10 +603,13 @@ html {
 .tl-process-card--wireframing {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 10rem;
+  min-width: 0;
 }
 .tl-process-card--wireframing h3 {
+  gap: 3rem;
   margin: 0;
+  margin-left: 5rem;
 }
 
 .tl-process-card h3 {
@@ -521,9 +622,9 @@ html {
 }
 
 .tl-process-card img.wireframing {
-  width: 70%;
+  width: 50%;
   height: auto;
-  margin-left: auto;
+  max-width: 100%;
 }
 
 /* TECH */
@@ -554,7 +655,7 @@ html {
 
 /*VIDEO*/
 .tl__videoContainer {
-  width: 60%;
+  width: 80%;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: auto;
@@ -592,9 +693,26 @@ html {
 }
 
   .tl-phone-left {
-    bottom: -18rem;
+    bottom: -19rem;
     z-index: 0;
     width: 20rem;
+  }
+}
+
+/* EXTRA-LARGE DESKTOP ONLY: hero phone entrance */
+@media (min-width: 1200px) {
+  .tl-phone-left,
+  .tl-phone-right {
+    will-change: transform;
+  }
+
+  .tl-hero--animate .tl-phone-left {
+    animation: tl-phone-enter-from-bottom 900ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  .tl-hero--animate .tl-phone-right {
+    animation: tl-phone-enter-from-top 900ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+    animation-delay: 140ms;
   }
 }
 
@@ -645,6 +763,28 @@ html {
 
   .solution-layout .tl-image-side {
     order: 2;
+  }
+
+  .tl-process-card--wireframing {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .tl-process-card--wireframing h3 {
+    margin-left: 0;
+  }
+
+  .tl-process-card img.wireframing {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .tl-image-card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
 
