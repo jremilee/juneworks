@@ -231,7 +231,7 @@ html {
 .tl-info-band {
   background: linear-gradient(90deg, #8eb4ef 0%, #aeb2ea 100%);
   color: white;
-  padding: 55px 50px;
+  padding: 5rem 5rem;
   display: grid;
   grid-template-columns: 1.4fr 1fr 0.5fr 1.2fr;
   gap: 24px;
@@ -708,7 +708,7 @@ html {
 }
 
   .tl-phone-left {
-    bottom: -19rem;
+    bottom: -18rem;
     z-index: 0;
     width: 20rem;
   }
@@ -719,6 +719,10 @@ html {
   .tl-phone-left,
   .tl-phone-right {
     will-change: transform;
+  }
+
+  .tl-info-band {
+    margin-top: -56px;
   }
 
   .tl-hero--animate .tl-phone-left {
