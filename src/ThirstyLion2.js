@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./ThirstyLion2.css";
 import Footer from "./Footer";
 
@@ -99,6 +99,20 @@ const techStack = [
   "Testing: User testing and smoke-and-mirrors validation",
 ];
 
+function getScrollContainer(node) {
+  let current = node?.parentElement;
+  while (current) {
+    const style = window.getComputedStyle(current);
+    const overflowY = style.overflowY || style.overflow;
+    const isScrollable = /(auto|scroll)/.test(overflowY);
+    if (isScrollable && current.scrollHeight > current.clientHeight) {
+      return current;
+    }
+    current = current.parentElement;
+  }
+  return window;
+}
+
 export default function ThirstyLionProject() {
     const heroSectionRef = useRef(null);
     const videoRef = useRef(null);
@@ -109,6 +123,43 @@ export default function ThirstyLionProject() {
     const [quotesVisible, setQuotesVisible] = useState(false);
   const [prototypeImageVisible, setPrototypeImageVisible] = useState(false);
     const [resultsVisible, setResultsVisible] = useState(false);
+
+    useLayoutEffect(() => {
+      const heroNode = heroSectionRef.current;
+      if (!heroNode) return;
+
+      const previousScrollRestoration = window.history.scrollRestoration;
+      window.history.scrollRestoration = "manual";
+
+      const scrollContainer = getScrollContainer(heroNode);
+      const scrollToTop = () => {
+        if (scrollContainer === window) {
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+          return;
+        }
+
+        if (typeof scrollContainer.scrollTo === "function") {
+          scrollContainer.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        }
+        scrollContainer.scrollTop = 0;
+      };
+
+      scrollToTop();
+      const rafId1 = requestAnimationFrame(scrollToTop);
+      const rafId2 = requestAnimationFrame(() => requestAnimationFrame(scrollToTop));
+      const timeoutId = window.setTimeout(scrollToTop, 120);
+      window.addEventListener("load", scrollToTop, { once: true });
+
+      return () => {
+        cancelAnimationFrame(rafId1);
+        cancelAnimationFrame(rafId2);
+        window.clearTimeout(timeoutId);
+        window.removeEventListener("load", scrollToTop);
+        window.history.scrollRestoration = previousScrollRestoration;
+      };
+    }, []);
 
     useEffect(() => {
       const node = heroSectionRef.current;

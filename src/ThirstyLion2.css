@@ -307,6 +307,11 @@ html {
   margin-bottom: 28px;
 }
 
+.context-layout h2,
+.context-layout .tl-body-large {
+  max-width: none;
+}
+
 .prototype-layout{
     margin-bottom: 5rem;
 }
