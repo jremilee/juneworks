@@ -1,6 +1,7 @@
 import Nav from "./Nav";
 import React, { useEffect, useRef } from "react";
 import "./ThirstyLion2.css";
+import Footer from "./Footer";
 
 // Replace these with your real image paths
 import heroPhoneLeft from "./images/hero-phone-left-clear.png";
@@ -12,9 +13,10 @@ import journeyOne from "./images/journey-1.png";
 import journeyTwo from "./images/journey-2.png";
 import prototypeLaptop from "./images/prototype-laptop.png";
 import dataDecisionGraphic from "./images/data-driven-icons.svg";
-import designProcess from "./images/design-process.png";
+import designProcess from "./images/design-process-clear.png";
+import lowFidMockup from "./images/low-fid-thirstylion.png";
+import highFidMockup from "./images/highfidelity-thirstylion.png";
 import finalScreens from "./images/final-screens.png";
-import footerHand from "./images/footer-hand.png";
 
 const interviews = [
   {
@@ -181,7 +183,7 @@ export default function ThirstyLionProject() {
             </div>
           </div>
 
-          <div className="tl-image-card">
+          <div className="tl-image-card tl-image-card--context">
             <img src={contextBoard} alt="Context and source material" />
           </div>
         </section>
@@ -202,7 +204,7 @@ export default function ThirstyLionProject() {
               </p>
             </div>
 
-            <div className="tl-image-side">
+            <div className="tl-image-side tl-image-side--solution">
               <img src={solutionPhone} alt="Solution mobile screen" />
             </div>
           </div>
@@ -320,10 +322,10 @@ export default function ThirstyLionProject() {
         {/* DATA DECISIONS */}
         <section className="tl-section">
           <div className="tl-label">DATA-DRIVEN DESIGN</div>
-          <h2>Our smoke-and-mirrors prototyping directly shaped our product direction.</h2>
+          <h2 className= "smoke-mirrors-h2">Our smoke-and-mirrors prototyping directly shaped our product direction.</h2>
 
           <div className="tl-two-col decisions-layout">
-            <div className="tl-image-side">
+            <div className="tl-image-side tl-image-side--decisions">
               <img src={dataDecisionGraphic} alt="Design decisions graphic" />
             </div>
 
@@ -352,14 +354,20 @@ export default function ThirstyLionProject() {
           </p>
 
           <div className="tl-process-stack">
-            <div className="tl-process-card">
+            <div className="tl-process-card tl-process-card--wireframing">
               <h3>Wireframing</h3>
-              <img src={designProcess} alt="Wireframing and low-fi process" />
+              <img className = "wireframing" src={designProcess} alt="Wireframing and low-fi process" />
             </div>
 
             <div className="tl-process-card">
               <h3>Final Mobile Screens</h3>
-              <img src={finalScreens} alt="Final mobile screens" />
+              <img className="lowfid-screens" src={lowFidMockup} alt="Low-fidelity mockup" />
+            </div>
+
+            <div className="tl-process-card">
+              <h3>Final Mobile Screens</h3>
+              <img className="highfid-screens" src={highFidMockup} alt="Final mobile screens" />
+              <p className="tl-design-note">For the high-fidelity mockup, I redesigned the map page to use more vertical space, creating a more immersive and usable layout. When users open the map by selecting a fountain, that fountain is highlighted with a blue navigation icon while other fountains appear in black. The selected fountain’s details slide up from the bottom, and users can tap other fountains to quickly view their information. I also replaced the floor toggle button with a dropdown menu, allowing users to switch floors more efficiently. <br/><br/> Additionally, I suggested grouping the current fountain ratings into a single box to clearly distinguish them from the previous reviews section. Users found our app easy to navigate and intuitive.  We made minor design tweaks (e.g. showing empty star outline) based on feedback.</p>
             </div>
           </div>
         </section>
@@ -386,32 +394,23 @@ export default function ThirstyLionProject() {
             ))}
           </ul>
 
-          <div className="tl-final-screen-strip">
-            <img src={finalScreens} alt="Final product screens" />
-          </div>
         </section>
-
-        {/* FOOTER CTA */}
-        <section className="tl-footer-cta">
-          <div className="tl-footer-image">
-            <img src={footerHand} alt="Hand holding laptop" />
+        
+        <div className="tl__videoContainer">
+            <iframe 
+              width="100%" 
+              height="480" 
+              src="https://www.youtube.com/embed/5AcqNHnTUBc" 
+              title="Thirsty Lion Demo Video"
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen>
+            </iframe>
           </div>
+        
+            <Footer/>
 
-          <div className="tl-footer-copy">
-            <h2>
-              Thanks for stopping by —
-              <br />
-              want to grab a coffee and chat?
-            </h2>
-
-            <div className="tl-footer-links">
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-              <a href="mailto:youremail@example.com">Email</a>
-            </div>
-          </div>
-        </section>
+        
       </main>
     </div>
   );
