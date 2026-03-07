@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
+import Footer from "./Footer";
 
 export default function Sharp() {
   useEffect(() => {
@@ -106,6 +107,8 @@ export default function Sharp() {
 
         
         </main>
+
+        <Footer />
       </div>
     </>
   );

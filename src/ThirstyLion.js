@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
+import Footer from "./Footer";
 
 export default function ThirstyLion() {
   useEffect(() => {
@@ -164,6 +165,8 @@ export default function ThirstyLion() {
             </iframe>
           </div>
         </main>
+
+        <Footer />
       </div>
     </>
   );

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
+import Footer from "./Footer";
 
 function Slideshow({ images = [] }) {
   const [index, setIndex] = useState(0);
@@ -173,6 +174,8 @@ export default function Miai() {
 
 
         </main>
+
+        <Footer />
       </div>
     </>
   );

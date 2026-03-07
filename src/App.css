@@ -1139,9 +1139,9 @@ body {
 .tlPage {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 calc(10px * var(--ui-scale));
+  padding: 0;
   box-sizing: border-box;
-  background-color: var(--bg);
+  background-color: #fff;
 }
 
 .tl__header {

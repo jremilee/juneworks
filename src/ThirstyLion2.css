@@ -38,6 +38,11 @@ html {
   background: #f4f4f4;
 }
 
+.thirsty-lion-page .tl-footer-cta {
+  --footer-scale: 0.8;
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
 /* NAV */
 .tl-navbar {
   width: 100%;
@@ -841,8 +846,7 @@ html {
   }
 
   .tl-two-col,
-  .tl-card-grid.two-up,
-  .tl-footer-cta {
+  .tl-card-grid.two-up {
     grid-template-columns: 1fr;
   }
 
@@ -904,7 +908,4 @@ html {
     bottom: auto;
   }
 
-  .tl-footer-copy h2 {
-    font-size: 30px;
-  }
 }
