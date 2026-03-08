@@ -85,7 +85,7 @@ export default function SharpWebConsolidation() {
 
         <section className="sharp-info-band">
           <div className="sharp-container sharp-info-grid">
-            <InfoItem title="MY ROLE" text="User Experience Designer" />
+            <InfoItem title="MY ROLE" text="User Experience Design, Sharp Marketing Intern" />
             <InfoItem title="TEAM" text="Sharp Marketing Team & Web Frontend Team" />
             <InfoItem title="DURATION" text="2 months" />
             <InfoItem title="SKILLS" text="UX design, SEO copy writing" />
@@ -159,12 +159,30 @@ export default function SharpWebConsolidation() {
                 importance of certain pages/info, I helped whittle down content using the following three filters.
               </p>
 
-              <div className="sharp-full-image">
-                <img
-                  src={processFilterCards}
-                  alt="Three content filtering questions used to evaluate SBS content"
-                />
-              </div>
+            <div className="process-filter-container">
+                
+                <div className="process-filter-card">
+                    <p>
+                    Is it <span className="highlight">SBS specific</span> information that
+                    can’t be found on other parts of the business site?
+                    </p>
+                </div>
+
+                <div className="process-filter-card">
+                    <p>
+                    Is it <span className="highlight">still relevant</span> (e.g. outdated,
+                    no longer important)?
+                    </p>
+                </div>
+
+                <div className="process-filter-card">
+                    <p>
+                    Is it <span className="highlight">important enough</span> to include on
+                    the new SBS page?
+                    </p>
+                </div>
+
+                </div>
             </div>
 
             <div className="sharp-process-block">

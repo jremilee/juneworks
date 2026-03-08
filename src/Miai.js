@@ -58,7 +58,7 @@ export default function Miai() {
           <p><strong>Team:</strong> June Lee, Blaire Kim, Charlette Huang </p>
 
           <p><strong>Overview:</strong> A single-player 2D PvE interrogation game for PC. </p>
-          <p className="story">You are a human player "hijacking" one of three AI suspects. You are sitting across 
+          <p className="story">You are a human player "hijacking" one of four AI suspects. You are sitting across 
             from the Inquisitor (the AI judge). To win, you must uncover the actual culprit among 
             the suspects while acting exactly like AI to stay undercover. Only the culprit and the human player may lie.</p>
           

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { allImages } from "./utils/imageLoader";
 import "./Miai2.css";
 import heroBanner from "./images/MIAI-poster.webp";
-import contextTransitionImage from "./images/context-transition-frame.svg";
+import contextTransitionImage from "./images/context-transition-frame.png";
 import context2DImage from "./images/miai-video.mp4";
 import styleGuideHeaderImage from "./images/style-guide-header.svg";
 import styleGuideBodyImage from "./images/style-guide-body.svg";
@@ -54,6 +54,76 @@ function InfoItem({ title, children }) {
 }
 
 export default function MiaiVideogameProject() {
+  const styleHeaderRef = useRef(null);
+  const stylePaletteRef = useRef(null);
+  const styleBodyRef = useRef(null);
+  const revealQueueRef = useRef([]);
+  const queuedKeysRef = useRef(new Set());
+  const isProcessingQueueRef = useRef(false);
+  const revealTimeoutRef = useRef(null);
+  const [styleHeaderVisible, setStyleHeaderVisible] = useState(false);
+  const [stylePaletteVisible, setStylePaletteVisible] = useState(false);
+  const [styleBodyVisible, setStyleBodyVisible] = useState(false);
+
+  useEffect(() => {
+    const observers = [];
+    const revealByKey = {
+      header: setStyleHeaderVisible,
+      palette: setStylePaletteVisible,
+      body: setStyleBodyVisible,
+    };
+
+    const processRevealQueue = () => {
+      if (isProcessingQueueRef.current) return;
+      if (!revealQueueRef.current.length) return;
+
+      isProcessingQueueRef.current = true;
+      const nextKey = revealQueueRef.current.shift();
+      queuedKeysRef.current.delete(nextKey);
+      const reveal = revealByKey[nextKey];
+      if (reveal) reveal(true);
+
+      revealTimeoutRef.current = setTimeout(() => {
+        isProcessingQueueRef.current = false;
+        processRevealQueue();
+      }, 1000);
+    };
+
+    const enqueueReveal = (key) => {
+      if (queuedKeysRef.current.has(key)) return;
+      queuedKeysRef.current.add(key);
+      revealQueueRef.current.push(key);
+      processRevealQueue();
+    };
+
+    const observeOnce = (node, key) => {
+      if (!node) return;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            enqueueReveal(key);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.35, rootMargin: "0px 0px -8% 0px" }
+      );
+      observer.observe(node);
+      observers.push(observer);
+    };
+
+    observeOnce(styleHeaderRef.current, "header");
+    observeOnce(stylePaletteRef.current, "palette");
+    observeOnce(styleBodyRef.current, "body");
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+      if (revealTimeoutRef.current) {
+        clearTimeout(revealTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="miai2-page">
       <header className="miai-hero">
@@ -103,16 +173,33 @@ export default function MiaiVideogameProject() {
           </p>
 
           <div className="miai-context-visual">
-            <div className="miai-context-card">
-              <video src={context2DImage} alt="2.5D sample concept" />
+            <div className="miai-context-media-item">
+              <div className="miai-context-card">
+                <video
+                  className="miai-context-video"
+                  src={context2DImage}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="2.5D sample concept"
+                />
+              </div>
+              <p className="miai-context-video-caption">
+                Sample 2.5D concept footage (not final art)
+              </p>
             </div>
 
             <div className="miai-context-arrow" aria-hidden="true">
               →
             </div>
 
-            <div className="miai-context-card miai-context-card--question">
-              <img src={contextTransitionImage} alt="Transition concept frame" />
+            <div className="miai-context-media-item">
+              <div className="miai-context-card miai-context-card--question">
+                <img src={contextTransitionImage} alt="Transition concept frame" />
+              </div>
+              <p className="miai-context-video-caption">Transition concept frame</p>
             </div>
           </div>
         </section>
@@ -147,8 +234,8 @@ export default function MiaiVideogameProject() {
 
         <section className="miai-section">
           <SectionLabel>THE PROCESS</SectionLabel>
-          <h2>Developing Style Guide</h2>
-          <div className="miai-copy-block">
+          <h2>Developing the Style Guide</h2>
+          <div className="miai-copy-block dev-style-guide">
             <p>
               I worked directly with the art team to develop a style guide for the
               game (created during 2.5D stage).
@@ -168,17 +255,26 @@ export default function MiaiVideogameProject() {
           </div>
 
           <div className="miai-style-guide-grid">
-            <div className="miai-style-card">
+            <div
+              className={`miai-style-card miai-style-header${styleHeaderVisible ? " is-visible" : ""}`}
+              ref={styleHeaderRef}
+            >
               <div className="miai-style-card-title">HEADER</div>
               <img src={styleGuideHeaderImage} alt="Header style guide" />
             </div>
 
-            <div className="miai-style-card">
+            <div
+              className={`miai-style-card miai-style-palette${stylePaletteVisible ? " is-visible" : ""}`}
+              ref={stylePaletteRef}
+            >
               <div className="miai-style-card-title">PALETTE</div>
               <img src={styleGuidePaletteImage} alt="Palette style guide" />
             </div>
 
-            <div className="miai-style-card miai-style-card--wide">
+            <div
+              className={`miai-style-card miai-style-card--wide miai-style-body${styleBodyVisible ? " is-visible" : ""}`}
+              ref={styleBodyRef}
+            >
               <div className="miai-style-card-title">BODY</div>
               <img src={styleGuideBodyImage} alt="Body typography style guide" />
             </div>
@@ -250,7 +346,7 @@ export default function MiaiVideogameProject() {
               relevant part of the text at any time.
             </p>
             <p>
-              I added a visual sliding timer above the typing box so that the user
+              I also added a visual sliding timer above the typing box so that the user
               could easily correlate the ticking time and have visual access to how
               much time is left when typing. We also added a chat filter and an
               annotator to the chat log to allow players to easily parse the texts
@@ -259,6 +355,12 @@ export default function MiaiVideogameProject() {
           </div>
 
           <div className="miai-annotated-image">
+            <h3>
+                Annotated interface 
+            </h3>
+            <p>
+                Notes on design decisions and features such as the sliding timer, scrollable text boxes, and chat log improvements
+            </p>
             <img
               src={annotatedInterfaceImage}
               alt="Annotated final interface with notes"
@@ -267,14 +369,14 @@ export default function MiaiVideogameProject() {
 
           <div className="miai-two-up">
             <div className="miai-two-up-card">
-              <h3>Risk to one</h3>
-              <p>Ask one AIC a question.</p>
+              <h3>Ask one AIC</h3>
+              <p>Players can choose one AIC to ask a question. The AIC being prompted is on the largest center screen for visual hierarchy</p>
               <img src={riskOneImage} alt="Risk to one interface state" />
             </div>
 
             <div className="miai-two-up-card">
-              <h3>Risk all</h3>
-              <p>Ask all view + overview.</p>
+              <h3>Ask all AICs</h3>
+              <p>Players can ask all AICs a question. The AICs are shown on equal sized screens</p>
               <img src={riskAllImage} alt="Risk all interface state" />
             </div>
           </div>

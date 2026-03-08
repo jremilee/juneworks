@@ -167,6 +167,39 @@ a {
   max-width: 760px;
 }
 
+/*Sharp 3 cards*/
+.process-filter-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.process-filter-card {
+  background: #f2f2f2;
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  min-height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-filter-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #222;
+}
+
+.highlight {
+  color: #c10016;
+  font-weight: 600;
+}
+
+
 /* Image layouts */
 .sharp-two-up {
   display: grid;
@@ -374,6 +407,10 @@ a {
   }
 
   .sharp-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-filter-container {
     grid-template-columns: 1fr;
   }
 
