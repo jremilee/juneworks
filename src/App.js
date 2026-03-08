@@ -5,9 +5,9 @@ import Home from './Home';
 import About from './About';
 import Creativeworks from './Creativeworks';
 import ThirstyLion from './ThirstyLion';
-import Sharp from './Sharp';
-import Miai from './Miai';
-import Alterea from './Alterea';
+import Sharp from './Sharp2';
+import Miai from './Miai2';
+import Alterea from './Alterea2';
 import Techspace from './Techspace';
 import ThirstyLion2 from './ThirstyLion2';
 

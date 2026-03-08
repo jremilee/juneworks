@@ -1,0 +1,395 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111111;
+  background: #f6f6f4;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sharp-page {
+  width: 100%;
+  min-width: 1100px;
+  background: #f6f6f4;
+}
+
+.sharp-container {
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* Top nav */
+.sharp-topbar {
+  background: #f6f6f4;
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.sharp-nav {
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto;
+  display: flex;
+  gap: 36px;
+  padding: 16px 0 14px;
+}
+
+.sharp-nav a {
+  font-size: 15px;
+  color: #555555;
+  transition: color 0.2s ease;
+}
+
+.sharp-nav a:hover {
+  color: #99000f;
+}
+
+/* Hero */
+.sharp-hero {
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto;
+  min-height: 470px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  align-items: center;
+  gap: 40px;
+  padding: 36px 0 24px;
+}
+
+.sharp-hero-text h1 {
+  margin: 0;
+  font-size: 53px;
+  line-height: 1.08;
+  font-weight: 400;
+  color: #9d0b17;
+  letter-spacing: -0.02em;
+}
+
+.sharp-hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sharp-hero-image img {
+  max-width: 620px;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Info band */
+.sharp-info-band {
+  background: linear-gradient(90deg, #96000f 0%, #7d000b 50%, #8d0010 100%);
+  color: #ffffff;
+  padding: 28px 0 30px;
+}
+
+.sharp-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.sharp-info-item h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.sharp-info-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 190px;
+}
+
+/* Shared sections */
+.sharp-section {
+  padding: 58px 0 34px;
+}
+
+.sharp-section--gray {
+  background: #dedede;
+  padding: 58px 0 48px;
+}
+
+.sharp-section-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 14px;
+  margin-bottom: 24px;
+  border: 1px solid #b45a61;
+  border-radius: 10px;
+  color: #9d0b17;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: transparent;
+}
+
+.sharp-section-title {
+  margin: 0 0 22px;
+  max-width: 920px;
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #111111;
+}
+
+.sharp-body-text {
+  margin: 0 0 14px;
+  max-width: 980px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #202020;
+}
+
+.sharp-body-text--narrow {
+  max-width: 760px;
+}
+
+/* Image layouts */
+.sharp-two-up {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+  align-items: start;
+  margin-top: 38px;
+}
+
+.sharp-image-card {
+  text-align: center;
+}
+
+.sharp-image-card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.sharp-image-caption {
+  margin: 14px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1b1b1b;
+}
+
+.sharp-full-image {
+  margin-top: 26px;
+}
+
+.sharp-full-image img {
+  width: 100%;
+}
+
+.sharp-rounded-panel {
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+/* Process */
+.sharp-process-block + .sharp-process-block {
+  margin-top: 48px;
+}
+
+.sharp-process-title {
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #111111;
+}
+
+.sharp-stacked-images {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 18px;
+}
+
+/* Additional work */
+.sharp-additional-pages {
+  margin-top: 30px;
+}
+
+.sharp-analytics-block {
+  margin-top: 70px;
+}
+
+.sharp-analytics-logo {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 28px;
+}
+
+.sharp-analytics-logo img {
+  max-width: 430px;
+  width: 100%;
+}
+
+/* Footer */
+.sharp-footer {
+  margin-top: 56px;
+  background: #d9d9d9;
+}
+
+.sharp-footer-inner {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  align-items: end;
+  gap: 56px;
+  min-height: 360px;
+  padding-top: 38px;
+}
+
+.sharp-footer-image {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.sharp-footer-image img {
+  max-width: 240px;
+  width: 100%;
+}
+
+.sharp-footer-content {
+  padding-bottom: 72px;
+}
+
+.sharp-footer-content h2 {
+  margin: 0 0 26px;
+  font-size: 23px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #111111;
+}
+
+.sharp-footer-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.sharp-footer-links a {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  background: #ffffff;
+  color: #0a66c2;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sharp-footer-links a:last-child {
+  color: #d44638;
+}
+
+.sharp-footer-bottom {
+  background: #000000;
+  color: #ffffff;
+  padding: 14px 28px;
+}
+
+.sharp-footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+  color: #f2f2f2;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .sharp-page {
+    min-width: 0;
+  }
+
+  .sharp-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    min-height: auto;
+    padding-top: 44px;
+  }
+
+  .sharp-hero-text h1 {
+    font-size: 42px;
+  }
+
+  .sharp-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+
+  .sharp-two-up {
+    grid-template-columns: 1fr;
+  }
+
+  .sharp-footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding-bottom: 24px;
+  }
+
+  .sharp-footer-content {
+    padding-bottom: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sharp-container,
+  .sharp-nav,
+  .sharp-hero {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .sharp-nav {
+    gap: 24px;
+    padding: 14px 0;
+  }
+
+  .sharp-hero-text h1 {
+    font-size: 34px;
+  }
+
+  .sharp-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sharp-section {
+    padding: 40px 0 24px;
+  }
+
+  .sharp-section-title {
+    font-size: 21px;
+  }
+
+  .sharp-body-text {
+    font-size: 14px;
+  }
+
+  .sharp-footer-content h2 {
+    font-size: 20px;
+  }
+}

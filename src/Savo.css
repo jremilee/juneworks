@@ -1,0 +1,370 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  color: #1f1f1f;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.savo-page {
+  width: 100%;
+  background: #f3f3f3;
+}
+
+/* TOP BAR */
+.savo-topbar {
+  width: 100%;
+  border-bottom: 1px solid #cfcfcf;
+  background: #f3f3f3;
+}
+
+.savo-nav {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 22px 48px 20px;
+  display: flex;
+  gap: 34px;
+}
+
+.savo-nav-link {
+  font-size: 16px;
+  color: #4a4a4a;
+  transition: opacity 0.2s ease;
+}
+
+.savo-nav-link:hover {
+  opacity: 0.7;
+}
+
+/* HERO */
+.savo-hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  align-items: center;
+  padding: 18px 70px 0;
+  gap: 40px;
+  background: linear-gradient(to right, #f5f5f5 58%, #dcebec 100%);
+}
+
+.savo-hero-text {
+  max-width: 440px;
+  padding-left: 4px;
+}
+
+.savo-hero-text h1 {
+  margin: 0 0 8px;
+  font-size: 54px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #74b5b6;
+}
+
+.savo-hero-text p {
+  margin: 0;
+  font-size: 31px;
+  line-height: 1.2;
+  color: #1f1f1f;
+}
+
+.savo-hero-image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.savo-hero-image {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  display: block;
+}
+
+/* INFO BAND */
+.savo-info-band {
+  background: #746f7d;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  padding: 44px 76px 46px;
+}
+
+.savo-info-item h3 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.savo-info-item p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.3;
+  color: #f2f2f2;
+}
+
+/* MAIN CONTENT */
+.savo-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 54px 56px 0;
+  background: #f3f3f3;
+}
+
+.savo-context-section,
+.savo-research-section {
+  max-width: 1240px;
+  margin: 0 auto 36px;
+}
+
+.savo-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 5px 14px;
+  border: 1px solid #d0c8f2;
+  border-radius: 999px;
+  color: #7d72d8;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: #faf8ff;
+  margin-bottom: 14px;
+}
+
+.savo-context-section h2 {
+  margin: 0 0 8px;
+  font-size: 35px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.savo-note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #111111;
+}
+
+.savo-research-section h3 {
+  margin: 0 0 18px;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.savo-research-section p {
+  max-width: 1080px;
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #222222;
+}
+
+/* CAROUSEL */
+.savo-carousel-wrap {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  align-items: center;
+  gap: 10px;
+}
+
+.savo-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.savo-carousel-image {
+  width: 100%;
+  max-width: 980px;
+  height: auto;
+  display: block;
+}
+
+.savo-carousel-counter {
+  margin-top: 14px;
+  background: #d7d7d7;
+  color: #333333;
+  border-radius: 999px;
+  padding: 6px 15px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.savo-carousel-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d4dddd;
+  border-radius: 50%;
+  background: #f7f9f8;
+  color: #8ab0af;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.savo-carousel-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* FOOTER */
+.savo-footer {
+  position: relative;
+  margin-top: 66px;
+  background: radial-gradient(circle at center, #f7f7f7 0%, #ededed 58%, #e2e2e2 100%);
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 44px 40px 72px;
+}
+
+.savo-footer-image-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.savo-footer-image {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.savo-footer-content {
+  text-align: left;
+}
+
+.savo-footer-content h3 {
+  margin: 0 0 24px;
+  font-size: 38px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #111111;
+}
+
+.savo-footer-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.savo-social-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 31px;
+  font-weight: 700;
+  background: #0a66c2;
+  color: #ffffff;
+}
+
+.savo-social-link-gmail {
+  background: #ffffff;
+  color: #db4437;
+  border: 1px solid #d8d8d8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.savo-footer-credit {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  font-size: 13px;
+  color: #333333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .savo-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 32px 32px 24px;
+  }
+
+  .savo-hero-text {
+    max-width: none;
+    padding-left: 0;
+  }
+
+  .savo-info-band {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .savo-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .savo-footer-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .savo-nav {
+    padding: 18px 20px;
+  }
+
+  .savo-hero-text h1 {
+    font-size: 40px;
+  }
+
+  .savo-hero-text p {
+    font-size: 22px;
+  }
+
+  .savo-info-band {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+  }
+
+  .savo-content {
+    padding: 38px 20px 0;
+  }
+
+  .savo-context-section h2,
+  .savo-research-section h3,
+  .savo-footer-content h3 {
+    font-size: 28px;
+  }
+
+  .savo-carousel-wrap {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+  }
+
+  .savo-footer {
+    min-height: auto;
+    padding: 36px 20px 60px;
+  }
+
+  .savo-footer-image {
+    width: 170px;
+  }
+}

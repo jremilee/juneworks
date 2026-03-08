@@ -1,6 +1,6 @@
 /* FOOTER CTA */
 .tl-footer-cta {
-  --footer-scale: 0.8;
+  --footer-scale: 1;
   position: relative;
   overflow: hidden;
   width: 100vw;
