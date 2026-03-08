@@ -197,18 +197,22 @@ export default function SharpWebConsolidation() {
               </p>
 
               <div className="sharp-stacked-images">
-                <div className="sharp-full-image sharp-rounded-panel">
-                  <img
-                    src={processHierarchyFlow}
-                    alt="Content hierarchy and page planning"
-                  />
+                <div className="sharp-full-image">
+                  <div className="process-image-panel">
+                    <img
+                      src={processHierarchyFlow}
+                      alt="Content hierarchy and page planning"
+                    />
+                  </div>
                 </div>
 
-                <div className="sharp-full-image sharp-rounded-panel">
-                  <img
-                    src={processWireframeAnnotations}
-                    alt="Annotated wireframe showing page structure and content flow"
-                  />
+                <div className="sharp-full-image">
+                  <div className="process-image-panel">
+                    <img
+                      src={processWireframeAnnotations}
+                      alt="Annotated wireframe showing page structure and content flow"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -230,11 +234,13 @@ export default function SharpWebConsolidation() {
                 text and remove other less critical elements.
               </p>
 
-              <div className="sharp-full-image sharp-rounded-panel">
-                <img
-                  src={processDraftComparison}
-                  alt="Comparison between first draft and final draft"
-                />
+              <div className="sharp-full-image">
+                <div className="process-image-panel">
+                  <img
+                    src={processDraftComparison}
+                    alt="Comparison between first draft and final draft"
+                  />
+                </div>
               </div>
             </div>
           </div>

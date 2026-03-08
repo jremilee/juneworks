@@ -238,6 +238,18 @@ a {
   overflow: hidden;
 }
 
+.process-image-panel {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 40px;
+}
+
+.process-image-panel img {
+  width: 100%;
+  height: auto;
+}
+
 /* Process */
 .sharp-process-block + .sharp-process-block {
   margin-top: 48px;
@@ -254,8 +266,12 @@ a {
 .sharp-stacked-images {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 44px;
   margin-top: 18px;
+}
+
+.sharp-process-block .sharp-full-image {
+  margin-top: 44px;
 }
 
 /* Additional work */

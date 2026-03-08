@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
-import Footer from "./Footer";
 
 export default function Alterea() {
   useEffect(() => {
@@ -151,8 +150,6 @@ export default function Alterea() {
         </div>
 
         </main>
-
-        <Footer />
       </div>
     </>
   );

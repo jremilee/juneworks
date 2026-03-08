@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 html {
   font-size: 100%;
 }
@@ -9,6 +11,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.site-typography,
+body.site-typography *:not(code):not(pre):not(kbd):not(samp) {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+body.site-typography h2 {
+  font-size: 26px !important;
+  line-height: 1.35;
+}
+
+body.site-typography p {
+  font-size: 16px !important;
+  line-height: 1.65;
 }
 
 code {

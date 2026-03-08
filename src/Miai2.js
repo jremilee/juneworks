@@ -207,7 +207,7 @@ export default function MiaiVideogameProject() {
         <section className="miai-section miai-section--tight-top">
           <SectionLabel>GAME MECHANICS</SectionLabel>
           <p className="miai-mechanics-text">
-            You are a human player “hijacking” one of three AI suspects. You are
+            You are a human player “hijacking” one of four AI suspects. You are
             sitting across from the Inquisitor (the AI judge). To win, you must
             uncover the actual culprit among the suspects while acting exactly like
             AI to stay undercover. Only the culprit and the human player may lie.
@@ -427,8 +427,26 @@ export default function MiaiVideogameProject() {
               </div>
             ))}
           </div>
+
+            <div className="game-link-section">
+                <p>
+                    Project launched in summer 2025! Prototype playtests validated the
+                    tri-fold access pattern and the clarity of the Puppeteer cues.
+                </p>
+
+                <a
+                    className="externalBtn"
+                    href="https://miai.dev/game"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    See Game
+                </a>
+            </div>
         </section>
       </main>
+
+        
 
       <footer className="miai-footer">
         <div className="miai-footer-left">

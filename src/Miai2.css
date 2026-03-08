@@ -82,7 +82,7 @@
   height: 100%;
   min-height: 100%;
   object-fit: cover;
-  transform: translateY(-10rem);
+  transform: translateY(-90rem);
 }
 
 .miai-hero-overlay {
@@ -101,7 +101,7 @@
   z-index: 2;
   max-width: 330px;
   color: #111;
-  top: 55%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -189,7 +189,7 @@
   width: 100%;
   max-width: var(--miai-max-width);
   margin: 0 auto;
-  padding: 56px 0 90px;
+  padding: 56px 0 1rem;
   background: var(--miai-bg);
 }
 
@@ -244,7 +244,7 @@
 }
 
 .miai-mechanics-text{
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1.5;
     color: var(--miai-text-soft);
 }
@@ -485,6 +485,45 @@
   object-fit: cover;
 }
 
+/*PLAY GAME*/
+.game-link-section {
+  max-width: 720px;
+  margin: 60px auto;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.game-link-section div:first-child {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.externalBtn {
+  display: inline-block;
+  padding: 12px 28px;
+
+  background: #c5bfd66f; /* your portfolio blue */
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.externalBtn:hover {
+  background: #1a7ec0;
+  transform: translateY(-2px);
+}
+
+
 /* FOOTER */
 .miai-footer {
   position: relative;
@@ -642,7 +681,7 @@
   .miai-mechanics-text,
   .miai-copy-block p,
   .miai-bullet-list li {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .miai-footer {
