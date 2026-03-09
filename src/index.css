@@ -24,7 +24,7 @@ body.site-typography h2 {
 }
 
 body.site-typography p {
-  font-size: 16px !important;
+  font-size: 16px important;
   line-height: 1.65;
 }
 

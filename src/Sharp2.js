@@ -13,20 +13,6 @@ import processDraftComparison from "./images/process-draft-comparison.svg";
 import additionalWorkPages from "./images/additional-work-pages.svg";
 
 import googleAnalyticsLogo from "./images/google-analytics-logo.svg";
-/*
-
-
-
-
-import processFilterCards from "./images/process-filter-cards.svg";
-
-
-
-
-
-import footerFingerLaptop from "./images/footer-finger-laptop.svg";
-
-*/
 
 // TEMP placeholder image so missing imports don't break the build
 const placeholder = "https://via.placeholder.com/1200x700?text=Image";
@@ -85,7 +71,7 @@ export default function SharpWebConsolidation() {
 
         <section className="sharp-info-band">
           <div className="sharp-container sharp-info-grid">
-            <InfoItem title="MY ROLE" text="User Experience Design, Sharp Marketing Intern" />
+            <InfoItem title="MY ROLE" text="Website Redesign, Sharp Marketing Intern" />
             <InfoItem title="TEAM" text="Sharp Marketing Team & Web Frontend Team" />
             <InfoItem title="DURATION" text="2 months" />
             <InfoItem title="SKILLS" text="UX design, SEO copy writing" />
@@ -178,7 +164,7 @@ export default function SharpWebConsolidation() {
                 <div className="process-filter-card">
                     <p>
                     Is it <span className="highlight">important enough</span> to include on
-                    the new SBS page?
+                    the new SBS page (given that there is a lot of content)?
                     </p>
                 </div>
 
