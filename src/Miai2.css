@@ -513,7 +513,7 @@
   display: inline-block;
   padding: 12px 28px;
 
-  background: #c5bfd66f; /* your portfolio blue */
+  background: #a696d26f; /* your portfolio blue */
   color: white;
   font-weight: 600;
   font-size: 15px;
@@ -533,16 +533,17 @@
 /* FOOTER */
 .miai-footer {
   position: relative;
-  width: 100%;
+  width: 110%;
   max-width: var(--miai-max-width);
   margin: 0 auto;
   min-height: 430px;
   background: #5c5a5d;
   display: grid;
-  grid-template-columns: minmax(250px, 430px) 1fr;
+  grid-template-columns: auto auto;
+  justify-content: center;
   align-items: center;
-  gap: 18px;
-  padding: 50px 58px 36px;
+  gap:2rem;
+  padding: 50px 58px 0px;
   overflow: hidden;
 }
 
@@ -551,6 +552,7 @@
   justify-content: center;
   align-items: end;
   height: 100%;
+  transform: translateX(-5rem);
 }
 
 .miai-footer-left img {
@@ -567,6 +569,10 @@
   font-weight: 600;
   letter-spacing: -0.03em;
   color: #f3f3f3;
+}
+
+.miai-footer-right {
+  transform: translateX(-5rem);
 }
 
 .miai-socials {
@@ -643,6 +649,11 @@
 
   .miai-footer-left {
     justify-content: center;
+    transform: none;
+  }
+
+  .miai-footer-right {
+    transform: none;
   }
 
   .miai-socials {

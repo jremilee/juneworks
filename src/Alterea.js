@@ -147,6 +147,7 @@ export default function Alterea() {
               </a>
             </div>
           </div>
+          
         </div>
 
         </main>
