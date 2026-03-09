@@ -70,7 +70,6 @@ a {
   grid-template-columns: 0.95fr 1.25fr;
   align-items: center;
   gap: 40px;
-  padding: 1rem 0 1rem;
   
 }
 
@@ -97,6 +96,8 @@ a {
   max-width: 560px;
   width: 100%;
   object-fit: contain;
+    display: block;
+  margin: 5rem 5rem auto;
 }
 
 /* Info band */
@@ -181,6 +182,7 @@ a {
   gap: 32px;
   margin-top: 32px;
   margin-bottom: 6rem;
+  overflow: hidden;
 }
 
 .process-filter-card {
@@ -193,6 +195,23 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: translateX(-90px);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.2s ease;
+  will-change: transform, opacity;
+}
+
+.process-filter-container.is-visible .process-filter-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.process-filter-container.is-visible .process-filter-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.process-filter-container.is-visible .process-filter-card:nth-child(3) {
+  transition-delay: 0.4s;
 }
 
 .process-filter-card p {
@@ -215,6 +234,7 @@ a {
   gap: 36px;
   align-items: start;
   margin-top: 38px;
+  overflow: hidden;
 }
 
 .sharp-two-up > * {
@@ -225,6 +245,28 @@ a {
   text-align: center;
   width: 100%;
   min-width: 0;
+}
+
+.sharp-image-card--from-left,
+.sharp-image-card--from-right {
+  opacity: 0;
+  transition: transform 2s cubic-bezier(0.22, 1, 0.36, 1), opacity 2s ease;
+  will-change: transform, opacity;
+}
+
+.sharp-image-card--from-left {
+  transform: translateX(-120px);
+}
+
+.sharp-image-card--from-right {
+  transform: translateX(120px) scale(0.96);
+  transition-delay: 0.4s;
+}
+
+.sharp-image-card--from-left.is-visible,
+.sharp-image-card--from-right.is-visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
 }
 
 .sharp-image-card img {
@@ -254,6 +296,18 @@ a {
   margin-top: 26px;
 }
 
+.sharp-full-image--animate {
+  opacity: 0;
+  transform: translateX(90px);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.1s ease;
+  will-change: transform, opacity;
+}
+
+.sharp-full-image--animate.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .sharp-full-image img {
   width: 60%;
   height: auto;
@@ -268,10 +322,22 @@ a {
 }
 
 .process-image-panel {
-  width: 100%;
+  width: 80%;
   background: #ffffff;
   border-radius: 30px;
   padding: 40px;
+
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(70px);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease;
+  will-change: transform, opacity;
+}
+
+.process-image-panel.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .process-image-panel img {
@@ -305,6 +371,12 @@ a {
 /* Additional work */
 .sharp-additional-pages {
   margin-top: 30px;
+}
+
+/* Additional work image width override */
+.sharp-full-image.sharp-additional-pages img {
+  width: 80%;
+  height: auto;
 }
 
 .sharp-analytics-block {

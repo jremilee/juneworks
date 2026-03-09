@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Sharp2.css";
 import Footer from "./Footer";
 import Nav from "./Nav";
@@ -50,6 +50,91 @@ function ImageCard({ src, alt, caption, className = "" }) {
 }
 
 export default function SharpWebConsolidation() {
+  const contextCardsRef = useRef(null);
+  const processFilterRef = useRef(null);
+  const [contextCardsVisible, setContextCardsVisible] = useState(false);
+  const [processFilterVisible, setProcessFilterVisible] = useState(false);
+
+  useEffect(() => {
+    const node = contextCardsRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setContextCardsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const node = processFilterRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setProcessFilterVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -6% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const panels = document.querySelectorAll(".sharp-page .process-image-panel");
+    if (!panels.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    panels.forEach((panel) => observer.observe(panel));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const fullImages = document.querySelectorAll(".sharp-page .sharp-full-image");
+    if (!fullImages.length) return;
+
+    fullImages.forEach((imageBlock) => imageBlock.classList.add("sharp-full-image--animate"));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    fullImages.forEach((imageBlock) => observer.observe(imageBlock));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="sharp-page">
       <Nav/ >
@@ -90,16 +175,18 @@ export default function SharpWebConsolidation() {
             Customers were also confused about which site to visit.
           </p>
 
-          <div className="sharp-two-up">
+          <div className="sharp-two-up" ref={contextCardsRef}>
             <ImageCard
               src={contextSharpBusiness}
               alt="Sharp Business website"
               caption="Sharp Business"
+              className={`sharp-image-card--from-left${contextCardsVisible ? " is-visible" : ""}`}
             />
             <ImageCard
               src={contextSharpSbs}
               alt="Sharp SBS website"
               caption="Sharp SBS"
+              className={`sharp-image-card--from-right${contextCardsVisible ? " is-visible" : ""}`}
             />
           </div>
         </section>
@@ -145,7 +232,7 @@ export default function SharpWebConsolidation() {
                 importance of certain pages/info, I helped whittle down content using the following three filters.
               </p>
 
-            <div className="process-filter-container">
+            <div className={`process-filter-container${processFilterVisible ? " is-visible" : ""}`} ref={processFilterRef}>
                 
                 <div className="process-filter-card">
                     <p>
