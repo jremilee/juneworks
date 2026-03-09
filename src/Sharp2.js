@@ -279,7 +279,7 @@ export default function SharpWebConsolidation() {
                   </div>
                 </div>
 
-                <div className="sharp-full-image">
+                <div className="sharp-full-image sharp-full-image--from-left">
                   <div className="process-image-panel">
                     <img
                       src={processWireframeAnnotations}

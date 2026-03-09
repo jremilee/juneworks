@@ -52,6 +52,28 @@ function AgentsOfInfluence() {
     };
   }, []);
 
+  useEffect(() => {
+    const betaCards = Array.from(document.querySelectorAll(".aoi-beta-card"));
+    if (!betaCards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    betaCards.forEach((card) => observer.observe(card));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="aoi-page">
         <Nav />
@@ -145,7 +167,7 @@ function AgentsOfInfluence() {
           </p>
 
           {/* Research Game Sample */}
-          <div className="aoi-beta-card">
+          <div className="aoi-beta-card aoi-beta-card--from-left">
             <h3 className="aoi-beta-card-title">Research Game Sample</h3>
 
             <div className="aoi-beta-research-images">
@@ -178,7 +200,7 @@ function AgentsOfInfluence() {
           </div>
 
           {/* Analysis Game */}
-          <div className="aoi-beta-card">
+          <div className="aoi-beta-card aoi-beta-card--from-right">
             <h3 className="aoi-beta-card-title">Analysis Game Sample</h3>
 
             <div className="aoi-beta-two-col">
@@ -221,7 +243,7 @@ function AgentsOfInfluence() {
           </div>
 
           {/* Conversation Game */}
-          <div className="aoi-beta-card">
+          <div className="aoi-beta-card aoi-beta-card--from-left">
             <h3 className="aoi-beta-card-title">Conversation Game Sample </h3>
 
             <div className="aoi-beta-two-col">

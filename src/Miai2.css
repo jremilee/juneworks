@@ -533,17 +533,17 @@
 /* FOOTER */
 .miai-footer {
   position: relative;
-  width: 110%;
+  width: 100%;
   max-width: var(--miai-max-width);
   margin: 0 auto;
-  min-height: 430px;
+  min-height: 350px;
   background: #5c5a5d;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
   align-items: center;
-  gap:2rem;
-  padding: 50px 58px 0px;
+  gap:10rem;
+  padding: 30px 58px 0px;
   overflow: hidden;
 }
 
@@ -552,7 +552,7 @@
   justify-content: center;
   align-items: end;
   height: 100%;
-  transform: translateX(-5rem);
+  transform: translateX(3rem);
 }
 
 .miai-footer-left img {

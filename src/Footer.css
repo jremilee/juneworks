@@ -157,6 +157,10 @@
   max-width: calc(260px * 0.8);
 }
 
+.aoi-page .tl-footer-image--animate.is-visible img {
+  max-width: calc(260px * 0.8);
+}
+
 @media (max-width: 760px) {
   .thirsty-lion-page .tl-footer-image img {
     max-width: calc(200px * 0.8);
@@ -164,6 +168,10 @@
 
   .sharp-page .tl-footer-image img {
     max-width: calc(200px * 0.8);
+  }
+
+  .aoi-page .tl-footer-image--animate.is-visible img {
+    max-width: calc(200px * 0.2);
   }
 }
 

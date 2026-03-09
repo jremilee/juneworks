@@ -168,24 +168,38 @@
 
 .aoi-beta-card {
   background: #ffffff;
-  border-radius: 34px;
-  padding: 34px 32px;
-  margin-bottom: 34px;
+  border-radius: 27px;
+  padding: 27px 26px;
+  margin: 0 auto 27px;
+  width: 90%;
+  opacity: 0;
+  transform: translateX(-90px);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.1s ease;
+  will-change: transform, opacity;
+}
+
+.aoi-beta-card.aoi-beta-card--from-right {
+  transform: translateX(90px);
+}
+
+.aoi-beta-card.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .aoi-beta-card-title {
-  margin: 0 0 22px;
+  margin: 0 0 18px;
   color: #111;
-  font-size: 1.35rem;
+  font-size: 1.08rem;
   font-weight: 700;
 }
 
 .aoi-beta-research-images {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
+  gap: 21px;
   align-items: start;
-  margin-bottom: 24px;
+  margin-bottom: 19px;
 }
 
 .aoi-beta-research-image-wrap img,
@@ -197,25 +211,25 @@
 }
 
 .aoi-beta-caption {
-  margin-top: 10px;
+  margin-top: 8px;
   text-align: center;
   color: #111;
-  font-size: 0.88rem;
+  font-size: 0.7rem;
 }
 
 .aoi-beta-text-block h4,
 .aoi-beta-side-block h4 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: #111;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
 .aoi-beta-text-block p,
 .aoi-beta-side-block p {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: #202020;
-  font-size: 0.95rem;
+  font-size: 0.76rem;
   line-height: 1.55;
 }
 
@@ -232,20 +246,20 @@
 .aoi-beta-two-col {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
-  gap: 30px;
+  gap: 24px;
   align-items: start;
 }
 
 .aoi-beta-image-stack {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 22px;
 }
 
 .aoi-beta-side-text {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
 }
 
 .aoi-beta-side-block {
@@ -271,8 +285,9 @@
   }
 
   .aoi-beta-card {
-    padding: 28px 24px;
-    border-radius: 28px;
+    width: 100%;
+    padding: 22px 19px;
+    border-radius: 22px;
   }
 
   .aoi-beta-two-col {
@@ -300,14 +315,15 @@
   }
 
   .aoi-beta-card {
-    padding: 22px 18px;
+    width: 100%;
+    padding: 18px 14px;
     border-radius: 22px;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
   }
 
   .aoi-beta-card-title {
-    font-size: 1.15rem;
-    margin-bottom: 18px;
+    font-size: 0.92rem;
+    margin-bottom: 14px;
   }
 
   .aoi-beta-research-images {
@@ -321,7 +337,7 @@
 
   .aoi-beta-text-block p,
   .aoi-beta-side-block p {
-    font-size: 0.92rem;
+    font-size: 0.74rem;
   }
 }
 
@@ -370,11 +386,20 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .aoi-beta-card,
+  .aoi-beta-card.aoi-beta-card--from-right,
+  .aoi-beta-card.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .aoi-guide-card {
     animation: none;
     opacity: 1;
   }
 }
+
 
 .aoi-guide-card img {
   width: 100%;

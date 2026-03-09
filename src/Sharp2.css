@@ -303,6 +303,10 @@ a {
   will-change: transform, opacity;
 }
 
+.sharp-full-image--animate.sharp-full-image--from-left {
+  transform: translateX(-90px);
+}
+
 .sharp-full-image--animate.is-visible {
   opacity: 1;
   transform: translateX(0);
