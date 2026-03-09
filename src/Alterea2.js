@@ -72,7 +72,7 @@ function AgentsOfInfluence() {
 
       {/* CONTEXT */}
       <section className="aoi-context">
-        <div className="section-label">THE CONTEXT</div>
+        <h4 className="section-label">THE CONTEXT</h4>
 
         <h2>
           Agents of Influence is an award-winning media literacy video game
