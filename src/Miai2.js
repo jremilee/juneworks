@@ -86,7 +86,7 @@ export default function MiaiVideogameProject() {
       revealTimeoutRef.current = setTimeout(() => {
         isProcessingQueueRef.current = false;
         processRevealQueue();
-      }, 1000);
+      }, 300);
     };
 
     const enqueueReveal = (key) => {
@@ -142,7 +142,7 @@ export default function MiaiVideogameProject() {
         </div>
 
         <div className="miai-hero-content">
-          <h1>M.I.A.I. Videogame</h1>
+          <h1>M.I.A.I. <br />Videogame</h1>
           <p>Human or AI? A Turing-style interrogation game</p>
         </div>
       </header>
