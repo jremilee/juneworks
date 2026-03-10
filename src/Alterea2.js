@@ -20,9 +20,6 @@ import tutorialBoard from "./images/aoi-board.svg";
 
 
 
-
-
-
 function AgentsOfInfluence() {
   useEffect(() => {
     const cards = Array.from(document.querySelectorAll(".aoi-guide-card"));

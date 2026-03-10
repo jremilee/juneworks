@@ -57,7 +57,8 @@ export default function ResearchProcessGrid() {
       });
 
       const nextLines = [];
-      const connectorOffset = 6;
+      const horizontalConnectorOffset = 3; // how much the horizontal connectors should extend beyond the card edge to connect with vertical connectors
+      const verticalConnectorOverlap = 2;
 
       for (let i = 1; i < revealOrder.length; i++) {
         const prevIndex = revealOrder[i - 1];
@@ -74,18 +75,18 @@ export default function ResearchProcessGrid() {
         if (Math.abs(from.y - to.y) < 10) {
           const leftToRight = from.x < to.x;
 
-          x1 = leftToRight ? from.right + connectorOffset : from.left - connectorOffset;
+          x1 = leftToRight ? from.right + horizontalConnectorOffset : from.left - horizontalConnectorOffset;
           y1 = from.y;
-          x2 = leftToRight ? to.left - connectorOffset : to.right + connectorOffset;
+          x2 = leftToRight ? to.left - horizontalConnectorOffset : to.right + horizontalConnectorOffset;
           y2 = to.y;
         } else {
           // Different row: connect vertically from bottom/top center
           const topToBottom = from.y < to.y;
 
           x1 = from.x;
-          y1 = topToBottom ? from.bottom + connectorOffset : from.top - connectorOffset;
+          y1 = topToBottom ? from.bottom - verticalConnectorOverlap : from.top + verticalConnectorOverlap;
           x2 = to.x;
-          y2 = topToBottom ? to.top - connectorOffset : to.bottom + connectorOffset;
+          y2 = topToBottom ? to.top + verticalConnectorOverlap : to.bottom - verticalConnectorOverlap;
         }
 
         nextLines.push({

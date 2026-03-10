@@ -71,6 +71,12 @@ a {
   align-items: center;
   gap: 40px;
   
+  
+}
+
+
+.sharp-hero-text {
+  margin-left: 2rem;
 }
 
 .sharp-hero-text h1 {
@@ -81,7 +87,7 @@ a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-left: 2rem;
+
   color: #9d0b17;
 }
 

@@ -85,7 +85,7 @@ body {
 .hero__title{
   font-size: calc(36px * var(--ui-scale));
   letter-spacing: -0.02em;
-  margin: 0 0 calc(10px * var(--ui-scale));
+  margin: 1.5rem 0 calc(10px * var(--ui-scale));
   font-weight: 650;
 }
 

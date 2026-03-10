@@ -428,11 +428,11 @@ export default function MiaiVideogameProject() {
           <h2>Trifold Design</h2>
           <div className="miai-copy-block">
             <p>
-              After debating between the screen looking cluttered and the
-              importance of having access to the chat log, incident summary, and
-              suspect profiles, we came to the conclusion that having to open and
-              close the chat logs, summary, etc, would make it a cumbersome
-              experience for the player.
+              User testing revealed that many players required almost constant access to 
+              the chat log, incident summary, and suspect profiles (which are large chunks of text).  After debating between the screen looking cluttered and the
+              importance of having easy access to the features, we came to the conclusion that having to open and
+              close the chat logs, summary, etc., would add friction to the gameplay and make it unenjoyable
+              for the player.
             </p>
             <p>
               We transitioned to a tri-fold design to allow for constant access to

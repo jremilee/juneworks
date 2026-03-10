@@ -147,6 +147,9 @@ export default function SharpWebConsolidation() {
               <br />
               Consolidation
             </h1>
+            <p>
+              Redesigning Sharp’s two websites into one cohesive site.
+            </p>
           </div>
 
           <div className="sharp-hero-image">

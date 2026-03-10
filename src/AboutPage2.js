@@ -1,6 +1,7 @@
 import React from "react";
 import "./AboutPage2.css";
 import Nav from "./Nav";
+import { allImages } from "./utils/imageLoader";
 
 // Placeholder image imports (using existing local assets to avoid missing-file build errors)
 import heroHandImage from "./images/hand-transparent.png";
@@ -23,23 +24,23 @@ const experienceItems = [
   {
     role: "UI/UX Designer",
     org: "BAR21",
-    detail: "Created wireframes and visual guidelines for a narrative video game project.",
+    detail: "Created wireframes and visual guidelines for a LLM (large language model) video game project.",
   },
   {
     role: "Instructional Design Intern",
     org: "Alterea",
-    detail: "Improved usability of the Agents of Influence educational game and teacher dashboard.",
+    detail: "Improved usability of educational video game and developed a gameguide used by 600+ teachers.",
   },
   {
-    role: "Lead Research Assistant",
-    org: "Columbia Living Lab",
-    detail: "Managed bilingual research participants and conducted cognitive science experiments.",
+    role: "Associate Marketing Communications Specialist",
+    org: "Sharp Electronics",
+    detail: "Gathered user feedback from Sharp dealers. Used Adobe XD to design key pages in B2B and B2C website consolidation.",
   },
 ];
 
 const researchItems = [
-  "Bilingualism & Mental Imagery Research",
-  "Perception and memory of stimuli in VR",
+  "Bilingualism & Mental Imagery (Research)",
+  "Perception and memory of stimuli in VR (Research)",
   "Poster Presentation — Columbia Linguistics Symposium",
   "Published Essay — National PTA Reflections",
   "Podcast Host — Brain Banter Neuroscience Podcast",
@@ -48,31 +49,24 @@ const researchItems = [
 const projectCards = [
   {
     number: "01",
-    title: "Thirsty Lion",
-    description: "UX research & gamified water fountain rating system",
-    image: projectMockupThirstyLion,
-    color: "#f6ece8",
+    title: "Agents of Influence",
+    description: "Educational gameplay onboarding design",
+    image: projectMockupAoi,
+    color: "#e0e5f4",
   },
   {
     number: "02",
-    title: "Agents of Influence",
-    description: "Educational ARG gameplay onboarding design",
-    image: projectMockupAoi,
-    color: "#eceff8",
+    title: "Thirsty Lion",
+    description: "UX research &  water fountain rating system",
+    image: projectMockupSigma,
+    color: "#e3f5e8",
   },
   {
     number: "03",
-    title: "SigmaEd Mobile",
-    description: "Mobile UX redesign",
-    image: projectMockupSigma,
-    color: "#edf4ef",
-  },
-  {
-    number: "04",
-    title: "Accessibility Compliance",
-    description: "ADA redesign work at Sharp",
+    title: "Sharp Web Consolidation",
+    description: "Designing a unified website for SEO optimization",
     image: projectMockupSharp,
-    color: "#f3f0ea",
+    color: "#f8f0e1",
   },
 ];
 
@@ -84,16 +78,30 @@ export default function AboutPage2() {
   return (
     <div className="about2-page">
         <Nav />
-      <div className="about2-container">
-        <section className="about2-hero">
-          <div className="about2-hero-copy">
-            <h1>June Lee</h1>
-            <h2>UX Designer interested in EdTech, Learning Systems, and Research.</h2>
-            <p>
-              I’m a Cognitive Science student at Barnard College exploring UX design,
-              research, and learning technologies. My work sits at the intersection of
-              education, human behavior, and digital product design.
+      <section className="aboutHero">
+        <div className="aboutHero__inner">
+          <div className="aboutHero__left">
+            <img
+              className="finger__image"
+              src={allImages['finger-comp-transparent.png']}
+              alt="Hand holding a tiny laptop"
+            />
+          </div>
+
+          <div className="aboutHero__right">
+            <h1 className="aboutHero__title">About Me</h1>
+            <p className="aboutHero__text">
+              I’m a senior at Barnard College, where I study cognitive science
+              and education. I began my journey as an ADA compliance
+              specialist, which sparked my interest in inclusive design and
+              eventually led me to broader design projects.
             </p>
+            <p className="aboutHero__text">
+              Recently, I’ve been exploring the EdTech industry. When I’m not
+              designing interfaces, I enjoy playing guitar, building escape
+              rooms, and learning languages.
+            </p>
+
             <div className="about2-meta-pill">
               <span>Barnard College</span>
               <span>•</span>
@@ -102,11 +110,9 @@ export default function AboutPage2() {
               <span>GPA 4.1</span>
             </div>
           </div>
-
-          <div className="about2-hero-visual" aria-hidden="true">
-            <img src={heroHandImage} alt="Finger balancing a laptop" />
-          </div>
-        </section>
+        </div>
+      </section>
+      <div className="about2-container">
 
         <section className="about2-grid-section">
           <article className="about2-column-card">
@@ -163,8 +169,17 @@ export default function AboutPage2() {
                   className="about2-project-top"
                   style={{ backgroundColor: project.color }}
                 >
+                  {project.title.toLowerCase().includes("sharp") && (
+                    <span className="about2-project-imprint" aria-hidden="true">
+                      SHARP
+                    </span>
+                  )}
                   <span className="about2-project-number">{project.number}</span>
-                  <img src={project.image} alt={`${project.title} project mockup`} />
+                  <img
+                    className={project.title.toLowerCase().includes("sharp") ? "about2-project-image about2-project-image--sharp" : "about2-project-image"}
+                    src={project.image}
+                    alt={`${project.title} project mockup`}
+                  />
                 </div>
 
                 <div className="about2-project-body">
