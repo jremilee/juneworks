@@ -124,13 +124,22 @@ export default function ResearchProcessGrid() {
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (wrapperRef.current) {
-        wrapperRef.current.classList.add("rpg-start");
-      }
-    }, 50);
+    const node = wrapperRef.current;
+    if (!node) return;
 
-    return () => clearTimeout(timeout);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!entry.isIntersecting) return;
+
+        node.classList.add("rpg-start");
+        observer.disconnect();
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
   }, []);
 
   return (

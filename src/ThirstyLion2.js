@@ -117,10 +117,12 @@ export default function ThirstyLionProject() {
     const heroSectionRef = useRef(null);
     const videoRef = useRef(null);
     const quoteGridRef = useRef(null);
+    const journeyCardsRef = useRef(null);
     const prototypeSectionRef = useRef(null);
     const resultsRowsRef = useRef(null);
     const [heroVisible, setHeroVisible] = useState(false);
     const [quotesVisible, setQuotesVisible] = useState(false);
+  const [journeyCardsVisible, setJourneyCardsVisible] = useState(false);
   const [prototypeImageVisible, setPrototypeImageVisible] = useState(false);
     const [resultsVisible, setResultsVisible] = useState(false);
 
@@ -193,6 +195,25 @@ export default function ThirstyLionProject() {
           }
         },
         { threshold: 0.2 }
+      );
+
+      observer.observe(node);
+      return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+      const node = journeyCardsRef.current;
+      if (!node) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            setJourneyCardsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
       );
 
       observer.observe(node);
@@ -400,11 +421,11 @@ export default function ThirstyLionProject() {
             to define how the app would function in real-world scenarios.
           </p>
 
-          <div className="tl-card-grid two-up">
-            <div className="tl-image-card">
+          <div className="tl-card-grid two-up" ref={journeyCardsRef}>
+            <div className={`tl-image-card tl-journey-card--animate tl-journey-card--from-left${journeyCardsVisible ? " is-visible" : ""}`}>
               <img src={journeyOne} alt="Journey map for facilities reporting" />
             </div>
-            <div className="tl-image-card">
+            <div className={`tl-image-card tl-journey-card--animate tl-journey-card--from-right${journeyCardsVisible ? " is-visible" : ""}`}>
               <img src={journeyTwo} alt="Journey map for nearby fountain reroute" />
             </div>
           </div>

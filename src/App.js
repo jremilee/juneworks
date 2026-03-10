@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Home from './Home';    
-import About from './AboutPage2';
+import About from './About';
 import Creativeworks from './Creativeworks';
 import ThirstyLion from './ThirstyLion';
 import Sharp from './Sharp2';
