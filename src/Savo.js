@@ -3,6 +3,7 @@ import "./Savo.css";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
+import SavoTimeline from "./SavoTimeline";
 
 import heroLaptopMockup from "./images/savo-hero-laptop.svg";
 import reportSlidePreview from "./images/savo-report-slide.svg";
@@ -124,6 +125,8 @@ const SavoHealthProject = () => {
             providing the program and which features would be most valuable in an MVP. 
           </p>
 
+          <SavoTimeline />
+          
           <p>
             At the end of my internship, I synthesized my findings and submitted a deliverable with analysis of
             the interviews and product direction suggestions. As a result of my

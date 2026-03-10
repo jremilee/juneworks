@@ -3,6 +3,7 @@ import "./Alterea2.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
+
 import heroGameImage from "./images/aoi-hero-game.svg"
 import researchOriginal from "./images/aoi-research-original.svg";
 import researchUpdated from "./images/aoi-research-updated.svg";
@@ -16,6 +17,8 @@ import tutorialDialogue from "./images/aoi-dialogue.svg";
 import tutorialChoices from "./images/aoi-choices.svg";
 import tutorialEvidence from "./images/aoi-evidence.svg";
 import tutorialBoard from "./images/aoi-board.svg";
+
+
 
 
 
@@ -190,6 +193,8 @@ function AgentsOfInfluence() {
                 fully exit one profile in order to view the other profile. This caused a lot
                 of friction when comparing profiles and required excessive clicking.
               </p>
+
+
               <p>
                 <span>Suggestion:</span> Remove the original home page as the base of the
                 research game and create two tabs so that students can easily toggle between

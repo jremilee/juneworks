@@ -253,6 +253,50 @@
   margin: 0;
 }
 
+.miai-mechanics-images {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+
+.miai-mechanics-images img {
+  width: 11rem;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateX(70px);
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1), opacity 900ms ease;
+  will-change: transform, opacity;
+}
+
+.miai-mechanics-images.is-visible img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.miai-mechanics-images.is-visible img:nth-child(2) {
+  transition-delay: 0.14s;
+}
+
+.miai-mechanics-images.is-visible img:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+.miai-mechanics-images.is-visible img:nth-child(4) {
+  transition-delay: 0.42s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .miai-mechanics-images img,
+  .miai-mechanics-images.is-visible img {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .miai-copy-block {
   max-width: 1130px;
 }
@@ -714,6 +758,10 @@
     grid-template-columns: 1fr;
   }
 
+  .miai-mechanics-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .miai-annotated-image,
   .miai-two-up {
     width: 100%;
@@ -776,6 +824,11 @@
   .miai-section {
     padding: 0 22px;
     margin-bottom: 56px;
+  }
+
+  .miai-mechanics-images {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .miai-section h2 {

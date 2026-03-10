@@ -7,6 +7,10 @@ import context2DImage from "./images/miai-video.mp4";
 import styleGuideHeaderImage from "./images/style-guide-header.svg";
 import styleGuideBodyImage from "./images/style-guide-body.svg";
 import styleGuidePaletteImage from "./images/style-guide-palette.svg";
+import aiShadow1 from "./images/ai-shadow1.svg";
+import aiShadowWbubble from "./images/ai-shadow-wbubble.svg";
+import aiShadow3 from "./images/ai-shadow-3.svg";
+import humanShadow from "./images/human-shadow.svg";
 import riskOneImage from "./images/risk-to-one.png";
 import riskAllImage from "./images/risk-all.png";
 import puppeteerInterfaceStrip from "./images/puppeteer-interface-strip.svg";
@@ -57,6 +61,7 @@ export default function MiaiVideogameProject() {
   const styleHeaderRef = useRef(null);
   const stylePaletteRef = useRef(null);
   const styleBodyRef = useRef(null);
+  const mechanicsImagesRef = useRef(null);
   const centeredImageRef = useRef(null);
   const annotatedImageRef = useRef(null);
   const twoUpRef = useRef(null);
@@ -68,6 +73,7 @@ export default function MiaiVideogameProject() {
   const [styleHeaderVisible, setStyleHeaderVisible] = useState(false);
   const [stylePaletteVisible, setStylePaletteVisible] = useState(false);
   const [styleBodyVisible, setStyleBodyVisible] = useState(false);
+  const [mechanicsImagesVisible, setMechanicsImagesVisible] = useState(false);
   const [centeredImageVisible, setCenteredImageVisible] = useState(false);
   const [annotatedImageVisible, setAnnotatedImageVisible] = useState(false);
   const [twoUpVisible, setTwoUpVisible] = useState(false);
@@ -130,6 +136,25 @@ export default function MiaiVideogameProject() {
         clearTimeout(revealTimeoutRef.current);
       }
     };
+  }, []);
+
+  useEffect(() => {
+    const node = mechanicsImagesRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setMechanicsImagesVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -296,6 +321,13 @@ export default function MiaiVideogameProject() {
             uncover the actual culprit among the suspects while acting exactly like
             AI to stay undercover. Only the culprit and the human player may lie.
           </p>
+
+          <div className={`miai-mechanics-images${mechanicsImagesVisible ? " is-visible" : ""}`} ref={mechanicsImagesRef}>
+            <img src={aiShadow1} alt="AI shadow 1" />
+            <img src={aiShadow1} alt="AI shadow with bubble" />
+            <img src={aiShadow3} alt="AI shadow 3" />
+            <img src={humanShadow} alt="Human shadow" />
+          </div>
         </section>
 
         <section className="miai-section">

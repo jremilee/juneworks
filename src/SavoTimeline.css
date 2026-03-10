@@ -1,0 +1,124 @@
+.rpg-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
+  overflow: visible;
+}
+
+.rpg-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px 38px;
+}
+
+.rpg-card {
+  min-height: 124px;
+  border-radius: 23px;
+  background: rgba(94, 171, 171, 0.53);
+  border: 5px solid rgba(94, 171, 171, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 16px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  transform: scale(0.92) translateY(8px);
+}
+
+.rpg-start .rpg-card {
+  animation: rpgCardIn 0.42s ease-out forwards;
+  animation-delay: var(--card-delay);
+}
+
+.rpg-card p {
+  margin: 0;
+  color: #111;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.rpg-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.rpg-line {
+  stroke: #7cbdbd;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-dasharray: var(--line-length);
+  stroke-dashoffset: var(--line-length);
+  opacity: 0;
+}
+
+.rpg-start .rpg-line {
+  animation: rpgLineGrow 0.24s ease-out forwards;
+  animation-delay: var(--line-delay);
+}
+
+@keyframes rpgLineGrow {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: var(--line-length);
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rpgCardIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .rpg-grid {
+    gap: 18px 22px;
+  }
+
+  .rpg-card {
+    min-height: 110px;
+    padding: 16px 14px;
+  }
+
+  .rpg-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .rpg-wrapper {
+    padding: 16px;
+  }
+
+  .rpg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rpg-lines {
+    display: none;
+  }
+
+  .rpg-card {
+    min-height: auto;
+  }
+}
