@@ -29,6 +29,7 @@ import finalMockup8 from "./images/final-mockup-8.svg";
 import finalMockup9 from "./images/final-mockup-9.svg";
 
 import contactLaptopHand from "./images/footer-finger-darkmode.svg";
+import Nav from "./Nav";
 
 
 
@@ -235,12 +236,9 @@ export default function MiaiVideogameProject() {
 
   return (
     <div className="miai2-page">
+      
       <header className="miai-hero">
-        <nav className="miai-nav">
-          <a href="/">Home</a> 
-          <a href="#about">About</a>
-        </nav>
-
+      <Nav />
         <div className="miai-hero-image-wrap">
           <img
             src={heroBanner}

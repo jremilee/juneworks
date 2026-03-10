@@ -1,9 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function Nav() {
+  const { pathname } = useLocation();
+  const isMiaiPage = pathname === "/miai";
+
   return (
-    <header className="nav">
+    <header
+      className={`nav${isMiaiPage ? " nav--miai" : ""}`}
+      style={{ position: "sticky", top: 0, zIndex: 50 }}
+    >
       <div className="nav__inner">
         <nav className="nav__links" aria-label="Primary">
           <NavLink

@@ -69,6 +69,11 @@ body {
   color: rgba(0,0,0,0.85);
 }
 
+.nav--miai .nav__link,
+.nav--miai .nav__link--active {
+  color: #000;
+}
+
 .nav__divider{
   height: 1px;
   background: var(--line);
