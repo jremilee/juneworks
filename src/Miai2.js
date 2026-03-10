@@ -57,6 +57,10 @@ export default function MiaiVideogameProject() {
   const styleHeaderRef = useRef(null);
   const stylePaletteRef = useRef(null);
   const styleBodyRef = useRef(null);
+  const centeredImageRef = useRef(null);
+  const annotatedImageRef = useRef(null);
+  const twoUpRef = useRef(null);
+  const galleryRef = useRef(null);
   const revealQueueRef = useRef([]);
   const queuedKeysRef = useRef(new Set());
   const isProcessingQueueRef = useRef(false);
@@ -64,6 +68,10 @@ export default function MiaiVideogameProject() {
   const [styleHeaderVisible, setStyleHeaderVisible] = useState(false);
   const [stylePaletteVisible, setStylePaletteVisible] = useState(false);
   const [styleBodyVisible, setStyleBodyVisible] = useState(false);
+  const [centeredImageVisible, setCenteredImageVisible] = useState(false);
+  const [annotatedImageVisible, setAnnotatedImageVisible] = useState(false);
+  const [twoUpVisible, setTwoUpVisible] = useState(false);
+  const [galleryVisible, setGalleryVisible] = useState(false);
 
   useEffect(() => {
     const observers = [];
@@ -122,6 +130,82 @@ export default function MiaiVideogameProject() {
         clearTimeout(revealTimeoutRef.current);
       }
     };
+  }, []);
+
+  useEffect(() => {
+    const node = centeredImageRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setCenteredImageVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const node = annotatedImageRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setAnnotatedImageVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const node = twoUpRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setTwoUpVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const node = galleryRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setGalleryVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -328,7 +412,10 @@ export default function MiaiVideogameProject() {
             </p>
           </div>
 
-          <div className="miai-centered-image miai-centered-image--medium">
+          <div
+            className={`miai-centered-image miai-centered-image--medium miai-centered-image--float-up${centeredImageVisible ? " is-visible" : ""}`}
+            ref={centeredImageRef}
+          >
             <img src={trifoldDesignImage} alt="Trifold design mockup" />
           </div>
         </section>
@@ -354,7 +441,7 @@ export default function MiaiVideogameProject() {
             </p>
           </div>
 
-          <div className="miai-annotated-image">
+          <div className={`miai-annotated-image miai-annotated-image--float-up${annotatedImageVisible ? " is-visible" : ""}`} ref={annotatedImageRef}>
             <h3>
                 Annotated interface 
             </h3>
@@ -367,7 +454,7 @@ export default function MiaiVideogameProject() {
             />
           </div>
 
-          <div className="miai-two-up">
+          <div className={`miai-two-up${twoUpVisible ? " is-visible" : ""}`} ref={twoUpRef}>
             <div className="miai-two-up-card">
               <h3>Ask one AIC</h3>
               <p>Players can choose one AIC to ask a question. The AIC being prompted is on the largest center screen for visual hierarchy</p>
@@ -399,7 +486,7 @@ export default function MiaiVideogameProject() {
             </p>
           </div>
 
-          <div className="miai-two-image-gallery">
+          <div className={`miai-two-image-gallery${galleryVisible ? " is-visible" : ""}`} ref={galleryRef}>
             <div className="miai-gallery-image-card">
               <img
                 src={characterSelectionSummaryImage}

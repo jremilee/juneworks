@@ -288,10 +288,15 @@ function AgentsOfInfluence() {
       <section className="aoi-guide">
         <div className="section-label">GAME PLAY GUIDE & TUTORIALS</div>
 
-        <p>
+        <h2>
           To prepare for classroom beta testing, I developed comprehensive
           onboarding materials to ensure seamless integration of Agents of
           Influence into teaching environments.
+        </h2>
+
+        <p>
+          This included a teacher onboarding guide explaining how to use the dashboard to track student progress and learning outcomes, as well as a gameplay guide that allowed teachers to quickly understand game mechanics without having to play through the entire experience. The guide also provided clear, step-by-step instructions for students to minimize confusion during classroom use. 
+          Below are sample pages featuring my annotated screenshots and written explanations.
         </p>
 
         <div className="aoi-guide-grid">

@@ -614,17 +614,23 @@ html {
   background: #ffffff;
   border-radius: 28px;
   padding: 28px;
+  width: 80%;
+    display: block;
+  margin: 0 auto;
 }
+
 .tl-process-card--wireframing {
   display: flex;
   align-items: center;
-  gap: 10rem;
+  justify-content: space-between;
+  gap: 2rem;
   min-width: 0;
 }
 .tl-process-card--wireframing h3 {
-  gap: 3rem;
   margin: 0;
-  margin-left: 5rem;
+  margin-left: 0;
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .tl-process-card h3 {
@@ -638,8 +644,17 @@ html {
 
 .tl-process-card img.wireframing {
   width: 50%;
+  flex: 0 1 50%;
   height: auto;
   max-width: 100%;
+  object-fit: contain;
+}
+
+/*tried to decrease size of the font in the white space*/
+.tl-process-card .tl-design-note{
+  font-size: 14px;
+  color: #2d2d2d;
+  margin-top: 12px;
 }
 
 /* TECH */

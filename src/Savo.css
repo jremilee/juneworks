@@ -21,9 +21,14 @@ a {
 
 /* TOP BAR */
 .savo-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
   width: 100%;
-  border-bottom: 1px solid #cfcfcf;
-  background: #f3f3f3;
+  border-bottom: 1px solid rgba(207, 207, 207, 0.85);
+  background: transparent;
 }
 
 .savo-nav {
@@ -46,25 +51,32 @@ a {
 
 /* HERO */
 .savo-hero {
+  position: relative;
   max-width: 1440px;
   margin: 0 auto;
   min-height: 430px;
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
+  grid-template-columns: minmax(520px, 1.55fr) minmax(0, 0.85fr);
   align-items: center;
-  padding: 18px 70px 0;
+  padding: 106px 70px 0;
   gap: 40px;
-  background: linear-gradient(to right, #f5f5f5 58%, #dcebec 100%);
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.savo-hero > * {
+  min-width: 0;
 }
 
 .savo-hero-text {
-  max-width: 440px;
+  max-width: 760px;
+  width: 100%;
   padding-left: 4px;
 }
 
 .savo-hero-text h1 {
   margin: 0 0 8px;
-  font-size: 54px;
+  font-size: 45px;
   line-height: 1.05;
   font-weight: 700;
   color: #74b5b6;
@@ -72,20 +84,23 @@ a {
 
 .savo-hero-text p {
   margin: 0;
-  font-size: 31px;
+  font-size: 20px;
   line-height: 1.2;
   color: #1f1f1f;
 }
 
 .savo-hero-image-wrap {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  margin-top: -92px;
+  transform: translateX(13rem);
 }
 
 .savo-hero-image {
-  width: 100%;
-  max-width: 760px;
+  width: 50rem;
+  
   height: auto;
   display: block;
 }
@@ -100,18 +115,23 @@ a {
   padding: 44px 76px 46px;
 }
 
+.savo-hero,
+.savo-info-band {
+  transform: translateY(-2rem);
+}
+
 .savo-info-item h3 {
   margin: 0 0 8px;
-  font-size: 30px;
-  line-height: 1.1;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .savo-info-item p {
   margin: 0;
-  font-size: 19px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.45;
   color: #f2f2f2;
 }
 
@@ -125,7 +145,7 @@ a {
 
 .savo-context-section,
 .savo-research-section {
-  max-width: 1240px;
+  max-width: 900px;
   margin: 0 auto 36px;
 }
 
@@ -133,23 +153,25 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 28px;
-  padding: 5px 14px;
-  border: 1px solid #d0c8f2;
-  border-radius: 999px;
+  min-height: 34px;
+  padding: 6px 14px;
+  margin-bottom: 1rem;
+  border: 1px solid #7d72d8;
+  border-radius: 10px;
   color: #7d72d8;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.04em;
-  background: #faf8ff;
-  margin-bottom: 14px;
+  background: transparent;
 }
+
 
 .savo-context-section h2 {
   margin: 0 0 8px;
-  font-size: 35px;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 26px;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .savo-note {
@@ -161,26 +183,25 @@ a {
 
 .savo-research-section h3 {
   margin: 0 0 18px;
-  font-size: 34px;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 26px;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .savo-research-section p {
   max-width: 1080px;
   margin: 0 0 16px;
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.6;
   color: #222222;
 }
 
 /* CAROUSEL */
 .savo-carousel-wrap {
   margin-top: 34px;
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr) 56px;
-  align-items: center;
-  gap: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .savo-carousel {
@@ -189,15 +210,31 @@ a {
   align-items: center;
 }
 
+.savo-carousel-image-frame {
+  width: min(100%, 980px);
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.savo-carousel-controls {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
 .savo-carousel-image {
   width: 100%;
-  max-width: 980px;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
 .savo-carousel-counter {
-  margin-top: 14px;
   background: #d7d7d7;
   color: #333333;
   border-radius: 999px;
@@ -207,13 +244,13 @@ a {
 }
 
 .savo-carousel-btn {
-  width: 42px;
-  height: 42px;
-  border: 1px solid #d4dddd;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d5d5d5;
   border-radius: 50%;
-  background: #f7f9f8;
-  color: #8ab0af;
-  font-size: 30px;
+  background: #f6f6f4;
+  color: #555555;
+  font-size: 24px;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -301,10 +338,24 @@ a {
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
+  .savo-topbar {
+    position: relative;
+  }
+
   .savo-hero {
     grid-template-columns: 1fr;
     text-align: center;
     padding: 32px 32px 24px;
+  }
+
+  .savo-hero-image-wrap {
+    justify-content: center;
+    margin-top: 0;
+    transform: translateX(3rem);
+  }
+
+  .savo-hero-image {
+    width: min(50rem, calc(100vw - 6rem));
   }
 
   .savo-hero-text {
@@ -315,7 +366,11 @@ a {
   .savo-info-band {
     grid-template-columns: 1fr 1fr;
   }
-
+  
+  .savo-carousel-image-frame {
+    height: 460px;
+  }
+  
   .savo-footer {
     flex-direction: column;
     text-align: center;
@@ -356,7 +411,11 @@ a {
   }
 
   .savo-carousel-wrap {
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    width: 100%;
+  }
+
+  .savo-carousel-image-frame {
+    height: 320px;
   }
 
   .savo-footer {

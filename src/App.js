@@ -10,7 +10,7 @@ import ThirstyLion from './ThirstyLion';
 import Sharp from './Sharp2';
 import Miai from './Miai2';
 import Alterea from './Alterea2';
-import Techspace from './Techspace';
+import Techspace from './Savo';
 import ThirstyLion2 from './ThirstyLion2';
 
 function AppRoutes() {
