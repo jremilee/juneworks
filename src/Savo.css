@@ -212,7 +212,7 @@ a {
 
 .savo-carousel-image-frame {
   width: min(100%, 980px);
-  height: 540px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;

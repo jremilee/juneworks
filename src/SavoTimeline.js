@@ -6,7 +6,7 @@ const cards = [
   { id: "c2", text: "Referenced previous stakeholder calls to develop a script for discovery calls" },
   { id: "c3", text: "Compiled DPP provider contacts" },
 
-  { id: "c4", text: "Conducted interviews and using Otter.ai to record the conversation" },
+  { id: "c4", text: "Conducted interviews and used Otter.ai to record the conversation" },
   { id: "c5", text: "Scheduled interview times" },
   { id: "c6", text: "Cold-called DPP providers and asked to interview program organizers and life style coaches" },
 
@@ -57,6 +57,7 @@ export default function ResearchProcessGrid() {
       });
 
       const nextLines = [];
+      const connectorOffset = 6;
 
       for (let i = 1; i < revealOrder.length; i++) {
         const prevIndex = revealOrder[i - 1];
@@ -73,18 +74,18 @@ export default function ResearchProcessGrid() {
         if (Math.abs(from.y - to.y) < 10) {
           const leftToRight = from.x < to.x;
 
-          x1 = leftToRight ? from.right : from.left;
+          x1 = leftToRight ? from.right + connectorOffset : from.left - connectorOffset;
           y1 = from.y;
-          x2 = leftToRight ? to.left : to.right;
+          x2 = leftToRight ? to.left - connectorOffset : to.right + connectorOffset;
           y2 = to.y;
         } else {
           // Different row: connect vertically from bottom/top center
           const topToBottom = from.y < to.y;
 
           x1 = from.x;
-          y1 = topToBottom ? from.bottom : from.top;
+          y1 = topToBottom ? from.bottom + connectorOffset : from.top - connectorOffset;
           x2 = to.x;
-          y2 = topToBottom ? to.top : to.bottom;
+          y2 = topToBottom ? to.top - connectorOffset : to.bottom + connectorOffset;
         }
 
         nextLines.push({
