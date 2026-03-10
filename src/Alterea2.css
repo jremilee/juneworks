@@ -34,6 +34,7 @@
 .aoi-hero-text {
   position: relative;
   z-index: 2;
+
 }
 
 .aoi-hero-image {
@@ -47,6 +48,15 @@
   height: auto;
   object-fit: contain;
   margin-left: auto;
+}
+
+/*to make it seem less wide in the hero*/
+@media (min-width: 900px) {
+  .aoi-hero-text {
+    position: relative;
+    z-index: 2;
+    transform: translateX(1.7rem);
+  }
 }
 
 /* INFO BAND */
@@ -108,9 +118,10 @@
 /* CONTEXT */
 
 .aoi-context {
-  max-width: 980px;
+  max-width: 1050px;
   margin: 0 auto;
-  padding: 10px 0px 72px;
+  padding: 0px 0px 30px;
+  transform: translateY(-2rem);
 }
 /*come back*/
 
@@ -150,12 +161,9 @@
 }
 
 .aoi-beta-shell {
-  max-width: 980px;
+  max-width: 1050px;
   margin: 0 auto;
 }
-
-
-
 
 
 .aoi-beta-subintro {
@@ -229,7 +237,7 @@
 .aoi-beta-side-block p {
   margin: 0 0 10px;
   color: #202020;
-  font-size: 0.76rem;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -424,6 +432,97 @@
 }
 
 /* FOOTER - removed code and moved to onenote*/
+
+/*added the purple rectangle drawing animation*/
+.aoi-outline-wrap {
+  position: relative;
+  width: min(820px, 100%);
+  aspect-ratio: 820 / 360;
+  margin: 0 auto;
+}
+
+.aoi-outline-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.aoi-outline-path {
+  fill: none;
+  stroke: #d8c9f4; /* light purple border */
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  /* draw animation */
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.aoi-outline-dot {
+  fill: #9b74e8;
+  opacity: 0;
+}
+
+.aoi-outline-wrap.is-visible .aoi-outline-path {
+  animation: drawOutline 2.4s ease forwards;
+}
+
+.aoi-outline-wrap.is-visible .aoi-outline-dot {
+  opacity: 1;
+}
+
+.aoi-outline-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.aoi-outline-content h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 700;
+  color: #111;
+}
+
+.aoi-game-btn {
+  border: none;
+  border-radius: 14px;
+  background: #9b74e8;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+}
+
+@keyframes drawOutline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aoi-outline-path,
+  .aoi-outline-wrap.is-visible .aoi-outline-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .aoi-outline-dot,
+  .aoi-outline-wrap.is-visible .aoi-outline-dot {
+    animation: none;
+    opacity: 1;
+  }
+}
 
 /*A180E2*/
 .aoi-playGameBtn {

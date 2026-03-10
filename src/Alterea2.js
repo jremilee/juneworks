@@ -77,6 +77,27 @@ function AgentsOfInfluence() {
     };
   }, []);
 
+  useEffect(() => {
+    const outlineWrap = document.querySelector(".aoi-outline-wrap");
+    if (!outlineWrap) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!entry.isIntersecting) return;
+        outlineWrap.classList.add("is-visible");
+        observer.disconnect();
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(outlineWrap);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="aoi-page">
         <Nav />
@@ -333,11 +354,34 @@ function AgentsOfInfluence() {
       </section>
 
         {/* PLAY GAME LINK */}
-        <div className="altereaFooter">
-          <h2>
-            Check out Agents of Influence!
-          </h2>
-          <div>
+        <div className="aoi-outline-wrap">
+          <svg
+            className="aoi-outline-svg"
+            viewBox="0 0 820 360"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            {/* animated outline */}
+            <path
+              className="aoi-outline-path"
+              pathLength="1"
+              d="
+                M 410 320
+                L 24 320
+                L 24 24
+                L 796 24
+                L 796 320
+                L 410 320
+              "
+            />
+
+            {/* bottom dot */}
+            <circle className="aoi-outline-dot" cx="410" cy="320" r="7" />
+          </svg>
+
+          <div className="aoi-outline-content">
+            <h2>Check out Agents of Influence!</h2>
+            
             <a
               className="aoi-playGameBtn"
               href="https://www.agentsofinfluencegame.com/"
@@ -349,6 +393,7 @@ function AgentsOfInfluence() {
             </a>
           </div>
         </div>
+        
         
 
       {/* FOOTER */}

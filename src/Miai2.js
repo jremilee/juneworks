@@ -308,7 +308,7 @@ export default function MiaiVideogameProject() {
               <div className="miai-context-card miai-context-card--question">
                 <img src={contextTransitionImage} alt="Transition concept frame" />
               </div>
-              <p className="miai-context-video-caption">Transition concept frame</p>
+              <p className="miai-context-video-caption"></p>
             </div>
           </div>
         </section>

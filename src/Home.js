@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
+import savoThumbnail from "./images/savo-thumbnail.svg";
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -51,6 +52,22 @@ export default function Home() {
         <div className="projectsCols">
           <div className="projectsCol projectsCol--left">
             {/* Project 1 */}
+                        <Link
+              id="thirstylion"
+              to="/thirstylion2"
+              className="proj-left"
+              aria-label="Thirsty Lion project"
+            >
+              <div className="proj__thumb">
+                <img src={allImages['thirstylion-2.png']} alt="Thirsty Lion" />
+              </div>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">ThirstyLion</div>
+              </div>
+            </Link>
+            
+
+            {/* Project 3 */}
             <Link
               id="sharp"
               to = "/sharp"
@@ -63,21 +80,6 @@ export default function Home() {
 
               <div className="proj__overlay">
                 <div className="proj__overlayInner">Sharp Electronics</div>
-              </div>
-            </Link>
-
-            {/* Project 3 */}
-            <Link
-              id="thirstylion"
-              to="/thirstylion2"
-              className="proj-left"
-              aria-label="Thirsty Lion project"
-            >
-              <div className="proj__thumb">
-                <img src={allImages['thirstylion-2.png']} alt="Thirsty Lion" />
-              </div>
-              <div className="proj__overlay">
-                <div className="proj__overlayInner">ThirstyLion</div>
               </div>
             </Link>
           </div>
@@ -94,7 +96,7 @@ export default function Home() {
                 <img src={allImages['miai-laptop.png']} alt="M.I.A.I. Game" />
               </div>
               <div className="proj__overlay">
-                <div className="proj__overlayInner">M.I.A.I</div>
+                <div className="proj__overlayInner">M.I.A.I Video game</div>
               </div>
             </Link>
 
@@ -121,11 +123,11 @@ export default function Home() {
               aria-label="Space Threads App project"
             >
               <div className="proj__thumb">
-                <img src={allImages['techspace.png']} alt="Space Threads App project" />
+                <img src={savoThumbnail} alt="Space Threads App project" />
               </div>
 
               <div className="proj__overlay">
-                <div className="proj__overlayInner">TechSpace</div>
+                <div className="proj__overlayInner">Savo Health</div>
               </div>
             </Link>
           </div>
