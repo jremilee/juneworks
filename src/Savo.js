@@ -42,12 +42,9 @@ const SavoHealthProject = () => {
 
   return (
     <div className="savo-page">
-      <header className="savo-topbar">
-        <nav className="savo-nav">
-          <a href="/" className="savo-nav-link">Home</a>
-          <a href="/about" className="savo-nav-link">About</a>
-        </nav>
-      </header>
+
+      <Nav />
+     
 
       <section className="savo-hero">
         <div className="savo-hero-text">
