@@ -112,6 +112,11 @@ body {
 
 /* Hero */
 
+/* Hero container - maintains stable height to prevent page shift */
+.hero-container {
+  width: 100%;
+  position: relative;
+}
 
 .hero__title{
   font-size: calc(36px * var(--ui-scale));
@@ -516,16 +521,30 @@ body {
 
 /* Mobile hero: stack text above the hand image and center the hand */
 @media (max-width: 620px) {
+  /* Hero container takes up 80% of viewport height, leaving space for projects */
+  .hero-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+  }
+
   .hero {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    padding-top: 24px;
+    gap: 5rem;
+    padding-top: 0rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .hero__left {
     order: 1;
     width: 100%;
+    z-index: 2;
+    margin-top: 5rem;
   }
 
   .hero__bg {
@@ -533,15 +552,18 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     pointer-events: none;
     transform: none;
-    margin-top: 0; /* removed extra gap on mobile */
+    margin-top: auto;
+    flex-grow: 1;
+    padding-bottom: 20px;
   }
 
   .hero__bg img {
-    max-width: 260px;
+    max-width: 380px;
     height: auto;
-    transform: translateX(50px);
+    transform: translateX(50px) scale(1.15);
   }
 
   .hero__title {

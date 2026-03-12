@@ -117,8 +117,13 @@ export default function AboutPage2() {
         <div className="aboutHero__inner">
           <div className="aboutHero__left">
             <img
-              className="finger__image"
+              className="finger__image finger__image--desktop"
               src={allImages['finger-comp-transparent.png']}
+              alt="Hand holding a tiny laptop"
+            />
+            <img
+              className="finger__image finger__image--mobile"
+              src={allImages['finger-comp-transparent-mobile.png']}
               alt="Hand holding a tiny laptop"
             />
           </div>

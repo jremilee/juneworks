@@ -27,8 +27,10 @@ export default function Home() {
       <Nav />
 
       <main className="content" id="home">
-        {/* Hero */}
-        <section className="hero">
+        {/* Hero Container - maintains stable height */}
+        <div className="hero-container">
+          {/* Hero */}
+          <section className="hero">
 
           <div className="hero__left">
             <h1 className="hero__title">
@@ -46,7 +48,8 @@ export default function Home() {
             <img src={allImages['hand-2.png']} alt="Image of hand holding minature objects" />
           </div>
 
-        </section>
+          </section>
+        </div>
 
         {/* Projects */}
         <div className="projectsCols">

@@ -198,7 +198,7 @@ export default function SharpWebConsolidation() {
           <SectionLabel>THE CHALLENGE</SectionLabel>
 
           <h2 className="sharp-section-title">
-            How can I consolidate all the content from the SBS page into one cohesive page on the Sharp business site?
+            How can I consolidate all the content from the SBS pages into one cohesive page on the Sharp business site?
           </h2>
 
           <p className="sharp-body-text">

@@ -24,9 +24,16 @@
 .finger__image {
   width: 100%;
   height: auto;
-  display: block;
   filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.12));
   transform: translateX(70px);
+}
+
+.finger__image--desktop {
+  display: block !important;
+}
+
+.finger__image--mobile {
+  display: none !important;
 }
 
 .aboutHero__title {
@@ -461,6 +468,24 @@
   .aboutHero__left {
     max-width: 320px;
     margin: 0 auto;
+  }
+
+  .aboutHero__right {
+    margin-top: 1rem;
+  }
+
+  .aboutHero__title {
+    text-align: left;
+  }
+
+  .finger__image--desktop {
+    display: none !important;
+  }
+
+  .finger__image--mobile {
+    display: block !important;
+    width: calc(100% - 4rem);
+    padding: 1rem 0rem 1rem;
   }
 
   .finger__image {
