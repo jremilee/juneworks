@@ -247,7 +247,7 @@ export default function SharpWebConsolidation() {
                 <div className="process-filter-card">
                     <p>
                     Is it <span className="highlight">still relevant</span> (e.g. outdated,
-                    no longer important)?
+                    no longer pertinent to include)?
                     </p>
                 </div>
 
@@ -300,7 +300,7 @@ export default function SharpWebConsolidation() {
 
               <p className="sharp-body-text">
                 I presented the page to the marketing team. They noted that several links directed users to
-                low-traffic pages slated for removal and that the number of linked location pages was overwhelming.
+                low-traffic pages slated for removal and that the location section had overlinking (more location links once you clicked on a location).
               </p>
 
               <p className="sharp-body-text">
