@@ -833,6 +833,20 @@ html {
 }
 
 @media (max-width: 760px) {
+  .tl-section h2 {
+    font-size: 26px;
+  }
+
+  .tl-section h3 {
+    font-size: 18px;
+  }
+
+  .tl-section p,
+  .tl-section li,
+  .tl-body-large {
+    font-size: 16px;
+  }
+
   .solution-layout {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -880,11 +894,11 @@ html {
   }
 
   .tl-section h1 {
-    font-size: 38px;
+    font-size: 35px;
   }
 
   .tl-section h2 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .tl-body-large {
@@ -926,7 +940,7 @@ html {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
-    font-size: clamp(30px, 9vw, 38px);
+    font-size: 35px;
     overflow-wrap: anywhere;
   }
 

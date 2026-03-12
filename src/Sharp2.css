@@ -491,8 +491,15 @@ a {
     padding-top: 44px;
   }
 
+  .sharp-hero-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
   .sharp-hero-text h1 {
     font-size: 42px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .sharp-info-grid {
@@ -525,6 +532,10 @@ a {
     max-width: 100%;
   }
 
+  .sharp-hero-text {
+    margin-left: 0;
+  }
+
   .sharp-nav {
     gap: 24px;
     padding: 14px 0;
@@ -534,8 +545,12 @@ a {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
-    font-size: 34px;
+    font-size: 35px;
     overflow-wrap: break-word;
+  }
+
+  .sharp-hero-image img {
+    transform: translateY(-2rem);
   }
 
   .sharp-info-grid {
@@ -551,11 +566,15 @@ a {
   }
 
   .sharp-section-title {
-    font-size: 28px !important;
+    font-size: 26px !important;
   }
 
   .sharp-body-text {
     font-size: 16px;
+  }
+
+  .sharp-process-title {
+    font-size: 18px;
   }
 
   .process-image-panel {

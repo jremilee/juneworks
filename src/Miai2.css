@@ -771,17 +771,25 @@
 
   .miai-footer {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "right"
+      "left";
     text-align: center;
     padding-top: 36px;
+    gap: 2rem;
   }
 
   .miai-footer-left {
+    grid-area: left;
     justify-content: center;
     transform: none;
+    align-self: end;
+    margin-top: auto;
   }
 
   .miai-footer-right {
-    transform: none;
+    grid-area: right;
+    transform: translateY(3rem);
   }
 
   .miai-socials {
@@ -821,8 +829,14 @@
   }
 
   .miai-mechanics-images {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
+  }
+
+  .miai-mechanics-images img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .miai-section h2 {
@@ -838,7 +852,7 @@
 
   .miai-footer {
     min-height: 380px;
-    padding: 28px 20px 34px;
+    padding: 28px 20px 0;
   }
 
   .miai-footer-right h2 {
@@ -855,5 +869,11 @@
     left: 18px;
     bottom: 14px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+    .miai-footer-right h2 {
+    font-size: 22px;
   }
 }

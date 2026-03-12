@@ -107,11 +107,16 @@
 
   .tl-footer-copy {
     grid-area: copy;
+    left: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .tl-footer-image {
     grid-area: image;
+    left: 0;
     justify-content: center;
     align-self: end;
     margin-top: auto;
@@ -190,3 +195,14 @@
   }
 }
 
+@media (max-width: 450px) {
+  .tl-footer-copy h2 {
+    font-size: calc(22px);
+    max-width: 100%;
+  }
+
+  .tl-footer-cta .aboutIconBtn {
+    width: calc(52px);
+    height: calc(52px);
+  }
+}
