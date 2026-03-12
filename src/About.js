@@ -194,7 +194,7 @@ export default function About() {
               <div className="aboutInfoRow__line">Phi Beta Kappa</div>
               <a
                 className="aboutInfoRow__link"
-                href="/pdf/transcript-1-12-26.pdf"
+                href={`${process.env.PUBLIC_URL}/pdf/transcript-1-12-26.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 download
@@ -219,7 +219,7 @@ export default function About() {
               </div>
               <a
                 className="aboutInfoRow__link"
-                href="/pdf/resume-1-12-26.pdf"
+                href={`${process.env.PUBLIC_URL}/pdf/resume-1-12-26.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 download

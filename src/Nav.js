@@ -4,10 +4,11 @@ import { NavLink, useLocation } from "react-router-dom";
 export default function Nav() {
   const { pathname } = useLocation();
   const isMiaiPage = pathname === "/miai";
+  const isCreativePage = pathname === "/creativeworks";
 
   return (
     <header
-      className={`nav${isMiaiPage ? " nav--miai" : ""}`}
+      className={`nav${isMiaiPage ? " nav--miai" : ""}${isCreativePage ? " nav--creative" : ""}`}
       style={{ position: "sticky", top: 0, zIndex: 50 }}
     >
       <div className="nav__inner">

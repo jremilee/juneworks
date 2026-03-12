@@ -237,14 +237,14 @@ function AgentsOfInfluence() {
                   <h4>Player confusion</h4>
                   <p>
                     User testing revealed that players were often confused about the
-                    mechanics of the game. I identified specific points where players
-                    struggled and proposed ways to clarify them while the tutorial. I also
-                    noted that certain rules—such as tiles introduced later in the game—were
-                    not accompanied by clear instructions.
+                    mechanics of the game. Players showed confusion about the different 
+                    types of tiles and dragging the tiles onto the board. I also
+                    noted that certain tiles introduced later in the game were
+                    never accompanied by clear instructions.
                   </p>
                   <p>
-                    <span>Suggestion:</span> Introduce the first round, the tutorial could
-                    introduce new tiles or game elements as they appear rather than
+                    <span>Suggestion:</span> The first round of the game could serve as a tutorial 
+                    that introduces new tiles or game elements as they appear rather than
                     presenting all instructions upfront. This would give students the
                     relevant information in context. I also suggested adding a darker overlay
                     to the T and F tiles to make it clearer that they are placeholders rather
@@ -258,7 +258,7 @@ function AgentsOfInfluence() {
                     I reviewed the game to identify assets and text that may not meet WCAG
                     accessibility standards. For example, the highlighted text in this
                     section failed the required color contrast ratio, making it difficult to
-                    read for some users.
+                    read for players.
                   </p>
                 </div>
               </div>
@@ -279,13 +279,15 @@ function AgentsOfInfluence() {
                 <div className="aoi-beta-side-block">
                   <h4>Player confusion</h4>
                   <p>
-                    Having the arrow present when you are guessing may confuse the player in
-                    thinking that there is more dialogue they should read before making a
-                    decision.
+                    Players alternate between reading dialogue and asking questions. 
+                    During the section with questions, the dialogue arrow remains on the screen.
+                    This can confuse players into thinking that there is more dialogue to read 
+                    before answering the question.
                   </p>
                   <p>
-                    <span>Suggestion:</span> Remove the arrow for times that they are
-                    supposed to be making a decision.
+                    <span>Suggestion:</span> Hide the arrow for when Players are
+                    answering questions and make the arrow visible again only once 
+                    they are able to move onto the next section. 
                   </p>
                 </div>
 
@@ -298,7 +300,7 @@ function AgentsOfInfluence() {
                   <p>
                     For example, the text "0/1" remained visible on the page after its
                     initial appearance when it should have been hidden, and in some cases
-                    images overlayed due to layer issues.
+                    images that were supposed to be hidden were visible due to layer issues.
                   </p>
                 </div>
               </div>

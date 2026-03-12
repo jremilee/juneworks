@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./AboutPage2.css";
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 import { allImages } from "./utils/imageLoader";
 
 // Placeholder image imports (using existing local assets to avoid missing-file build errors)
@@ -8,7 +9,8 @@ import heroHandImage from "./images/hand-transparent.png";
 import projectMockupThirstyLion from "./images/thirstylion-phone.png";
 import projectMockupAoi from "./images/aoi-hero-game.svg";
 import projectMockupSigma from "./images/solution-phone-clear.png";
-import projectMockupSharp from "./images/sharp-hero-desktop-mockup.png";
+import projectMockupSharp from "./images/sharp-hero-desktop-mockup.png"; 
+import palmUp from "./images/palm-up.png";
 
 const experienceItems = [
   {
@@ -38,12 +40,14 @@ const experienceItems = [
   },
 ];
 
+/*extracurriculars*/
 const researchItems = [
-  "Bilingualism & Mental Imagery (Research)",
-  "Perception and memory of stimuli in VR (Research)",
-  "Poster Presentation — Columbia Linguistics Symposium",
-  "Published Essay — National PTA Reflections",
-  "Podcast Host — Brain Banter Neuroscience Podcast",
+  <li key="research-4"> <strong>Brain Banter Podcaster</strong> — Columbia's Neuroscience Podcast</li>,
+  <li key="research-5"> <strong>CU CogSci</strong> — Columbia University Cognitive Science Club — VP of Partnerships </li>,
+  <li key="research-1"> <strong>Research Areas</strong> — Source Monitoring for Text and Audio; Bilingualism & Mental Imagery; Perception and memory of stimuli in VR </li>,
+  <li key="research-6"> <strong>Published Works</strong> — Tart (poem), Illusion of Inadequacy (essay), Dirty Rain (poem), All 10 (short story) </li>
+  
+
 ];
 
 const projectCards = [
@@ -53,13 +57,15 @@ const projectCards = [
     description: "Educational gameplay onboarding design",
     image: projectMockupAoi,
     color: "#e0e5f4",
+    path: "/alterea",
   },
   {
     number: "02",
     title: "Thirsty Lion",
     description: "UX research &  water fountain rating system",
     image: projectMockupSigma,
-    color: "#e3f5e8",
+    color: "#e3f5f4",
+    path: "/thirstylion2",
   },
   {
     number: "03",
@@ -67,6 +73,7 @@ const projectCards = [
     description: "Designing a unified website for SEO optimization",
     image: projectMockupSharp,
     color: "#f8f0e1",
+    path: "/sharp",
   },
 ];
 
@@ -75,6 +82,34 @@ function ContactIcon({ label }) {
 }
 
 export default function AboutPage2() {
+  const projectGalleryRef = useRef(null);
+
+  useEffect(() => {
+    const gallery = projectGalleryRef.current;
+    if (!gallery) return;
+
+    const cards = Array.from(gallery.querySelectorAll(".about2-project-card"));
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!entry.isIntersecting) return;
+
+        cards.forEach((card, index) => {
+          card.style.setProperty("--project-card-delay", `${index * 120}ms`);
+          card.classList.add("about2-project-card--visible");
+        });
+
+        observer.disconnect();
+      },
+      { threshold: 0.22, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(gallery);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="about2-page">
         <Nav />
@@ -94,18 +129,19 @@ export default function AboutPage2() {
               I’m a senior at Barnard College, where I study cognitive science
               and education. I began my journey as an ADA compliance
               specialist, which sparked my interest in inclusive design and
-              eventually led me to broader design projects.
+              eventually led me to broader design projects. 
             </p>
             <p className="aboutHero__text">
-              Recently, I’ve been exploring the EdTech industry. When I’m not
-              designing interfaces, I enjoy playing guitar, building escape
+              I am especially passionate about 
+              leveraging design to solve issues in education and healthcare.
+              When I’m not designing interfaces, I enjoy playing guitar, building escape
               rooms, and learning languages.
             </p>
 
             <div className="about2-meta-pill">
               <span>Barnard College</span>
               <span>•</span>
-              <span>Cognitive Science</span>
+              <span>Cognitive Science & Education</span>
               <span>•</span>
               <span>GPA 4.1</span>
             </div>
@@ -116,7 +152,7 @@ export default function AboutPage2() {
 
         <section className="about2-grid-section">
           <article className="about2-column-card">
-            <h3>Experience</h3>
+            <h3>Experience 🥐</h3>
             <div className="about2-stack-list">
               {experienceItems.map((item) => (
                 <div className="about2-stack-item" key={`${item.role}-${item.org}`}>
@@ -130,26 +166,24 @@ export default function AboutPage2() {
           </article>
 
           <article className="about2-column-card">
-            <h3>Research & Work</h3>
+            <h3>Extracurriculars🪴</h3>
             <ul className="about2-research-list">
-              {researchItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              {researchItems}
             </ul>
           </article>
 
           <article className="about2-column-card">
-            <h3>Contact</h3>
+            <h3>Contact ☕</h3>
             <div className="about2-contact-links">
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/june-lee-18snvk90/" target="_blank" rel="noreferrer">
                 <ContactIcon label="in" />
                 <span>LinkedIn</span>
               </a>
-              <a href="mailto:junelee@example.com">
+              <a href="mailto:jrl2227@barnard.edu">
                 <ContactIcon label="@" />
                 <span>Email</span>
               </a>
-              <a href="/pdf/june-lee-resume.pdf" target="_blank" rel="noreferrer">
+              <a href={`${process.env.PUBLIC_URL}/pdf/resume-1-12-26.pdf`} target="_blank" rel="noreferrer">
                 <ContactIcon label="CV" />
                 <span>Resume</span>
               </a>
@@ -162,9 +196,9 @@ export default function AboutPage2() {
             <h3>Featured Work</h3>
           </div>
 
-          <div className="about2-project-gallery">
+          <div className="about2-project-gallery" ref={projectGalleryRef}>
             {projectCards.map((project) => (
-              <article className="about2-project-card" key={project.number}>
+              <Link className="about2-project-card" key={project.number} to={project.path}>
                 <div
                   className="about2-project-top"
                   style={{ backgroundColor: project.color }}
@@ -176,9 +210,9 @@ export default function AboutPage2() {
                   )}
                   <span className="about2-project-number">{project.number}</span>
                   <img
-                    className={project.title.toLowerCase().includes("sharp") ? "about2-project-image about2-project-image--sharp" : "about2-project-image"}
                     src={project.image}
                     alt={`${project.title} project mockup`}
+                    className={`about2-project-image${project.title.toLowerCase().includes("sharp") ? " about2-project-image--sharp" : ""}`}
                   />
                 </div>
 
@@ -186,9 +220,11 @@ export default function AboutPage2() {
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
+
+          <img src={palmUp} alt="Image of hand with palm up" className="about2-palm-image" aria-hidden="true" />
         </section>
       </div>
     </div>

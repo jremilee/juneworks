@@ -74,6 +74,10 @@ body {
   color: #000;
 }
 
+.nav--creative {
+  background: var(--bg);
+}
+
 .nav__divider{
   height: 1px;
   background: var(--line);
@@ -231,7 +235,7 @@ body {
   padding: 0 calc(18px * var(--ui-scale));
   color: #111111; /* strong black */
   font-size: calc(23px * var(--ui-scale));
-  font-weight: 400; /* normal weight */
+  font-weight: 600; /* normal weight */
   text-align: center;
   line-height: 1.2;
 }

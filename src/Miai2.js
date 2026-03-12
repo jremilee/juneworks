@@ -235,10 +235,11 @@ export default function MiaiVideogameProject() {
   }, []);
 
   return (
+    
     <div className="miai2-page">
       
       <header className="miai-hero">
-      <Nav />
+        <Nav />
         <div className="miai-hero-image-wrap">
           <img
             src={heroBanner}
