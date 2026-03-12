@@ -174,13 +174,19 @@ function AgentsOfInfluence() {
           <div className="section-label">BETA TESTING</div>
 
           <h2 className="aoi-beta-intro">
-            Alterea was in the stage of preparing the game to send out to teachers for beta
-            testing. I played through each of the games and synthesized a list of unclear
-            points and provided UX solutions for each point.
+            Conducted end-to-end game evaluations, identifying usability gaps and delivering UX recommendations to improve player experience.
+            
+            
           </h2>
 
           <p className="aoi-beta-subintro">
-            Below I compiled samples of my work for the following games. In addition to
+
+            As Alterea prepared the game for teacher beta testing, 
+            I evaluated each game end-to-end to uncover friction 
+            points and unclear interactions. I translated these insights 
+            into targeted UX improvements to enhance clarity, usability, and player engagement.
+            <br/><br/>
+            Below, I compiled samples of my work for the following games. In addition to
             pointing out potential points of confusion, I also helped track and identify
             reproducible bugs and glitches. For UI confusions that would not be fixable prior
             to the teacher launch deadline, I noted them down so I could clarify it in the
@@ -280,8 +286,8 @@ function AgentsOfInfluence() {
                   <h4>Player confusion</h4>
                   <p>
                     Players alternate between reading dialogue and asking questions. 
-                    During the section with questions, the dialogue arrow remains on the screen.
-                    This can confuse players into thinking that there is more dialogue to read 
+                    During the section with questions, the dialogue arrow remained on the screen.
+                    This could confuse players into thinking that there is more dialogue to read 
                     before answering the question.
                   </p>
                   <p>

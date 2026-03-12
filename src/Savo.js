@@ -122,11 +122,11 @@ const SavoHealthProject = () => {
             I conducted 60+ cold calls to diabetes prevention programs based in NY
             and completed 30–40 minute interviews with DPP leadership and staff to
             gain a comprehensive understanding of the logistics and difficulties of
-            providing the program and which features would be most valuable in an MVP. 
+            providing the DPP program. This research helped me determine which features would be most valuable in Savo's MVP. 
           </p>
 
           <SavoTimeline />
-          
+
           <p>
             At the end of my internship, I synthesized my findings and submitted a deliverable with analysis of
             the interviews and product direction suggestions. As a result of my

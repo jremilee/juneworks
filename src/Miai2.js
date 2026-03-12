@@ -457,10 +457,9 @@ export default function MiaiVideogameProject() {
               to all 4 suspects or just 1 suspect. In order to highlight the AIC
               who is replying, I suggested that the Inquisitor (INQ) be moved to
               the side and the AIC who is responding to be shown on the larger
-              screen. In order to accommodate the large amount of text with the
-              addition of the inquisitor image, I added scroll bars to the
-              incident summary and suspect profiles which allows them to access the
-              relevant part of the text at any time.
+              screen. To accommodate the large amount of text, I added scroll bars to the
+              incident summary and suspect profiles to allow players to access relevant
+              text at any time.
             </p>
             <p>
               I also added a visual sliding timer above the typing box so that the user
