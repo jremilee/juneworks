@@ -235,11 +235,10 @@ export default function MiaiVideogameProject() {
   }, []);
 
   return (
-    
-    <div className="miai2-page">
-      
+    <>
+      <Nav />
+      <div className="miai2-page">
       <header className="miai-hero">
-        <Nav />
         <div className="miai-hero-image-wrap">
           <img
             src={heroBanner}
@@ -604,6 +603,7 @@ export default function MiaiVideogameProject() {
         <div className="miai-footer-credit">@juneworks2026</div>
       </footer>
     </div>
+    </>
   );
 }
 

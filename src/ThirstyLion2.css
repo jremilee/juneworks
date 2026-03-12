@@ -31,6 +31,7 @@ html {
 .thirsty-lion-page {
   --tl-section-top-pad: 72px;
   --tl-nav-height: 48px;
+  --tl-nav-overlap: 64px;
   --tl-phone-gap: clamp(1.25rem, 5vw, 5rem);
   --tl-phone-half-gap: calc(var(--tl-phone-gap) / 2);
   width: 100%;
@@ -163,6 +164,8 @@ html {
   align-items: center;
   gap: 40px;
   min-height: 540px;
+  margin-top: calc(-1 * var(--tl-nav-overlap));
+  padding-top: calc(var(--tl-section-top-pad) + var(--tl-nav-overlap));
 }
 
 .tl-hero-text p {

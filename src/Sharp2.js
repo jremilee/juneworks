@@ -137,7 +137,7 @@ export default function SharpWebConsolidation() {
 
   return (
     <div className="sharp-page">
-      <Nav/ >
+      <Nav />
 
       <main>
         <section className="sharp-hero">

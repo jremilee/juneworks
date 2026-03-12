@@ -28,7 +28,7 @@ a {
   width: 100%;
   min-width: 0;
   background: #f6f6f4;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .sharp-container {

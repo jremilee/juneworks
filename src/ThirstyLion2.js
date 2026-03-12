@@ -50,11 +50,11 @@ const results = [
   },
   {
     title: "Negativity Reporting Bias",
-    text: "Users reported water fountains more when they were malfunctioning, which meant a few reviews for fountains functioning properly.",
+    text: "Users reported water fountains more when they were malfunctioning, which meant few reviews for fountains functioning properly.",
   },
   {
     title: "80%",
-    text: "Of users confirmed that they would go to a better fountain indicated by our app.",
+    text: "Of responses confirmed that they would go to a better fountain suggested by our app.",
   },
   {
     title: "“Forgotten” Fountains",
@@ -62,7 +62,7 @@ const results = [
   },
   {
     title: "Low filter status ≠ Low water pressure",
-    text: "Students did not always interpret red filter status and low pressure the same way, so separate metrics were needed.",
+    text: "Red filter status does not always indicate low water pressure. Separate metrics would be needed to assess fountain conditions.",
   },
 ];
 
@@ -76,15 +76,15 @@ const designDecisions = [
   },
   {
     title: "Surface “Forgotten Fountains”",
-    text: "Research showed high-quality fountains were underused due to limited visibility. Campus blueprints helped students discover nearby options.",
+    text: "Research showed high-quality fountains were underused due to limited visibility. Integrating familiar campus blueprints into our app would help students discover nearby options.",
   },
   {
     title: "Separate Quality Metrics",
-    text: "We learned that a single rating could not capture water quality. We broke out temperature, pressure, and taste as separate signals.",
+    text: "We learned that a single rating could not capture water quality. We added separate ratings for temperature, pressure, and taste as separate signals.",
   },
   {
     title: "Rethink Facilities Reporting",
-    text: "Students rarely submitted maintenance reports, so we explored ways aggregated low ratings could better support facilities awareness.",
+    text: "Students rarely submitted maintenance reports and found the process cumbersome. Our app data could be directly sent to facilities to alert them of poor fountain conditions.",
   },
   {
     title: "Design for Scale",
@@ -259,10 +259,10 @@ export default function ThirstyLionProject() {
     }, []);
       
   return (
-    <div className="thirsty-lion-page">
+    <>
       <Nav />
-
-      <main>
+      <div className="thirsty-lion-page">
+        <main>
         {/* HERO */}
         <section className={`tl-section tl-hero${heroVisible ? " tl-hero--animate" : ""}`} ref={heroSectionRef}>
           <div className="tl-hero-text">
@@ -369,7 +369,7 @@ export default function ThirstyLionProject() {
           <h2>Identifying the Issues</h2>
           <p className="tl-section-intro">
             From our early research and online sources, it became clear that
-            students were dissatisfied with campus fountains. We interviewed
+            students were dissatisfied with the water fountains on campus. To gain specific insights, we interviewed
             students on campus and clustered the insights into larger themes to
             shape product direction.
           </p>
@@ -527,14 +527,14 @@ export default function ThirstyLionProject() {
             </div>
 
             <div className="tl-process-card">
-              <h3>Final Mobile Screens</h3>
+              <h3>Design Logic</h3>
               <img className="lowfid-screens" src={lowFidMockup} alt="Low-fidelity mockup" />
             </div>
 
             <div className="tl-process-card">
               <h3>Final Mobile Screens</h3>
               <img className="highfid-screens" src={highFidMockup} alt="Final mobile screens" />
-              <p className="tl-design-note">For the high-fidelity mockup, I redesigned the map page to use more vertical space, creating a more immersive and usable layout. When users open the map by selecting a fountain, that fountain is highlighted with a blue navigation icon while other fountains appear in black. The selected fountain’s details slide up from the bottom, and users can tap other fountains to quickly view their information. I also replaced the floor toggle button with a dropdown menu, allowing users to switch floors more efficiently. <br/><br/> Additionally, I suggested grouping the current fountain ratings into a single box to clearly distinguish them from the previous reviews section. Users found our app easy to navigate and intuitive.  We made minor design tweaks (e.g. showing empty star outline) based on feedback.</p>
+              <p className="tl-design-note">For the high-fidelity mockup, I redesigned the map page to use more vertical space, creating a more immersive and usable layout. When users open the map by selecting a fountain, that fountain is highlighted with a blue navigation icon while other fountains appear in black. The selected fountain’s details slide up from the bottom, and users can tap other fountains to quickly view their information. I also replaced the floor toggle button with a dropdown menu, allowing users to switch floors more efficiently. <br/><br/> Additionally, I suggested grouping the current fountain ratings into a single box to clearly distinguish them from the previous reviews section. Users found our app easy to navigate and intuitive.  We made minor design tweaks (e.g. showing empty star outline) based on user feedback.</p>
             </div>
           </div>
         </section>
@@ -575,10 +575,9 @@ export default function ThirstyLionProject() {
             </iframe>
           </div>
         
-            <Footer/>
-
-        
-      </main>
-    </div>
+          <Footer />
+        </main>
+      </div>
+    </>
   );
 }

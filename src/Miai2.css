@@ -10,6 +10,7 @@
   --miai-max-width: 1360px;
   --miai-content-width: 1240px;
   --miai-radius: 18px;
+  --miai-nav-overlap: 64px;
 }
 
 .miai2-page,
@@ -23,6 +24,8 @@
   background: var(--miai-bg);
   color: var(--miai-text);
   font-family: Inter, Arial, Helvetica, sans-serif;
+  margin-top: calc(-1 * var(--miai-nav-overlap));
+  padding-top: var(--miai-nav-overlap);
 }
 
 .miai2-page img {
@@ -48,7 +51,8 @@
   isolation: isolate;
   width: 100%;
   max-width: var(--miai-max-width);
-  margin: 0 auto;
+  margin: calc(-1 * var(--miai-nav-overlap)) auto 0;
+  padding-top: var(--miai-nav-overlap);
   min-height: 640px;
   overflow: hidden;
 }

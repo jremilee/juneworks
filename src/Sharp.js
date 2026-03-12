@@ -12,6 +12,7 @@ export default function Sharp() {
     <>
       <Nav />
       <div className="tlPage">
+        
         <main className="content" id="sharp">
 
 

@@ -5,11 +5,12 @@ export default function Nav() {
   const { pathname } = useLocation();
   const isMiaiPage = pathname === "/miai";
   const isCreativePage = pathname === "/creativeworks";
+  const isSharpPage = pathname === "/sharp";
+  const isThirstyLionPage = pathname === "/thirstylion2";
 
   return (
     <header
-      className={`nav${isMiaiPage ? " nav--miai" : ""}${isCreativePage ? " nav--creative" : ""}`}
-      style={{ position: "sticky", top: 0, zIndex: 50 }}
+      className={`nav${isMiaiPage ? " nav--miai" : ""}${isCreativePage ? " nav--creative" : ""}${isSharpPage ? " nav--sharp" : ""}${isThirstyLionPage ? " nav--thirsty" : ""}`}
     >
       <div className="nav__inner">
         <nav className="nav__links" aria-label="Primary">
