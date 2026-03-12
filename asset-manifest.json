@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/juneworks/static/css/main.c5ab9592.css",
-    "main.js": "/juneworks/static/js/main.887ce993.js",
+    "main.js": "/juneworks/static/js/main.a322748d.js",
     "static/js/453.a04ae9d0.chunk.js": "/juneworks/static/js/453.a04ae9d0.chunk.js",
     "static/media/miai-video.mp4": "/juneworks/static/media/miai-video.30b7fcc6888ffd345811.mp4",
     "static/media/data-driven-icons.svg": "/juneworks/static/media/data-driven-icons.f1c29cbd22f5d55ac74b1d9de4c14ca1.svg",
@@ -168,11 +168,11 @@
     "index.html": "/juneworks/index.html",
     "static/media/footer-bg.svg": "/juneworks/static/media/footer-bg.cdb53cf192b9e39fa053.svg",
     "main.c5ab9592.css.map": "/juneworks/static/css/main.c5ab9592.css.map",
-    "main.887ce993.js.map": "/juneworks/static/js/main.887ce993.js.map",
+    "main.a322748d.js.map": "/juneworks/static/js/main.a322748d.js.map",
     "453.a04ae9d0.chunk.js.map": "/juneworks/static/js/453.a04ae9d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c5ab9592.css",
-    "static/js/main.887ce993.js"
+    "static/js/main.a322748d.js"
   ]
 }
