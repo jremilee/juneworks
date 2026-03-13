@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import { allImages } from "./utils/imageLoader";
 import SavoTimeline from "./SavoTimeline";
 
-import heroLaptopMockup from "./images/savo-hero-laptop.svg";
+import heroLaptopMockup from "./images/savo-hero-centered.svg";
 import reportSlidePreview from "./images/savo-report-slide.svg";
 
 const getSavoSlide = (slideNumber) => {
