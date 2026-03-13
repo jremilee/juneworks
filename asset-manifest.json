@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/juneworks/static/css/main.3f7007f4.css",
-    "main.js": "/juneworks/static/js/main.7a71523f.js",
+    "main.css": "/juneworks/static/css/main.6093da1e.css",
+    "main.js": "/juneworks/static/js/main.4f5ac58f.js",
     "static/js/453.a04ae9d0.chunk.js": "/juneworks/static/js/453.a04ae9d0.chunk.js",
     "static/media/miai-video.mp4": "/juneworks/static/media/miai-video.30b7fcc6888ffd345811.mp4",
     "static/media/data-driven-icons.svg": "/juneworks/static/media/data-driven-icons.f1c29cbd22f5d55ac74b1d9de4c14ca1.svg",
@@ -73,7 +73,8 @@
     "static/media/thirstylion-postits.png": "/juneworks/static/media/thirstylion-postits.c16627439684382296ae.png",
     "static/media/hand-cropped.png": "/juneworks/static/media/hand-cropped.98f049036cf451584f9c.png",
     "static/media/cardboard.png": "/juneworks/static/media/cardboard.a69db9fafa5848391266.png",
-    "static/media/savo-hero-laptop.svg": "/juneworks/static/media/savo-hero-laptop.d31cb5634d5f11b79a746c23f9bea071.svg",
+    "static/media/savo-hero-laptop.svg": "/juneworks/static/media/savo-hero-laptop.d31cb5634d5f11b79a74.svg",
+    "static/media/savo-hero-centered.svg": "/juneworks/static/media/savo-hero-centered.e2b1170affb74c28ef027e22698786f9.svg",
     "static/media/style-guide-palette.svg": "/juneworks/static/media/style-guide-palette.6a23df8f59b5b794ad9ea5cb0d3303dc.svg",
     "static/media/miai-7.png": "/juneworks/static/media/miai-7.240dca735dd008ef1076.png",
     "static/media/savo-report-slide.svg": "/juneworks/static/media/savo-report-slide.bd0ed9ca194453a5a8470e074b9215f0.svg",
@@ -168,12 +169,12 @@
     "static/media/context-transition-frame.svg": "/juneworks/static/media/context-transition-frame.8e317488223cf78f7ab2.svg",
     "index.html": "/juneworks/index.html",
     "static/media/footer-bg.svg": "/juneworks/static/media/footer-bg.cdb53cf192b9e39fa053.svg",
-    "main.3f7007f4.css.map": "/juneworks/static/css/main.3f7007f4.css.map",
-    "main.7a71523f.js.map": "/juneworks/static/js/main.7a71523f.js.map",
+    "main.6093da1e.css.map": "/juneworks/static/css/main.6093da1e.css.map",
+    "main.4f5ac58f.js.map": "/juneworks/static/js/main.4f5ac58f.js.map",
     "453.a04ae9d0.chunk.js.map": "/juneworks/static/js/453.a04ae9d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f7007f4.css",
-    "static/js/main.7a71523f.js"
+    "static/css/main.6093da1e.css",
+    "static/js/main.4f5ac58f.js"
   ]
 }
