@@ -31,6 +31,15 @@ export default function Nav() {
           >
             About
           </NavLink>
+
+          <NavLink
+            to="/creativeworks"
+            className={({ isActive }) =>
+              isActive ? "nav__link nav__link--active" : "nav__link"
+            }
+          >
+            Creative Works
+          </NavLink>
         </nav>
       </div>
       <div className="nav__divider" />

@@ -85,7 +85,7 @@ body {
 }
 
 .nav--creative {
-  background: var(--bg);
+  background: #fff;
 }
 
 .nav--sharp {
@@ -1079,7 +1079,7 @@ body {
 
 .cwPage {
   font-family: 'IBM Plex Sans JP', sans-serif;
-  background: var(--bg);
+  background: #fff;
   padding: calc(40px * var(--ui-scale)) calc(18px * var(--ui-scale));
   max-width: var(--wide-max);
   margin: 0 auto;
@@ -1094,6 +1094,7 @@ body {
 
 .cw__section {
   margin-bottom: 60px;
+  min-height: 420px;
 }
 
 .cw__sectionTitle {
@@ -1102,79 +1103,102 @@ body {
   margin: 0 0 16px;
 }
 
-.cw__carouselWrap {
+.cw__worldSection {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
-.cw__carousel {
+.cw__worldSection--active .cw__sectionTitle {
+  color: #111;
+}
+
+.cw__worldViewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.96));
+  min-height: 290px;
+}
+
+.cw__worldLayer {
   display: flex;
-  gap: 22px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  flex: 1;
+  gap: 34px;
+  align-items: flex-end;
+  width: max-content;
+  min-width: calc(100% + 220px);
+  padding: 34px 28px;
+  will-change: transform;
+}
+
+.cw__worldCard {
+  margin: 0;
+  width: 210px;
+  min-width: 210px;
   padding: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  flex-shrink: 0;
 }
 
-.cw__carousel::-webkit-scrollbar {
-  display: none;
+.cw__worldCard:nth-child(4n + 1) {
+  width: 220px;
+  min-width: 220px;
+  transform: translateY(-8px);
+}
+
+.cw__worldCard:nth-child(4n + 2) {
+  width: 190px;
+  min-width: 190px;
+  transform: translateY(20px);
+}
+
+.cw__worldCard:nth-child(4n + 3) {
+  width: 240px;
+  min-width: 240px;
+  transform: translateY(-18px);
+}
+
+.cw__worldCard:nth-child(4n + 4) {
+  width: 205px;
+  min-width: 205px;
+  transform: translateY(12px);
 }
 
 .cw__carouselImg {
-  height: 280px;
-  width: auto;
+  height: 170px;
+  width: 100%;
   object-fit: contain;
-  border-radius: 12px;
-  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
 }
 
-.cw__scrollBtn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  cursor: pointer;
+.cw__characterOverlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  color: var(--ink);
-  flex-shrink: 0;
-  transition: background 0.2s ease;
-  position: relative;
-  z-index: 5;
-  pointer-events: auto;
+  pointer-events: none;
+  z-index: 3;
 }
 
-.cw__scrollBtn:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.cw__scrollBtn--left {
-  order: -1;
-}
-
-.cw__scrollBtn--right {
-  order: 3;
-}
-
-/* Disabled state to indicate scroll limits */
-.cw__scrollBtn:disabled,
-.cw__scrollBtn[aria-disabled="true"] {
-  opacity: 0.4;
-  cursor: default;
+.cw__characterAboveProgress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -8rem;
+  margin-bottom: 0px;
   pointer-events: none;
 }
 
-/* Progress indicator showing scroll bounds */
 .cw__progress {
   height: 4px;
   background: rgba(0,0,0,0.06);
   border-radius: 999px;
-  margin-top: 10px;
+  margin-top: 0;
   overflow: hidden;
 }
 
@@ -1184,6 +1208,61 @@ body {
   width: 0%;
   border-radius: 999px;
   transition: width 200ms ease;
+}
+
+.cw__worldHint {
+  margin: 10px 0 0;
+  color: rgba(0, 0, 0, 0.62);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .cw__section {
+    min-height: 250px;
+  }
+
+  .cw__worldViewport {
+    min-height: 250px;
+  }
+
+  .cw__worldLayer {
+    gap: 18px;
+    padding: 20px 16px;
+  }
+
+  .cw__carouselImg {
+    height: 140px;
+  }
+
+  .cw__worldCard {
+    width: 160px;
+    min-width: 160px;
+    padding: 0;
+  }
+
+  .cw__worldCard:nth-child(4n + 1) {
+    width: 170px;
+    min-width: 170px;
+    transform: translateY(-4px);
+  }
+
+  .cw__worldCard:nth-child(4n + 2) {
+    width: 150px;
+    min-width: 150px;
+    transform: translateY(10px);
+  }
+
+  .cw__worldCard:nth-child(4n + 3) {
+    width: 180px;
+    min-width: 180px;
+    transform: translateY(-10px);
+  }
+
+  .cw__worldCard:nth-child(4n + 4) {
+    width: 160px;
+    min-width: 160px;
+    transform: translateY(6px);
+  }
 }
 
 /* =========================

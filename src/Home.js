@@ -11,7 +11,7 @@ export default function Home() {
   const dynamic = useTypewriter([
     "a UX designer based in NYC",
     "a product designer",
-    "a cheese enthusiast",
+    "a storyteller",
   ], 6000, 80, 80);
   useEffect(() => {
     const v = videoRef.current;
