@@ -111,10 +111,12 @@ export default function About() {
             <div className="aboutHero__right">
               <h1 className="aboutHero__title">About Me</h1>
               <p className="aboutHero__text">
-                I’m a senior at Barnard College, where I study cognitive science
-                and education. I began my journey as an ADA compliance
-                specialist, which sparked my interest in inclusive design and
-                eventually led me to broader design projects.
+                I studied Cognitive Science and Education at Barnard College, 
+                where I learned how people percieve and interact with 
+                the world around them. I began my journey as an ADA compliance 
+                specialist, which sparked my interestn in inclusive design and 
+                eventually led me to broader design and user experience projects.
+
               </p>
               <p className="aboutHero__text">
                 Recently, I’ve been exploring the EdTech industry. When I’m not
